@@ -1,0 +1,16 @@
+{
+    "description": ""
+  , "name":"jplusplus"
+  , "version": "0.0.1"
+  , "author": "Pirhoo"
+  , "license": "MIT"
+  , "engines": {
+      "node": "0.6.18",
+      "npm": "1.1.32"
+    }
+  , "dependencies": {
+        "phantom": "latest",
+        "express": "latest"
+    }
+
+}

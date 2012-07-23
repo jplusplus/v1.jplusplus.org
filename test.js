@@ -1,5 +1,5 @@
 var express = require('express')
-	, phantom = require('phantom')
+//	, phantom = require('phantom')
 			, app = null;
 
 
@@ -12,7 +12,6 @@ var express = require('express')
 exports.boot = function(){
 
   // Environement configuration
-  process.env.DATABASE_URL = process.env.DATABASE_URL || "postgres://pirhoo:pirhoo@localhost:5432/jquest_orm";
   process.env.PORT = process.env.PORT || 3000;
 
   // Creates Express server
@@ -42,6 +41,7 @@ exports.boot = function(){
 
 		console.log('Loading a web page');
 
+		/*
 		phantom.create( function(ph) {
 		  
 		  ph.createPage( function(page) {
@@ -71,7 +71,7 @@ exports.boot = function(){
 		    });
 		  });
 		});
-
+		*/
 	});
 
   return app;

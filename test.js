@@ -42,7 +42,7 @@ exports.boot = function(){
 
 		console.log('Loading a web page');
 
-		exec("phantomjsa --version", function (error, stdout, stderr) {
+		exec("phantomjs --version", function (error, stdout, stderr) {
 		  console.log("error : " +  error);
 		  console.log("stdout : " +  stdout);
 		  console.log("stderr : " +  stderr);

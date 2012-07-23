@@ -4,6 +4,13 @@ var express = require('express')
   	, exec = require('child_process').exec;
 
 
+
+exec("phantomjs  --version", function (error, stdout, stderr) {
+  console.log("error : " +  error);
+  console.log("stdout : " +  stdout);
+  console.log("stderr : " +  stderr);
+});
+
 /**
 * @author Pirhoo
 *
@@ -42,11 +49,6 @@ exports.boot = function(){
 
 		console.log('Loading a web page');
 
-		exec("phantomjs  --version", function (error, stdout, stderr) {
-		  console.log("error : " +  error);
-		  console.log("stdout : " +  stdout);
-		  console.log("stderr : " +  stderr);
-		});
 		/*
 		phantom.create( function(ph) {
 		  

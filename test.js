@@ -1,6 +1,7 @@
 var express = require('express')
 //	, phantom = require('phantom')
-			, app = null;
+			, app = null
+  	, exec = require('child_process').exec;
 
 
 /**
@@ -41,6 +42,11 @@ exports.boot = function(){
 
 		console.log('Loading a web page');
 
+		exec("phantomjsa --version", function (error, stdout, stderr) {
+		  console.log("error : " +  error);
+		  console.log("stdout : " +  stdout);
+		  console.log("stderr : " +  stderr);
+		});
 		/*
 		phantom.create( function(ph) {
 		  

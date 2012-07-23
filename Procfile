@@ -1,1 +1,1 @@
-web:  phantomjs test.js
+renderer:  phantomjs test.js

@@ -4,7 +4,6 @@ var express = require('express')
   	, exec = require('child_process').exec;
 
 
-
 exec("phantomjs  --version", function (error, stdout, stderr) {
   console.log("error : " +  error);
   console.log("stdout : " +  stdout);

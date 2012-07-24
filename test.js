@@ -1,7 +1,7 @@
 var express = require('express')
 //	, phantom = require('phantom')
 			, app = null
-  	, exec = require('child_process').exec;
+  	 , exec = require('child_process').exec;
 
 exec("phantomjs  --version", function (error, stdout, stderr) {
   console.log("error : " +  error);

@@ -1,0 +1,101 @@
+@import "tools.less";
+
+h1, h2, h3, h4, .brand, fieldset legend {
+	font-family: 'Share', sans-serif;
+	text-shadow:1px 1px 0 white;
+}
+
+body {
+	background:url("../images/bg.png");
+}
+
+#portfolio {
+
+	position:relative;
+	overflow: hidden;
+
+	&:before, &:after {
+		content:"";
+		position:absolute;
+		z-index:150;
+		top:0;
+
+		height:100%;
+		width:50px;
+	}
+
+	&:after {
+		right:0;
+		background:url("../images/bg-disappear-right.png") repeat-y right top;
+	}
+
+	&:before {		
+		left:0;
+		background:url("../images/bg-disappear-left.png") repeat-y left top;
+	}
+
+
+	li {
+		
+		position:relative;
+		z-index:100;
+		padding:0;
+		margin:0;
+
+		.view {
+
+			position:relative;
+			float:left;
+			
+			height:450px;
+			margin:30px 50px;
+
+			background: #555;
+			.box-shadow( 0 0 20px 0 rgba(0,0,0, 0.2) );
+
+			&:after, &:before {
+				content:"";
+				position:absolute;
+				z-index:-1;
+				bottom:10px;
+
+				width:50%;
+				height:1px;
+				.box-shadow(0 0 30px 5px #000);
+			}
+
+			&:after {
+				left:20px;
+				.rotate(-2deg);
+			}
+
+			&:before {
+				right:20px;
+				.rotate(2deg);
+			}
+
+			.wrapper {
+				position: relative;
+				height:100%;
+				width:100%;
+				overflow:hidden;
+
+				canvas {
+					position:absolute;
+					top:0;
+					left:0;
+					.transition(opacity 1s)
+				}
+
+				&.open canvas {
+					opacity:0;
+				}
+
+				img {
+					width:100%;
+				}
+			}
+		}
+
+	}
+}

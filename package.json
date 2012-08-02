@@ -1,16 +1,21 @@
 {
-    "description": ""
-  , "name":"jplusplus"
+    "name": "jquest"
   , "version": "0.0.1"
-  , "author": "Pirhoo"
-  , "license": "MIT"
+  , "private": true
+  , "dependencies": {  	 
+      "express"       : "2.5.10"
+    , "less"          : "latest"
+    , "jade"          : "latest"
+    , "oauth"         : ">= 0.9.7"
+    , "pg"            : "latest"
+    , "enc"           : "0.0.1"
+    , "restler"       : "latest"
+    , "memory-cache"  : "latest"
+    , "async"         : "latest"
+    , "i18n"          : "latest"
+  }
   , "engines": {
-      "node": "0.6.18",
-      "npm": "1.1.32"
-    }
-  , "dependencies": {
-        "phantom": "latest",
-        "express": "latest"
-    }
-
+    "node": "0.6.18",
+    "npm": "1.1.32"
+  }
 }

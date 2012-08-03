@@ -21,14 +21,14 @@
 	that.initPortfolioBlur = function() {
 
 		// No webgl support
-		//if( ! Modernizr.webgl ) return;
+		if( ! Modernizr.webgl ) return;
 
 		// For each card
 		that.el.$portfolio.find(".js-card.js-active").each(function(i, card) {
 
  			var $card = $(card);
-			// If there is no canvas yet
-			if( $card.find("canvas").length ) return;
+			// If there already is canvas or no image
+			if( $card.find("canvas").length || !$card.find("img").length ) return;
 
       // creates a Canvas with the size of the preview
   	  try {
@@ -44,7 +44,7 @@
       var img     = $card.find("img:first")[0],
           texture = canvas.texture(img);
 
-      //canvas.draw(texture).lensBlur(10, -1, 0).update();            
+      canvas.draw(texture).lensBlur(5, 1, 0).update();            
 
       // append the canvas to the current preview
       $card.find(".wrapper").append(canvas);
@@ -77,11 +77,27 @@
 	 * @function
 	 *
 	 */
+	that.slabTextHeadlines = function() {
+		
+		$(".slabtexted").slabText({
+     	// Don't slabtext the headers if the viewport is under 380px
+			"viewportBreakpoint":380
+		});
+	};
+
+	/**
+	 * @function
+	 *
+	 */
 	$(that.init = function() {	
 		
 		that.initElements();
 		that.initPortfolio();
 		$(window).on("resize", that.initPortfolio);
+		$(".lettering").lettering();
+		$(".lettering-lines").lettering('lines');
+		$(".lettering-words").lettering('words');
+		//setTimeout(that.slabTextHeadlines, 1000);
 
 	});
 

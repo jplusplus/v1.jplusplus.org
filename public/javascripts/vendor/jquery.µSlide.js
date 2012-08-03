@@ -1,7 +1,7 @@
 (function($) {
 
     $.fn.µSlide = function(p_options) {
-
+      
         // to escape some inheritance problem
         var $that       = $(this),
             that        = this,
@@ -10,7 +10,7 @@
         // iscroll
             iScrollInst = false,
         // detects to know if we use iScroll or scrollTo
-            hasTouch    =  true || 'ontouchstart' in window;
+            hasTouch    =  true || !!('ontouchstart' in window);
         // timestamp to prevent double click on ipad
             lastSlideTo = 0,
         // every slide
@@ -272,7 +272,6 @@
                 
             // iScroll on the slide
             if(hasTouch && !iScrollInst) {    
-
 
                 // only if we are on webkit navigator
                 iScrollInst = new iScroll( $that.attr("id"), {                    

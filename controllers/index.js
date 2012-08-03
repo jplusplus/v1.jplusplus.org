@@ -16,7 +16,8 @@ module.exports = function(app, db, controllers) {
 				stylesheets: [
 					 "/stylesheets/vendor/bootstrap-build/bootstrap.min.css"
 					,"/stylesheets/vendor/bootstrap-build/bootstrap-responsive.min.css"
-					,"http://fonts.googleapis.com/css?family=Share:400,700"
+					,"/stylesheets/vendor/slabtext.css"
+					,"http://fonts.googleapis.com/css?family=Share:400,700|Leckerli+One"
 					,"/stylesheets/style.less"
 				], 
 				javascripts: [
@@ -24,6 +25,8 @@ module.exports = function(app, db, controllers) {
 					, "/javascripts/vendor/iScroll.class.js"																
 					, "/javascripts/vendor/jquery.scrollTo-min.js"																
 					, "/javascripts/vendor/jquery.µSlide.js"																	
+					, "/javascripts/vendor/jquery.lettering-0.6.1.min.js"											
+					, "/javascripts/vendor/jquery.slabtext.min.js"																
 					, "/javascripts/vendor/glfx.js"																	
 					, "/javascripts/global.js"																	
 				]

@@ -9,10 +9,25 @@ body {
 	background:url("../images/bg.png");
 }
 
+hr.little {
+	height:5px;
+	border:0;
+	border-top:1px solid fade(black, 50%);
+	border-bottom:1px solid fade(black, 50%);
+	width:150px;
+	margin:10px auto;
+	.box-shadow(~"0 1px 0 0px white, inset 0 1px 0 0px white");	
+}
+
+.slabtexted .slabtext:nth-child(1) {
+	line-height:1.1;
+}
+
 #portfolio {
 
 	position:relative;
-	overflow: hidden;
+	overflow: hidden;	
+	.transition(height 0.4s);
 
 	&:before, &:after {
 		content:"";
@@ -47,8 +62,7 @@ body {
 			position:relative;
 			float:left;
 			
-			height:450px;
-			margin:30px 50px;
+			margin:30px 50px;			
 
 			background: #555;
 			.box-shadow( 0 0 20px 0 rgba(0,0,0, 0.2) );
@@ -74,9 +88,65 @@ body {
 				.rotate(2deg);
 			}
 
+			/* .legend {
+				
+				z-index:10;
+				position:absolute;
+				right:35px;
+				bottom:30px;
+
+				padding:0px 10px;
+				padding-right:0;
+				text-align:justify;
+				.border-radius(10px 0px 0 10px);	
+				//.box-shadow(0 0 15px fade(black, 80%) );
+
+				background:fade(white, 40%);
+
+				.btn {
+					margin-left:5px;
+					position:relative;
+					right:-5px;
+				}
+
+				h2 {
+					padding:0;
+					color:lighten(#000, 15%);
+					text-shadow:1px 1px 0 fade(white, 40%);				
+					letter-spacing:-1px;
+					//font-family: 'Leckerli One', cursive;
+				}
+
+			} */
+			.legend {
+				
+				z-index:10;
+				position:absolute;
+				right:35px;
+				bottom:30px;
+
+				padding:0px 10px;
+				text-align:justify;
+				.border-radius(10px);	
+				.box-shadow(0 0 10px 10px fade(white, 40%) );
+
+				background:fade(white, 40%);
+
+				.btn { display:none; }
+
+				h2 {
+					padding:0;
+					color:lighten(#000, 15%);
+					text-shadow:1px 1px 0 fade(white, 40%);				
+					letter-spacing:-1px;
+				}
+
+			}
+
 			.wrapper {
 				position: relative;
 				height:100%;
+				max-height:450px;
 				width:100%;
 				overflow:hidden;
 
@@ -84,10 +154,10 @@ body {
 					position:absolute;
 					top:0;
 					left:0;
-					.transition(opacity 1s)
+					.transition(opacity 2s)
 				}
 
-				&.open canvas {
+				&.open canvas, &:hover canvas {
 					opacity:0;
 				}
 

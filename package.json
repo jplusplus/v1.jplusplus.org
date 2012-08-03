@@ -7,7 +7,6 @@
     , "less"          : "latest"
     , "jade"          : "latest"
     , "oauth"         : ">= 0.9.7"
-    , "pg"            : "latest"
     , "enc"           : "0.0.1"
     , "restler"       : "latest"
     , "memory-cache"  : "latest"

@@ -1,8 +1,17 @@
+
+
 include layouts/menu
-.container
+#main.container.relative
+
+	#about	
+		.row
+			h3 À propos
+			article
+				p I am a stranger. I come in peace. Take me to your leader and there will be a massive reward for you in eternity.
+				p The surface is fine and powdery. I can kick it up loosely with my toe. It does adhere in fine layers, like powdered charcoal, to the sole and sides of my boots. I only go in a small fraction of an inch, maybe an eighth of an inch, but I can see the footprints of my boots and the treads in the fine, sandy particles. There seems to be no difficult in moving around, as we suspected.		
 
 	#portfolio
-		ul.unstyled.js-wrapper
+		ul.unstyled.js-wrapper.row
 			li.span12.js-card
 				.view
 					.wrapper
@@ -44,28 +53,41 @@ include layouts/menu
 								i.icon-play
 						img(src="/images/gallery/4233696193_22f99dacbd_b.jpg")							
 
-	ul.row.no-bullet.top40	
+	hr.soften
+
+	ul#team.row.no-bullet.top40
 		li.span2.offset2
-			img
+			.pp
+				img(src="/images/team/nkb.jpg")
+			.link
+				a(href="")
+					i.left05.icon-play.icon-white
 			h3.slabtexted 
-				span.slabtext Nicolas 
-				span.slabtext Kayser-Bril
-			p CEO &bullet; Data-journalist depuis 1907
-		li.span2
-			img
+				span.slabtext Nicolas  
+				span.slabtext &nbsp;Kayser-Bril 
+			p CEO &bullet; Data-journalist
+			p.website
+		li.span2.offset1
+			.pp
+				img(src="/images/team/pr.jpg")
+			.link
+				a(href="")
+					i.left05.icon-play.icon-white
 			h3.slabtexted 
-				span.slabtext Pierre 
-				span.slabtext Romera
+				span.slabtext Pierre  
+				span.slabtext &nbsp;Romera 
 			p CTO &bullet; Développeur
-		li.span2
-			img
+			p.website
+		li.span2.offset1
+			.pp
+				img(src="/images/team/alb.jpg")
+			.link
+				a(href="")
+					i.left05.icon-play.icon-white
 			h3.slabtexted 
-				span.slabtext Anne-Lise
-				span.slabtext Bouyer
+				span.slabtext Anne-Lise 
+				span.slabtext &nbsp;Bouyer 
 			p Chef de projet
-		li.span2
-			img
-			h3.slabtexted 
-				span.slabtext Bertrand 
-				span.slabtext De Véricourt
-			p Développeur
+			p.website
+
+include layouts/footer

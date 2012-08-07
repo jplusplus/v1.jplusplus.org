@@ -1,3 +1,8 @@
+var rest = require('restler')
+ , async = require('async')
+ , cache = require('memory-cache')
+ ,  i18n = require("i18n");
+
 /**
  * @author Pirhoo
  * @description Home route binder
@@ -59,7 +64,13 @@ module.exports.getPosts = function(complete) {
     function getFromAPI() {
 
       // get_category_index request from the external "WordPress API"
-      rest.get("http://jplusplus.oeildupirate.com/?count=100").on("complete", function(data) {
+      rest.get("http://jplusplus.oeildupirate.com/?count=100&json=1&custom_fields=siteurl").on("complete", function(data) {
+
+      	// Filters custom fields
+      	for(var index in data.posts) {
+      		var post = data.posts[index];
+      		post.siteurl = post.custom_fields.siteurl ? post.custom_fields.siteurl[0] : false;
+      	}
 
         // Put the data in the cache 
         cache.put('posts-list', data.posts);

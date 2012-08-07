@@ -5,76 +5,33 @@ include layouts/menu
 
 	#portfolio
 		ul.unstyled.js-wrapper.row
-			li.span12.js-card
-				.view
-					.legend
-						h2.slabtexted AFP : e-diplomacy hub la&nbsp;diplomacie numérique en action
-						strong.btn.btn-primary En savoir plus
-					.wrapper
-						img(src="/images/gallery/afp-ediplo.png")
-				.about		
-					.row					
-						h3 À propos
-						article
-							p I am a stranger. I come in peace. Take me to your leader and there will be a massive reward for you in eternity.
-							p The surface is fine and powdery. I can kick it up loosely with my toe. It does adhere in fine layers, like powdered charcoal, to the sole and sides of my boots. I only go in a small fraction of an inch, maybe an eighth of an inch, but I can see the footprints of my boots and the treads in the fine, sandy particles. There seems to be no difficult in moving around, as we suspected.		
+			- if(typeof posts !== "undefined")
 
-			li.span12.js-card
-				.view
-					.legend
-						h2.slabtexted ABZV : DataWrapper Data visualisation open source
-						strong.btn.btn-primary En savoir plus
-					.wrapper
-						img(src="/images/gallery/5346475190_40f87cd0bd_b_d.jpg")				
-				.about		
-					.row												
-						h3 À propos
-						article
-							p I am a stranger. I come in peace. Take me to your leader and there will be a massive reward for you in eternity.
-							p The surface is fine and powdery. I can kick it up loosely with my toe. It does adhere in fine layers, like powdered charcoal, to the sole and sides of my boots. I only go in a small fraction of an inch, maybe an eighth of an inch, but I can see the footprints of my boots and the treads in the fine, sandy particles. There seems to be no difficult in moving around, as we suspected.		
-
-			li.span12.js-card
-				.view
-					.legend
-						h2.slabtexted Feowl : accurate and actionable insights on the electricity supply
-						strong.btn.btn-primary En savoir plus
-					.wrapper
-						img(src="/images/gallery/5364231350_99826bb16b_b_d.jpg")
-				.about		
-					.row						
-						h3 À propos
-						article
-							p I am a stranger. I come in peace. Take me to your leader and there will be a massive reward for you in eternity.
-							p The surface is fine and powdery. I can kick it up loosely with my toe. It does adhere in fine layers, like powdered charcoal, to the sole and sides of my boots. I only go in a small fraction of an inch, maybe an eighth of an inch, but I can see the footprints of my boots and the treads in the fine, sandy particles. There seems to be no difficult in moving around, as we suspected.		
-
-			li.span12.js-card
-				.view
-					.legend
-						h2.slabtexted AFP : législatives, la carte du&nbsp;débat&nbsp;sur Twitter
-						strong.btn.btn-primary En savoir plus
-					.wrapper
-						img(src="/images/gallery/4211690456_4c4ec43c7d_b.jpg")				
-				.about		
-					.row											
-						h3 À propos
-						article
-							p I am a stranger. I come in peace. Take me to your leader and there will be a massive reward for you in eternity.
-							p The surface is fine and powdery. I can kick it up loosely with my toe. It does adhere in fine layers, like powdered charcoal, to the sole and sides of my boots. I only go in a small fraction of an inch, maybe an eighth of an inch, but I can see the footprints of my boots and the treads in the fine, sandy particles. There seems to be no difficult in moving around, as we suspected.		
-
-			li.span12.js-card
-				.view
-					.legend
-						h2.slabtexted Rue89 : Alerte Politique
-						strong.btn.btn-primary En savoir plus
-					.wrapper
-						img(src="/images/gallery/4233696193_22f99dacbd_b.jpg")	
-				.about		
-					.row					
-						h3 À propos
-						article
-							p I am a stranger. I come in peace. Take me to your leader and there will be a massive reward for you in eternity.
-							p The surface is fine and powdery. I can kick it up loosely with my toe. It does adhere in fine layers, like powdered charcoal, to the sole and sides of my boots. I only go in a small fraction of an inch, maybe an eighth of an inch, but I can see the footprints of my boots and the treads in the fine, sandy particles. There seems to be no difficult in moving around, as we suspected.		
-						
+				- posts.forEach(function(item) {
+					li.span12.js-card
+						.view
+							.legend
+								h2.slabtexted !{item.title}
+								strong.btn.btn-primary=_("En savoir plus")
+							.wrapper
+								img(src=item.thumbnail)
+						.about		
+							.row	
+								a.back
+									i.icon-circle-arrow-left.icon-white
+									=_("Retour")
+								h3 !{item.title}
+								article !{item.content}
+								- if(item.siteurl)
+									a(href=item.siteurl).siteurl
+										i.icon-globe.icon-white
+										=item.siteurl
+								- if(item.tags.length > 0)
+									ul.tags.unstyled
+										- item.tags.forEach(function(tag) {
+											li=tag.title
+										- })										
+				- })
 
 	hr.soften
 

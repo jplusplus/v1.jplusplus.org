@@ -117,17 +117,15 @@ header {
 
 			z-index:115;
 			position:absolute;
-			top:-30px;
-			height:510px;
-
+			top:30px; left:0;
 			.opacity(0);			
-			.transform( rotateX( 180deg ) );
+			.transform( rotateX( 180deg ) );			
 
 			.row {
 
 				margin:0 50px;
 				padding:50px;
-				height:350px;
+				height:380px;
 
 				color:white;
 				background:@linkColor;
@@ -135,12 +133,93 @@ header {
 
 				.shadow-large();
 
+				.back {
+					cursor:pointer;
+					i {
+						position:relative;
+						top:2px;
+						margin-right:5px;						
+					}
+				}
+
+				.siteurl {
+					margin-top:20px;
+					position:relative;
+					float:right;
+					padding:7px;
+					font-size:20px;
+					background:fade(white, 40%);
+					.box-shadow(inset 0 0 2px 0 @linkColor);					
+					.border-radius(3px);
+
+					i {
+						color:lighten(@linkColor, 10%);
+						background-color:darken(@linkColor, 10%);
+						border:9px solid darken(@linkColor, 10%);
+						font-size:20px;			
+						position:absolute;
+						right:102%;		
+						top:0;			
+						.border-radius(3px);
+					}
+				}
+
+				a {
+					color:white;
+				}
+
 				h3 {
 					text-shadow:none;
+					font-size:30px;
+					padding-bottom:20px;
 				}
 
 				article {
-					.content-columns(2, 15px);
+					text-align: justify;
+					.content-columns(2, 20px);
+				}
+
+				.tags {
+
+					margin-top:25px;
+
+					li {
+						float:left;
+						font-size:10px;
+						height:18px;
+						padding:1px 4px;
+						padding-right:6px;
+						margin-right:20px;
+						background:lighten(@linkColor, 10%);
+						color:white;	
+						.border-radius(3px 0 0 3px);					
+						.box-shadow( 0 1px 0 0 darken(@linkColor, 10%) );	
+
+						&:after {
+							content:"";
+							position:absolute;
+							z-index:-1;
+							left:100%;
+							top:0;
+							border:10px solid lighten(@linkColor, 10%);
+							border-right-color:transparent;
+							border-bottom-color:transparent;
+							border-top-color:transparent;
+						}
+
+						&:before {							
+							content:"";
+							position:absolute;
+							right:-4px;
+							top:50%;
+
+							margin-top:-2px;
+							width:4px;
+							height:4px;
+							.border-radius(50%);
+							background:darken(@linkColor, 10%);
+						}
+ 					}
 				}
 
 			}
@@ -194,9 +273,11 @@ header {
 
 			.wrapper {
 				position: relative;
-				height:100%;
-				max-height:450px;
 				width:100%;
+				height:100%;
+				max-height:480px;
+				min-height:480px;
+				background:white;
 				overflow:hidden;
 
 				canvas {
@@ -214,17 +295,14 @@ header {
 					width:100%;
 				}
 
-				/*&:after {
+				&:after {
 					content:"";
-					display: block;
 					position:absolute;
-					top:0;
-					left:0;
-
-					width:100%;
+					top:0; left:0;
 					height:100%;
-					background:fade(@linkColor, 40%);
-				} */
+					width:100%;
+					.box-shadow(inset 0 0 100px 0 fade(black, 60%) );					
+				}
 			}
 		}
 

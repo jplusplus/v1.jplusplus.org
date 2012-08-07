@@ -17,5 +17,7 @@
 	"/courses/": "/courses/",
 	"course": "course",
 	"courses": "courses",
-	"Start the mission!": "Start the mission!"
+	"Start the mission!": "Start the mission!",
+	"En savoir plus": "En savoir plus",
+	"Retour": "Retour"
 }

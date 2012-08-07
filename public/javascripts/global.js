@@ -96,7 +96,7 @@
 		$(".lettering-words").lettering('words');
 		setTimeout(that.slabTextHeadlines, 1000);
 
-		$("#portfolio").delegate(".legend .btn, .about h3", "click", function() {
+		$("#portfolio").delegate(".legend .btn, .about .back", "click", function() {
 			$(this).parents(".js-card").toggleClass("fliped");
 		});
 

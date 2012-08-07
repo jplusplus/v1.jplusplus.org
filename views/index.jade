@@ -5,8 +5,7 @@ include layouts/menu
 
 	#portfolio
 		ul.unstyled.js-wrapper.row
-			- if(typeof posts !== "undefined")
-
+			- if(typeof posts !== "array")
 				- posts.forEach(function(item) {
 					li.span12.js-card
 						.view
@@ -14,7 +13,10 @@ include layouts/menu
 								h2.slabtexted !{item.title}
 								strong.btn.btn-primary=_("En savoir plus")
 							.wrapper
-								img(src=item.thumbnail)
+								- if(item.thumbnail)
+									img(src=item.thumbnail)
+								else
+									img(src="/images/gallery/4268986830_edccb88587_b_d.jpg")
 						.about		
 							.row	
 								a.back
@@ -32,6 +34,12 @@ include layouts/menu
 											li=tag.title
 										- })										
 				- })
+
+	- if(typeof posts !== "array")
+		ul#portfolio-nav.unstyled
+			- posts.forEach(function(item) {
+					li.right10
+			- })			
 
 	hr.soften
 

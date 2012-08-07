@@ -79,10 +79,7 @@
 	 */
 	that.slabTextHeadlines = function() {
 		
-		$(".slabtexted").slabText({
-     	// Don't slabtext the headers if the viewport is under 380px
-			"viewportBreakpoint":380
-		});
+		$(".slabtexted").slabText();
 	};
 
 	/**
@@ -97,9 +94,9 @@
 		$(".lettering").lettering();
 		$(".lettering-lines").lettering('lines');
 		$(".lettering-words").lettering('words');
-		//setTimeout(that.slabTextHeadlines, 1000);
+		setTimeout(that.slabTextHeadlines, 1000);
 
-		$(".legend, .about h3", "#main").click(function() {
+		$("#portfolio").delegate(".legend .btn, .about h3", "click", function() {
 			$(this).parents(".js-card").toggleClass("fliped");
 		});
 

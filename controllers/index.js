@@ -15,6 +15,11 @@ module.exports = function(app, db, controllers) {
 	 */
 	app.get('/', function(req, res){
 
+		if(typeof req.query["refresh-cache"] != "undefined") {
+			console.log("Cache refresfed.")
+			cache.clear();
+		}
+
 		module.exports.getPosts(function(posts) {
 
 		  res.render('index.jade', 
@@ -45,6 +50,7 @@ module.exports = function(app, db, controllers) {
 	});
 
 };
+
 
 /**
  * @author Pirhoo

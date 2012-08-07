@@ -8,7 +8,8 @@
 	 */
 	that.initElements = function() {
 		that.el = {
-			$portfolio : $("#portfolio")
+			$portfolio 		: $("#portfolio"),
+			$portfolioNav : $("#portfolio-nav")
 		};
 	};
 
@@ -57,6 +58,14 @@
 	 * @function
 	 *
 	 */
+	that.changePortfolioNav = function(slide, i) {
+		that.el.$portfolioNav.find("li").removeClass("active").eq(i).addClass("active");
+	};
+
+	/**
+	 * @function
+	 *
+	 */
 	that.initPortfolio = function() {
 	
 		var option = {                
@@ -68,7 +77,17 @@
 		that.el.$portfolio
 			// define a slide
 			.µSlide(option)
-			//.on("after-slide", that.initPortfolioBlur);		
+			.on("after-slide", that.changePortfolioNav);		
+
+
+		$("#portfolio").delegate(".legend .btn, .about .back", "click", function() {
+			$(this).parents(".js-card").toggleClass("fliped");
+		});
+
+
+		$("#portfolio-nav").delegate("li", "click", function(el) {
+			that.el.$portfolio.data("µSlide").slideTo( $(this).index() );
+		});
 
 	};
 
@@ -96,9 +115,6 @@
 		$(".lettering-words").lettering('words');
 		setTimeout(that.slabTextHeadlines, 1000);
 
-		$("#portfolio").delegate(".legend .btn, .about h3", "click", function() {
-			$(this).parents(".js-card").toggleClass("fliped");
-		});
 
 	});
 

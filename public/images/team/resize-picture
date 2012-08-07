@@ -1,2 +1,2 @@
 #!/bin/bash
-mogrify -resize 100 ./*.jpg
+mogrify -resize 100 -crop 100x100 ./*.jpg

@@ -99,6 +99,10 @@
 		$(".lettering-words").lettering('words');
 		//setTimeout(that.slabTextHeadlines, 1000);
 
+		$(".legend, .about h3", "#main").click(function() {
+			$(this).parents(".js-card").toggleClass("fliped");
+		});
+
 	});
 
 })(window);

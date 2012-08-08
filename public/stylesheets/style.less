@@ -84,6 +84,9 @@ header {
 	overflow: hidden;	
 
 	.js-card {
+
+		float:left;
+
 						transition:transform 0.8s;
 				 -o-transition:-o-transform 0.8s;
 				-ms-transition:-ms-transform 0.8s;
@@ -140,7 +143,6 @@ header {
 		z-index:100;
 		padding:0;
 		margin:0;
-
 
 		.about, .view {	
 			.transition(opacity 0.8s);
@@ -370,14 +372,14 @@ header {
 
 	padding:20px 50px;
 	padding-bottom: 0px;
-	height:20px;
+	height:15px;
 	text-align:center;
 
 	li {
 
 		display:inline-block;	
-		width:20px;
-		height:20px;
+		width:15px;
+		height:15px;
 		overflow:hidden;
 		cursor:pointer;
 		.border-radius(50%);
@@ -393,6 +395,7 @@ header {
 		}
 	}
 }
+
 
 #team {
 
@@ -498,4 +501,85 @@ footer {
 	&:hover {
 		color:#000;
 	}
+}
+
+
+// Tablets & small desktops only
+@media (min-width: 768px) and (max-width: 979px) {
+
+	h1 small {
+		display:block;
+		margin-left:0 !important;
+	}
+
+	#portfolio-nav {
+		height:20px;
+		li {
+			width:20px;
+			height:20px;
+		}
+	}
+
+}
+
+
+// Phones only
+@media (max-width: 767px) {
+	
+	h1 small {
+		display:block;
+		margin-left:0 !important;
+	}
+	#portfolio-nav {
+		height:20px;
+		li {
+			width:20px;
+			height:20px;
+		}
+	}
+
+	#portfolio {
+
+		&:before, &:after {
+			display:none !important;
+		}
+
+		.span12 {
+			float:left !important;
+			width:100px;
+		}
+
+		.view, .about .row {
+			margin:0;
+		}
+
+		.legend {
+			width:80% !important;
+			right:10%;
+			text-align: right !important;
+		}		
+	}
+
+	#team {
+		
+		li {			
+			clear:left;
+			text-align:left !important;		
+
+			h3 {
+				padding-top:20px;	
+			}
+		}
+
+		.pp {
+			float:left !important;
+			margin-right:20px !important;
+		}
+
+		.link {
+			left:55px !important;
+			text-align:center;
+		}
+	}
+
 }

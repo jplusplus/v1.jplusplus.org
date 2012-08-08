@@ -74,11 +74,12 @@
     	, overflow: "visible"
 		},
 		$wrappers = that.el.$portfolio.find(".wrapper"),
+		$cards = that.el.$portfolio.find(".js-card").css("width", that.el.$portfolio.innerWidth() ),
 		// Determine the portfolio height according the width
 		height = $wrappers.outerWidth() * 0.5;
 
 		// Change the wrappers height
-		$wrappers.css("height", height);
+		$wrappers.css("height", height);		
 		that.el.$portfolio.find(".about .row").css("height", height);
 
 		// First time we initialize the portfolio
@@ -94,10 +95,14 @@
 			.µSlide(option)
 			// Event after the slide to update the bullet list
 			.on("after-slide", that.changePortfolioNav)
-			// Flip event
-			.on("click", ".legend, .about .back, .about h3:first", function() {
-				$(this).parents(".js-card").toggleClass("fliped");
-			});
+			// Flip event (open)
+			.on("click", ".legend, .legend .btn", function() {
+				$(this).parents(".js-card").addClass("fliped");
+			})
+			// Flip event (close)
+			.on("click", ".about .back, .about h3:first", function() {
+				$(this).parents(".js-card").removeClass("fliped");
+			})
 
 			// Bullets navigation
 			that.el.$portfolioNav.delegate("li", "click", function(el) {
@@ -113,7 +118,7 @@
 	 */
 	that.slabTextHeadlines = function() {
 		
-		$(".slabtexted").slabText();
+		$(".slabtexted:visible").slabText();
 	};
 
 	/**

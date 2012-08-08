@@ -7,10 +7,11 @@ include layouts/menu
 		ul.unstyled.js-wrapper.row
 			- if(typeof posts !== "array")
 				- posts.forEach(function(item) {
-					li.span12.js-card
+					li.js-card
 						.view
 							.legend
-								h2.slabtexted !{item.title}
+								h2.slabtexted.hidden-phone !{item.title}
+								h2.visible-phone.tl !{item.title}
 								.btn.btn-primary.btn-large=_("See more")
 							.wrapper
 								- if(item.thumbnail)

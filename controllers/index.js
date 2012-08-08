@@ -17,14 +17,14 @@ module.exports = function(app, db, controllers) {
 
 		// Refresh the cache
 		if(typeof req.query["refresh-cache"] != "undefined") {
-			console.log("Cache refresfed.")
+			console.log("Cache refresfed.");
 			cache.clear();
 		}
 
 		// Get and set the language in (or from) session
-		req.session.lang = module.exports.getUserLang(req);
+		req.session.language = module.exports.getUserLang(req);
 
-		module.exports.getPosts(req.session.lang, function(posts) {
+		module.exports.getPosts(req.session.language, function(posts) {
 
 		  res.render('index.jade', 
 				{ 
@@ -56,8 +56,8 @@ module.exports = function(app, db, controllers) {
 	/*
 	 * Chnage the user language
 	 */
-	app.get('/lang/:lang', function(req, res){
-		req.session.lang = ["fr", "en"].indexOf(req.params.lang) > -1 ? req.params.lang : "fr";
+	app.get('/lang/:ln', function(req, res){
+		req.session.language = ["fr", "en"].indexOf(req.params.ln) > -1 ? req.params.ln : "fr";		
 		res.redirect("/");
 	});
 
@@ -67,8 +67,8 @@ module.exports = function(app, db, controllers) {
  * @author Pirhoo
  * @description Get the current user lang according to the given request
  */
-module.exports.getUserLang = function(request) {
-	return request.session.lang || "fr";
+module.exports.getUserLang = function(request) {	
+	return request.session.language || i18n.getLocale(request) || "fr";
 };
 
 

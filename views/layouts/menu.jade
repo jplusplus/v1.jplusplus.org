@@ -3,11 +3,11 @@
 		.span8
 			h1.left50 
 				| Journalism++
-				small.left30 we build data-first newsrooms
+				small.left30=_("we build data-first newsrooms")
 		.span4
 			ul.tr.unstyled.select-lang.right50 
 				- ["fr", "en"].forEach(function(lang) {
-					- if(session.lang === lang) {
+					- if(session.language === lang) {
 						li.active
 							a(href="/lang/"+lang)=lang.toUpperCase()
 					- } else {

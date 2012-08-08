@@ -94,13 +94,19 @@ exports.boot = function(){
   
   i18n.configure({
     // setup some locales
-    locales:['fr'],
+    locales:['fr', 'en']
   });
 
   // Register helpers for use in templates
   app.helpers({
-    _: i18n.__,
-    _n: i18n.__n
+    _: function(msg) {
+      i18n.setLocale(this.session.language || "fr");
+      return i18n.__(msg);
+    },
+    _n: function(singular, plural, count) {
+      i18n.setLocale(this.session.language || "fr");
+      return i18n.__n(singular, plural, count);
+    },
   });
 
   // Dynamic view's helpers

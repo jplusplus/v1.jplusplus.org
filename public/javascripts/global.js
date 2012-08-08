@@ -72,23 +72,38 @@
 	      child_class: ".js-card"
     	, startSlide:0
     	, overflow: "visible"
-		};
+		},
+		$wrappers = that.el.$portfolio.find(".wrapper"),
+		// Determine the portfolio height according the width
+		height = $wrappers.outerWidth() * 0.5;
 
-		that.el.$portfolio
-			// define a slide
+		// Change the wrappers height
+		$wrappers.css("height", height);
+		that.el.$portfolio.find(".about .row").css("height", height);
+
+		// First time we initialize the portfolio
+		if( that.el.$portfolio.data("µSlide") ) {
+			
+			// Reset the previous one
+			that.el.$portfolio.data("µSlide").init();
+
+		// Not the first time we initialize the portfolio
+		} else {
+			that.el.$portfolio
+			// Define a slide
 			.µSlide(option)
-			.on("after-slide", that.changePortfolioNav);		
+			// Event after the slide to update the bullet list
+			.on("after-slide", that.changePortfolioNav)
+			// Flip event
+			.on("click", ".legend, .about .back, .about h3:first", function() {
+				$(this).parents(".js-card").toggleClass("fliped");
+			});
 
-
-		$("#portfolio").delegate(".legend .btn, .about .back", "click", function() {
-			$(this).parents(".js-card").toggleClass("fliped");
-		});
-
-
-		$("#portfolio-nav").delegate("li", "click", function(el) {
-			that.el.$portfolio.data("µSlide").slideTo( $(this).index() );
-		});
-
+			// Bullets navigation
+			that.el.$portfolioNav.delegate("li", "click", function(el) {
+				that.el.$portfolio.data("µSlide").slideTo( $(this).index() );
+			});
+		}
 	};
 
 
@@ -108,8 +123,10 @@
 	$(that.init = function() {	
 		
 		that.initElements();
+		
 		that.initPortfolio();
 		$(window).on("resize", that.initPortfolio);
+
 		$(".lettering").lettering();
 		$(".lettering-lines").lettering('lines');
 		$(".lettering-words").lettering('words');

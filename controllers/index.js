@@ -15,7 +15,9 @@ module.exports = function(app, db, controllers) {
 	 */
 	app.get('/', function(req, res){
 
-		module.exports.getPosts(function(posts) {
+		req.session.lang = module.exports.getUserLang(req);
+
+		module.exports.getPosts(req.session.lang, function(posts) {
 
 		  res.render('index.jade', 
 				{ 
@@ -25,7 +27,7 @@ module.exports = function(app, db, controllers) {
 						,"/stylesheets/vendor/bootstrap-build/bootstrap-responsive.min.css"
 						,"/stylesheets/vendor/slabtext.css"
 						,"http://fonts.googleapis.com/css?family=Share:400,700|Leckerli+One|Averia+Sans+Libre:400,700,300,300italic,400italic,700italic"
-						,"/stylesheets/style.less"
+						,"/stylesheets/style.css"
 					], 
 					javascripts: [
 						  "/javascripts/vendor/bootstrap/bootstrap.min.js"																
@@ -44,19 +46,35 @@ module.exports = function(app, db, controllers) {
 
 	});
 
+	/*
+	 * Chnage the user language
+	 */
+	app.get('/lang/:lang', function(req, res){
+		req.session.lang = ["fr", "en"].indexOf(req.params.lang) > -1 ? req.params.lang : "fr";
+		res.redirect("/");
+	});
+
+};
+
+/**
+ * @author Pirhoo
+ * @description Get the current user lang according to the given request
+ */
+module.exports.getUserLang = function(request) {
+	return request.session.lang || "fr";
 };
 
 /**
  * @author Pirhoo
  * @description Get the posts from the API or from the cache
  */
-module.exports.getPosts = function(complete) {
+module.exports.getPosts = function(lang, complete) {
 
   async.series([
     // Get data from cache first
     function getFromCache(fallback) {      
       // Get the course from the cache
-      if( cache.get('posts-list') ) complete( cache.get('posts-list') );
+      if( cache.get('posts-list-'+lang) ) complete( cache.get('posts-list-'+lang) );
       // Or get the colletion from the fallback function
       else fallback();
     },
@@ -64,7 +82,7 @@ module.exports.getPosts = function(complete) {
     function getFromAPI() {
 
       // get_category_index request from the external "WordPress API"
-      rest.get("http://jplusplus.oeildupirate.com/?count=100&json=1&custom_fields=siteurl").on("complete", function(data) {
+      rest.get("http://jplusplus.oeildupirate.com/?count=100&json=1&custom_fields=siteurl&lang=" + lang).on("complete", function(data) {
 
       	// Filters custom fields
       	for(var index in data.posts) {
@@ -73,7 +91,7 @@ module.exports.getPosts = function(complete) {
       	}
 
         // Put the data in the cache 
-        cache.put('posts-list', data.posts);
+        cache.put('posts-list-'+lang, data.posts);
 
         // Call the complete function
         complete( data.posts );

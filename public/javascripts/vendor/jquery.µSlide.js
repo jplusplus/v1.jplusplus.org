@@ -244,9 +244,9 @@
             }
 
             // Every slides
-            $slides = $that.find(that.options["child_class"]),
+            $slides = $that.find(that.options["child_class"]);
             // Wrapper width
-            width = 0;
+            var width = 0;
 
             $slides.each(function(i, slide) {                  
                 width += that.options.slideWidth || $(slide).outerWidth();
@@ -286,19 +286,27 @@
                       // hides vertical scrollBar
                       vScrollbar: false,
                       // forbids vertical movment
-                      vScroll: false,
+                      vScroll: true,
                       // turn of movment elasticity 
                       momentum:false,
-                      // enables hozizontal preventDefault event
-                      hPreventDefault: true,
-                      // disables vertical preventDefault event
-                      vPreventDefault: false,
                       // calls function "slideChange" when the scroll stops
                       onScrollEnd: slideChange,
                       // no bounce effect
                       bounce:true,
                       // disable scroll
-                      wheelAction: 'none',
+                      wheelAction: 'none',                      
+                      onBeforeScrollStart: function (e) {                        
+                        point = e.touches ? e.touches[0] : e;
+                        pointStartX = point.pageX;
+                        pointStartY = point.pageY;                              
+                      },
+                      onBeforeScrollMove: function(e){
+                        deltaX = Math.abs(point.pageX - pointStartX);
+                        deltaY = Math.abs(point.pageY - pointStartY);
+                        if (deltaX >= deltaY) {
+                                e.preventDefault();
+                        }
+                      } 
                 });    
 
 
@@ -334,6 +342,8 @@
             // Binds default events on some elements
             bindEvent();
 
+            // Refresh the default height
+            that.refreshHeight();
 
             return that;                 
 

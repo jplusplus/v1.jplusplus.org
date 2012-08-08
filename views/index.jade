@@ -11,7 +11,7 @@ include layouts/menu
 						.view
 							.legend
 								h2.slabtexted !{item.title}
-								strong.btn.btn-primary=_("En savoir plus")
+								.btn.btn-primary.btn-large=_("En savoir plus")
 							.wrapper
 								- if(item.thumbnail)
 									img(src=item.thumbnail)
@@ -19,27 +19,45 @@ include layouts/menu
 									img(src="/images/gallery/4268986830_edccb88587_b_d.jpg")
 						.about		
 							.row	
-								a.back
-									i.icon-circle-arrow-left.icon-white
-									=_("Retour")
-								h3 !{item.title}
-								article !{item.content}
-								- if(item.siteurl)
-									a(href=item.siteurl).siteurl
-										i.icon-globe.icon-white
-										=item.siteurl
-								- if(item.tags.length > 0)
-									ul.tags.unstyled
-										- item.tags.forEach(function(tag) {
-											li=tag.title
-										- })										
+							
+								.visible-desktop
+									a.back
+										i.icon-circle-arrow-left.icon-white
+										=_("Retour")
+								
+									h3 !{item.title}
+									article !{item.content}
+
+									- if(item.tags.length > 0)
+										ul.tags.unstyled
+											- item.tags.forEach(function(tag) {
+												li=tag.title
+											- })			
+
+									- if(item.siteurl)
+										a(href=item.siteurl).siteurl
+											i.icon-globe.icon-white
+											=item.siteurl		
+
+								.hidden-desktop
+									a.back
+										i.icon-circle-arrow-left.icon-white
+										=_("Retour")
+								
+									h3 !{item.title}
+									article !{item.content}
+
+									- if(item.siteurl)
+										a(href=item.siteurl).siteurl
+											i.icon-globe.icon-white
+											=item.siteurl							
 				- })
 
 	- if(typeof posts !== "array")
 		ul#portfolio-nav.unstyled
 			- posts.forEach(function(item) {
 					li.right10
-			- })			
+			- })	
 
 	hr.soften
 

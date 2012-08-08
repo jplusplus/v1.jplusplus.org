@@ -1,8 +1,17 @@
 .container
 	header.row.top20
 		.span8
-			h1.left50.right30.pull-left <span class="blur">Journalism++</span>
-			h2 we build data-first newsrooms
-		.span3
-			a.pull-right(src="")
-				| À propos
+			h1.left50 
+				| Journalism++
+				small.left30 we build data-first newsrooms
+		.span4
+			ul.tr.unstyled.select-lang.right50 
+				- ["fr", "en"].forEach(function(lang) {
+					- if(session.lang === lang) {
+						li.active
+							a(href="/lang/"+lang)=lang.toUpperCase()
+					- } else {
+						li
+							a(href="/lang/"+lang)=lang.toUpperCase()
+					- }				
+				- });

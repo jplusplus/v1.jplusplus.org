@@ -1,9 +1,10 @@
 /**
  * Module dependencies.
  */
-var express = require('express')
-  , fs      = require('fs')
-  , i18n    = require("i18n");
+var express         = require('express')
+  , fs              = require('fs')
+  , i18n            = require("i18n")
+  , lessMiddleware  = require("less-middleware");
 
 /**
  * Global objects
@@ -46,7 +47,6 @@ function loadAllRequires(dirname, where) {
 }
 
 
-
 /**
 * @author Pirhoo
 *
@@ -74,8 +74,12 @@ exports.boot = function(){
     app.use(express.methodOverride());
     app.use(express.cookieParser());
     app.use(express.session({ secret: 'L7mdcS4K5JZI097PQWTaVdTGp4uZi4ifgF0ht2bkET' }));
-    
-    app.use(app.router);
+
+    app.use(lessMiddleware({
+        src: __dirname + '/public',
+        compress: true
+    }));
+
     app.use(express.static(__dirname + '/public'));
 
   });

@@ -15,12 +15,12 @@ html(class='no-js', lang='en')
     title= typeof title !== "undefined" ? title : "Journalism++"
 
     meta(name='description', content='')
-    meta(name='viewport', content='width=device-width')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, min-width=755')
     
     - if(typeof stylesheets !== "undefined")
       - stylesheets.forEach(function(item) {
         - var rel = item.indexOf(".less") > -1 ? 'stylesheet/less' : 'stylesheet';
-        link(href=item, type='text/css', rel=rel)
+        link(href=item, type='text/css', rel='stylesheet')
       - })
 
   body!= body

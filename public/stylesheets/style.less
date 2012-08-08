@@ -11,9 +11,15 @@ body {
 
 header {	
 
-	h2 {
-		padding-top:1px;		
-		color:fade(#941E38, 80%);
+	h1 {
+		
+		white-space:nowrap;
+
+		small {
+			font-size:25px;
+			padding-top:1px;		
+			color:fade(@linkColor, 80%);
+		}
 	}
 }
 
@@ -49,13 +55,41 @@ header {
 
 }
 
+.select-lang {
+
+	padding-top:10px;
+
+	li {
+		display:inline;
+		padding:4px 6px;
+		margin-left:6px;		
+	}
+
+	.active {
+		font-weight: bold;
+		background:fade(white, 40%);
+		.box-shadow(inset 0 0 4px 0 fade(black, 40%) );
+		.border-radius(4px);
+		text-shadow:1px 1px 0 white;
+
+		a { 
+			color:@textColor;
+		}
+	}
+}
+
 #portfolio {
 
 	position:relative;
 	overflow: hidden;	
 
 	.js-card {
-		.transition(0.8s);
+						transition:transform 0.8s;
+				 -o-transition:-o-transform 0.8s;
+				-ms-transition:-ms-transform 0.8s;
+			 -moz-transition:-moz-transform 0.8s;
+		-webkit-transition:-webkit-transform 0.8s;
+
 		.transform(perspective(1000px));
 
 	  	    	transform-style: preserve-3d;
@@ -117,14 +151,17 @@ header {
 
 			z-index:115;
 			position:absolute;
-			top:30px; left:0;
+			top:0; left:0;
 			.opacity(0);			
 			.transform( rotateX( 180deg ) );			
 
 			.row {
 
-				margin:0 50px;
-				padding:50px;
+				position:relative;
+				top:-30px;
+
+				margin:0 50px;	
+				padding-top:1px;
 				height:380px;
 
 				color:white;
@@ -176,7 +213,30 @@ header {
 
 				article {
 					text-align: justify;
-					.content-columns(2, 30px);
+					display:block;
+				}
+
+				.visible-desktop {
+
+					margin:50px;
+					article {
+						.content-columns(2, 30px);
+					}
+
+				}
+				
+				.hidden-desktop {
+
+					margin:25px;
+					h3 {
+						font-size:20px;
+						padding-bottom:10px;
+					}
+
+					article {
+						font-size:10px;
+						line-height: 12px;
+					}
 				}
 
 				.tags {
@@ -246,7 +306,7 @@ header {
 				width:150px;
 
 				padding:10px;
-				text-align:right;
+				text-align:center;
 				//.border-radius(10px);	
 				.box-shadow( 0 5px 5px 0 fade(black, 40%) );
 
@@ -274,9 +334,6 @@ header {
 			.wrapper {
 				position: relative;
 				width:100%;
-				height:100%;
-				max-height:480px;
-				min-height:480px;
 				background:white;
 				overflow:hidden;
 
@@ -313,19 +370,19 @@ header {
 
 	padding:20px 50px;
 	padding-bottom: 0px;
-	height:15px;
+	height:20px;
 	text-align:center;
 
 	li {
 
 		display:inline-block;	
-		width:15px;
-		height:15px;
+		width:20px;
+		height:20px;
 		overflow:hidden;
 		cursor:pointer;
 		.border-radius(50%);
 		.box-shadow(inset 0 0 2px 0 fade(black, 60%));				
-		.transition(0.6s);
+		.transition(0.2s);
 
 		&.active, &.active:hover {
 			background:@linkColor;

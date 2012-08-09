@@ -117,8 +117,7 @@
 	 *
 	 */
 	that.slabTextHeadlines = function() {
-		
-		$(".slabtexted:visible").slabText();
+		$(".slabtexted").slabText();
 	};
 
 	/**

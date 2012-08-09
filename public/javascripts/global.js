@@ -137,6 +137,34 @@
 		$(".lettering-words").lettering('words');
 		setTimeout(that.slabTextHeadlines, 1000);
 
+		// Smooth anchor scrolling
+    $("a[href^='#']").on("click", function(event) {
+
+      event.preventDefault();
+      
+      var $this = $(this),
+          target = this.hash,
+          $target = $(target),
+          scrollElement = 'html, body';
+
+      if(target === "" || target === "#") return;
+
+      $(scrollElement).stop().animate({
+          'scrollTop': $target.offset().top // minus the height of the fixed top menu
+      }, 500, 'linear', function() {
+      	window.location.hash = target;
+      });
+
+      return false;
+        
+    }); 
+
+		// Open external links in a new tab
+		$("a[rel$='external']").on("click", function(){
+		     this.target = "_blank";
+		});
+
+
 
 	});
 

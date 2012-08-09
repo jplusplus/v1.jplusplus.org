@@ -24,9 +24,21 @@ module.exports = function(app, db, controllers) {
 		// Get and set the language in (or from) session
 		req.session.language = module.exports.getUserLang(req);
 
-		module.exports.getPosts(req.session.language, function(posts) {
+		async.parallel({
+		    getPosts: function(callback){
+	        module.exports.getPosts(req.session.language, function(posts) {
+	          callback(null, posts);
+	        });
+		    },
+		    getAbout: function(callback){
+	        module.exports.getPage("a-propos-de-journalism", req.session.language, function(page) {
+	          callback(null, page);
+	        });
+		    }
+		},
+		function(err, results){
 
-		  res.render('index.jade', 
+			res.render('index.jade', 
 				{ 
 					title: 'Journalism++', 
 					stylesheets: [
@@ -46,9 +58,11 @@ module.exports = function(app, db, controllers) {
 						, "/javascripts/vendor/glfx.js"																	
 						, "/javascripts/global.js"																	
 					],
-					posts: posts
+					posts: results.getPosts,
+					about: results.getAbout
 				}
 			);
+
 		});
 
 	});
@@ -82,7 +96,7 @@ module.exports.getPosts = function(lang, complete) {
     // Get data from cache first
     function getFromCache(fallback) {      
       // Get the course from the cache
-      if( cache.get('posts-list-'+lang) ) complete( cache.get('posts-list-'+lang) );
+      if( !! cache.get('posts-list-'+lang) ) complete( cache.get('posts-list-'+lang) );
       // Or get the colletion from the fallback function
       else fallback();
     },
@@ -103,6 +117,44 @@ module.exports.getPosts = function(lang, complete) {
 
         // Call the complete function
         complete( data.posts );
+
+      });
+    }        
+  ]);
+
+};
+
+
+/**
+ * @author Pirhoo
+ * @description Get a page from the API or from the cache
+ */
+module.exports.getPage = function(id, lang, complete) {
+
+	var cacheSlug = 'page-'+lang+'-'+id;
+
+  async.series([
+    // Get data from cache first
+    function getFromCache(fallback) {      
+      // Get the course from the cache
+      if( !! cache.get(cacheSlug) ) complete( cache.get(cacheSlug) );
+      // Or get the colletion from the fallback function
+      else fallback();
+    },
+    // Get data from the API 
+    function getFromAPI() {
+
+    	var uri  = "http://jplusplus.oeildupirate.com/";
+    			uri += isNaN( parseFloat(id) ) ? id + "?" : "?p=" + id;
+
+      // get_category_index request from the external "WordPress API"
+      rest.get(uri +"&json=1&lang=" + lang).on("complete", function(data) {
+
+        // Put the data in the cache 
+        cache.put(cacheSlug, data.page);
+
+        // Call the complete function
+        complete( data.page );
 
       });
     }        

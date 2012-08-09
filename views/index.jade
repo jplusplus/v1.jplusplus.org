@@ -36,7 +36,7 @@ include layouts/menu
 											- })			
 
 									- if(item.siteurl)
-										a(href=item.siteurl).siteurl
+										a(href=item.siteurl, rel='external').siteurl
 											i.icon-globe.icon-white
 											=item.siteurl		
 
@@ -49,7 +49,7 @@ include layouts/menu
 									article !{item.content}
 
 									- if(item.siteurl)
-										a(href=item.siteurl).siteurl
+										a(href=item.siteurl, rel='external').siteurl
 											i.icon-globe.icon-white
 											=item.siteurl							
 				- })
@@ -67,25 +67,34 @@ include layouts/menu
 			.pp
 				img(src="/images/team/nkb.jpg")
 			.link
-				a(href="http://nkb.fr")
-					i.left05.icon-play.icon-white
+				a(href="http://twitter.com/nicolaskb", rel='external')
+					img(src="/images/twitter-bird-dark-bgs.png").left05
 			h3 Nicolas Kayser-Bril 
 			p=_("CEO &bullet; Data-journalist")
 		li.span2.offset1
 			.pp
 				img(src="/images/team/pr.jpg")
 			.link
-				a(href="http://pirhoo.com")
-					i.left05.icon-play.icon-white
+				a(href="http://twitter.com/pirhoo", rel='external')
+					img(src="/images/twitter-bird-dark-bgs.png").left05
 			h3 Pierre Romera 
 			p=_("CTO &bullet; Developer")
 		li.span2.offset1
 			.pp
 				img(src="/images/team/alb.jpg")
 			.link
-				a(href="")
-					i.left05.icon-play.icon-white
+				a(href="http://twitter.com/annelisebouyer", rel='external')
+					img(src="/images/twitter-bird-dark-bgs.png").left05
 			h3 Anne-Lise Bouyer 
 			p=_("Project manager")
+
+	-if( about )
+		hr.soften
+
+		#about
+			.row
+				.span10.offset1
+					h2 !{about.title}
+					article !{about.content}
 
 include layouts/footer

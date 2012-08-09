@@ -5,7 +5,10 @@
 				| Journalism++
 				small.left30=_("we build data-first newsrooms")
 		.span4
-			ul.tr.unstyled.select-lang.right50 
+			ul.tr.unstyled.select-lang.right50 									
+				- if(about)
+					li.about
+						a(href="#about") !{about.title}
 				- ["fr", "en"].forEach(function(lang) {
 					- if(session.language === lang) {
 						li.active

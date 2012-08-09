@@ -73,8 +73,8 @@ header h1{white-space:nowrap;}header h1 small{font-size:25px;padding-top:1px;col
 #portfolio li .about .row:after{left:20px;-webkit-transform:rotate(-3deg);-moz-transform:rotate(-3deg);-ms-transform:rotate(-3deg);-o-transform:rotate(-3deg);transform:rotate(-3deg);}
 #portfolio li .about .row:before{right:20px;-webkit-transform:rotate(3deg);-moz-transform:rotate(3deg);-ms-transform:rotate(3deg);-o-transform:rotate(3deg);transform:rotate(3deg);}
 #portfolio li .about .row .back{cursor:pointer;}#portfolio li .about .row .back i{position:relative;top:2px;margin-right:5px;}
-#portfolio li .about .row .siteurl{margin-top:20px;position:relative;float:right;padding:7px;font-size:20px;background:rgba(255, 255, 255, 0.4);-webkit-box-shadow:inset 0 0 2px 0 #941e38;-moz-box-shadow:inset 0 0 2px 0 #941e38;box-shadow:inset 0 0 2px 0 #941e38;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}#portfolio li .about .row .siteurl i{color:#be2748;background-color:#6a1528;border:9px solid #6a1528;font-size:20px;position:absolute;right:102%;top:0;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
-#portfolio li .about .row a{color:white;}
+#portfolio li .about .row .siteurl{margin-top:20px;position:relative;float:right;padding:7px;font-size:20px;background:rgba(255, 255, 255, 0.4);-webkit-box-shadow:inset 0 0 2px 0 #941e38;-moz-box-shadow:inset 0 0 2px 0 #941e38;box-shadow:inset 0 0 2px 0 #941e38;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;color:white;}#portfolio li .about .row .siteurl i{color:#be2748;background-color:#6a1528;border:9px solid #6a1528;font-size:20px;position:absolute;right:102%;top:0;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
+#portfolio li .about .row a{color:#e995a7;}
 #portfolio li .about .row h3{text-shadow:none;font-size:30px;padding-bottom:20px;}
 #portfolio li .about .row article{text-align:justify;display:block;}
 #portfolio li .about .row .visible-desktop{margin:50px;}#portfolio li .about .row .visible-desktop article{-webkit-column-count:2;-moz-column-count:2;column-count:2;-webkit-column-gap:30px;-moz-column-gap:30px;column-gap:30px;}

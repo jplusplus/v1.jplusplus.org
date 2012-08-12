@@ -6,8 +6,6 @@
       "express"         : "2.5.10"
     , "less-middleware" : "latest"
     , "jade"            : "latest"
-    , "oauth"           : ">= 0.9.7"
-    , "enc"             : "0.0.1"
     , "restler"         : "latest"
     , "memory-cache"    : "latest"
     , "async"           : "latest"

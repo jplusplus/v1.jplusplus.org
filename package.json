@@ -1,7 +1,7 @@
 {
-    "name": "jquest"
+    "name": "jplusplus"
   , "version": "0.0.1"
-  , "private": true
+  , "private": false
   , "dependencies": {  	 
       "express"         : "2.5.10"
     , "less-middleware" : "latest"

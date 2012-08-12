@@ -94,7 +94,7 @@ exports.boot = function(){
   
   i18n.configure({
     // setup some locales
-    locales:['fr', 'en']
+    locales:['fr', 'en', 'de']
   });
 
   // Register helpers for use in templates

@@ -1,20 +1,21 @@
 .container
-	header.row.top20
-		.span8
-			h1.left50 
-				| Journalism++
-				small.left30=_("we build data-first newsrooms")
-		.span4
-			ul.tr.unstyled.select-lang.right50 									
-				- if(about)
-					li.about
-						a(href="#about") !{about.title}
-				- ["fr", "en"].forEach(function(lang) {
-					- if(session.language === lang) {
-						li.active
-							a(href="/lang/"+lang)=lang.toUpperCase()
-					- } else {
-						li
-							a(href="/lang/"+lang)=lang.toUpperCase()
-					- }		
-				- });
+	header.top20
+		.row
+			.span8
+				h1.left50 
+					| Journalism++
+					small.left30=_("we build data-first newsrooms")
+			.span4
+				ul.tr.unstyled.select-lang.right50 									
+					- if(about)
+						li.about
+							a(href="#about") !{about.title}
+					- ["fr", "en", "de"].forEach(function(lang) {
+						- if(session.language === lang) {
+							li.active
+								a(href="/lang/"+lang)=lang.toUpperCase()
+						- } else {
+							li
+								a(href="/lang/"+lang)=lang.toUpperCase()
+						- }		
+					- });

@@ -9,15 +9,12 @@ include layouts/menu
 				- posts.forEach(function(item) {
 					li.js-card
 						.view
+							.wrapper
+								img(src=item.thumbnail)
 							.legend
 								h2.slabtexted.hidden-phone !{item.title}
 								h2.visible-phone.tl !{item.title}
-								.btn.btn-primary.btn-large=_("See more")
-							.wrapper
-								- if(item.thumbnail)
-									img(src=item.thumbnail)
-								else
-									img(src="/images/gallery/4268986830_edccb88587_b_d.jpg")
+								.btn.btn-primary.btn=_("See more")
 						.about		
 							.row	
 							

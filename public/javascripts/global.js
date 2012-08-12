@@ -96,19 +96,37 @@
 			// Event after the slide to update the bullet list
 			.on("after-slide", that.changePortfolioNav)
 			// Flip event (open)
-			.on("click", ".legend, .legend .btn", function() {
+			.on("click touchend", ".legend, .legend .btn", function() {				
+				// Stops auto slide
+				if(that.autoSlide) clearInterval( that.autoSlide );
 				$(this).parents(".js-card").addClass("fliped");
 			})
 			// Flip event (close)
-			.on("click", ".about .back, .about h3:first", function() {
+			.on("click touchend", ".about .back, .about h3:first", function() {
 				$(this).parents(".js-card").removeClass("fliped");
 			})
+			// Stop auto slide
+			.on("mousedown touchstart", function() {				
+				if(that.autoSlide) clearInterval( that.autoSlide );
+			});
 
 			// Bullets navigation
 			that.el.$portfolioNav.delegate("li", "click", function(el) {
+				// Stops auto slide
+				if(that.autoSlide) clearInterval( that.autoSlide );
 				that.el.$portfolio.data("µSlide").slideTo( $(this).index() );
 			});
+
+			// Auto slide after 3000 milliseconds
+			that.autoSlide = setInterval(function() {
+
+				that.el.$portfolio.data("µSlide").slideTo("next");
+
+			}, 4000);
 		}
+
+
+
 	};
 
 
@@ -125,6 +143,9 @@
 	 *
 	 */
 	$(that.init = function() {	
+
+		// iOs detection
+		if( navigator.userAgent.match(/(iphone|ipod|ipad)/i) != null ) $("html").addClass("ios");
 		
 		that.initElements();
 		
@@ -162,8 +183,6 @@
 		$("a[rel$='external']").on("click", function(){
 		     this.target = "_blank";
 		});
-
-
 
 	});
 

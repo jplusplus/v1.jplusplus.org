@@ -10,7 +10,7 @@
         // iscroll
             iScrollInst = false,
         // detects to know if we use iScroll or scrollTo
-            hasTouch    =  true || !!('ontouchstart' in window);
+            hasTouch    = ! $("html").hasClass("lt-ie9");
         // timestamp to prevent double click on ipad
             lastSlideTo = 0,
         // every slide
@@ -91,12 +91,12 @@
 
                         switch(direction) {
 
-                            case "next":
-                                slideId -= (slideId < $slides.length - 1) ? -1 : 0;
+                            case "next":                              
+                                slideId -= (slideId < $slides.length - 1) ? -1 : slideId; // loop
                                 break;
 
                             case "previous":
-                                slideId -= (slideId > 0) ? 1 : 0;
+                                slideId -= (slideId > 0) ? 1 : -1 * slideId; // loop
                                 break;
 
                         }                              
@@ -145,13 +145,13 @@
          */
         var slideChange = function() {
 
-            if(hasTouch) slideId = iScrollInst.currPageX;
+          if(hasTouch) slideId = iScrollInst.currPageX;
 
-            // change the active slide
-            $slides.filter(".js-active").removeClass("js-active");
-            $slides.eq(slideId).addClass("js-active");
+          // change the active slide
+          $slides.filter(".js-active").removeClass("js-active");
+          $slides.eq(slideId).addClass("js-active");
 
-            afterSlide(slideId);            
+          afterSlide(slideId);            
         };
         
 

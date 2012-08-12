@@ -23,14 +23,16 @@ html(class='no-js', lang='en')
         link(href=item, type='text/css', rel='stylesheet')
       - })
 
-  body!= body
-
+  body
     //if lte IE 7
-      p.chromeframe.
-        Your browser is <em>ancient!</em>
-        <a href="http://browsehappy.com/">Upgrade to a different browser</a> or
-        <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>
-        to experience this site.
+      .container
+        p.chromeframe.alert.alert-error.span11.top20.bottom40
+          a(class="close",data-dismiss="alert",href="#") ×          
+          | Your browser is <em>ancient!</em>
+          | <b><a href="http://browsehappy.com/">Upgrade to a different browser</a></b> or
+          | <b><a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a></b>
+          | to experience this site.
+    != body
 
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
     script window.jQuery || document.write('<script src=/javascripts/vendor/jquery.min.js><\\/script>')

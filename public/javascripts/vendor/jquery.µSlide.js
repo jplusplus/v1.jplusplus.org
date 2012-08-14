@@ -294,28 +294,7 @@
                       // disable scroll
                       wheelAction: 'none',                      
                       // forbids vertical movment
-                      vScroll: false,
-                      onBeforeScrollStart: function (e) {                        
-                        point = e.touches ? e.touches[0] : e;
-                        pointStartX = point.pageX;
-                        pointStartY = point.pageY;                
-                      },
-                      onBeforeScrollMove: function(e){
-
-                        deltaX = Math.abs(point.pageX - pointStartX);
-                        deltaY = Math.abs(point.pageY - pointStartY);
-
-                        if(deltaY > 3) {
-                          // Stop iscroll
-                          return false;
-                        }                 
-
-                        if (deltaX >= deltaY) {
-                          // Stop native scroll
-                          e.preventDefault();
-                        } 
-
-                      }
+                      vScroll: false
                 });    
 
 

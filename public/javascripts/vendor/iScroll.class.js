@@ -97,7 +97,10 @@ var m = Math,
 
 			// Events
 			onRefresh: null,
-			onBeforeScrollStart: function (e) { e.preventDefault(); },
+			onBeforeScrollStart: function (e) {
+				// @edit Pirhoo
+				// e.preventDefault();
+			},
 			onScrollStart: null,
 			onBeforeScrollMove: null,
 			onScrollMove: null,
@@ -310,6 +313,10 @@ iScroll.prototype = {
 	},
 	
 	_start: function (e) {
+
+		// @edit Pirhoo
+		if (this.initiated) return;
+
 		var that = this,
 			point = hasTouch ? e.touches[0] : e,
 			matrix, x, y,
@@ -321,6 +328,7 @@ iScroll.prototype = {
 
 		if (that.options.useTransition || that.options.zoom) that._transitionTime(0);
 
+		that.initiated = true;
 		that.moved = false;
 		that.animating = false;
 		that.zoomed = false;
@@ -330,6 +338,12 @@ iScroll.prototype = {
 		that.absDistY = 0;
 		that.dirX = 0;
 		that.dirY = 0;
+
+
+		// @edit Pirhoo
+		that.stepsX = 0;
+		that.stepsY = 0;
+		that.directionLocked = false;
 
 		// Gesture start
 		if (that.options.zoom && hasTouch && e.touches.length > 1) {
@@ -381,6 +395,9 @@ iScroll.prototype = {
 	
 	_move: function (e) {
 
+		// @edit Pirhoo
+		if (!this.initiated) return;
+
 		var that = this,
 			point = hasTouch ? e.touches[0] : e,
 			deltaX = point.pageX - that.pointX,
@@ -390,11 +407,23 @@ iScroll.prototype = {
 			c1, c2, scale,
 			timestamp = e.timeStamp || Date.now();
 
-		
-		if (this.options.onBeforeScrollMove 
-		&& this.options.onBeforeScrollMove.call(this, e) === false) {			
-			return;
+		// @edit Pirhoo
+		if( this.options.vScroll === false) {
+			this.stepsX += Math.abs(deltaX);
+			this.stepsY += Math.abs(deltaY);
+
+			// We are scrolling vertically, so skip iScroll and give the control back to the browser
+			if (!that.directionLocked && that.stepsY > that.stepsX) {
+				that.initiated = false;
+				return;
+			}
+
+			that.directionLocked = true;
+			e.preventDefault();
 		}
+		
+		if (this.options.onBeforeScrollMove) this.options.onBeforeScrollMove.call(this, e);
+
 
 		// Zoom
 		if (that.options.zoom && hasTouch && e.touches.length > 1) {
@@ -466,6 +495,8 @@ iScroll.prototype = {
 	},
 	
 	_end: function (e) {
+
+		if (!this.initiated) return;
 		if (hasTouch && e.touches.length != 0) return;
 
 		var that = this,
@@ -480,6 +511,8 @@ iScroll.prototype = {
 			newDuration,
 			snap,
 			scale;
+
+		this.initiated = false;
 
 		that._unbind(MOVE_EV);
 		that._unbind(END_EV);

@@ -380,6 +380,7 @@ iScroll.prototype = {
 	},
 	
 	_move: function (e) {
+
 		var that = this,
 			point = hasTouch ? e.touches[0] : e,
 			deltaX = point.pageX - that.pointX,
@@ -389,7 +390,11 @@ iScroll.prototype = {
 			c1, c2, scale,
 			timestamp = e.timeStamp || Date.now();
 
-		if (that.options.onBeforeScrollMove) that.options.onBeforeScrollMove.call(that, e);
+		
+		if (this.options.onBeforeScrollMove 
+		&& this.options.onBeforeScrollMove.call(this, e) === false) {			
+			return;
+		}
 
 		// Zoom
 		if (that.options.zoom && hasTouch && e.touches.length > 1) {

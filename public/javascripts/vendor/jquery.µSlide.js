@@ -282,11 +282,9 @@
                       // allows horizontal movment
                       hScroll:true, 
                       // allows only one direction movment in the same time
-                      lockDirection: true,
+                      lockDirection: false,
                       // hides vertical scrollBar
                       vScrollbar: false,
-                      // forbids vertical movment
-                      vScroll: true,
                       // turn of movment elasticity 
                       momentum:false,
                       // calls function "slideChange" when the scroll stops
@@ -295,18 +293,29 @@
                       bounce:true,
                       // disable scroll
                       wheelAction: 'none',                      
+                      // forbids vertical movment
+                      vScroll: false,
                       onBeforeScrollStart: function (e) {                        
                         point = e.touches ? e.touches[0] : e;
                         pointStartX = point.pageX;
-                        pointStartY = point.pageY;                              
+                        pointStartY = point.pageY;                
                       },
                       onBeforeScrollMove: function(e){
+
                         deltaX = Math.abs(point.pageX - pointStartX);
                         deltaY = Math.abs(point.pageY - pointStartY);
+
+                        if(deltaY > 3) {
+                          // Stop iscroll
+                          return false;
+                        }                 
+
                         if (deltaX >= deltaY) {
-                                e.preventDefault();
-                        }
-                      } 
+                          // Stop native scroll
+                          e.preventDefault();
+                        } 
+
+                      }
                 });    
 
 

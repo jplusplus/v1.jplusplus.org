@@ -167,8 +167,9 @@ header {
 
 		.about {
 			// unvisible on webkit to avoid a stack bug
-			.ios & {
+			.ios &, .webkit & {
 				display:none;
+				.opacity(100);	
 			}
 			position:absolute;
 			z-index:115;

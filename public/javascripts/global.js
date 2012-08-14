@@ -143,9 +143,10 @@
 	 *
 	 */
 	$(that.init = function() {	
-
 		// iOs detection
 		if( navigator.userAgent.match(/(iphone|ipod|ipad)/i) != null ) $("html").addClass("ios");
+		// webKit detection
+		if( navigator.userAgent.match(/(webkit)/i) != null ) $("html").addClass("webkit");
 		
 		that.initElements();
 		

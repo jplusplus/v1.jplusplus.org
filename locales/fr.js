@@ -5,5 +5,5 @@
 	"CTO &bullet; Developer": "CTO • Développeur",
 	"Project manager": "Chef de projet",
 	"Back": "Retour",
-	"Developer": "Developer"
+	"Developer": "Développeur"
 }

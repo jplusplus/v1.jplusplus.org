@@ -7,23 +7,21 @@ include layouts/menu
 		ul.unstyled.js-wrapper.row
 			- if(typeof posts !== "array")
 				- posts.forEach(function(item) {
-					li.span12.js-card
+					li.js-card
 						.view
-							.legend
-								h2.slabtexted !{item.title}
-								.btn.btn-primary.btn-large=_("En savoir plus")
 							.wrapper
-								- if(item.thumbnail)
-									img(src=item.thumbnail)
-								else
-									img(src="/images/gallery/4268986830_edccb88587_b_d.jpg")
+								img(src=item.thumbnail)
+							.legend
+								h2.slabtexted.hidden-phone !{item.title}
+								h2.visible-phone.tl !{item.title}
+								.btn.btn-primary.btn=_("See more")
 						.about		
 							.row	
 							
 								.visible-desktop
 									a.back
 										i.icon-circle-arrow-left.icon-white
-										=_("Retour")
+										=_("Back")
 								
 									h3 !{item.title}
 									article !{item.content}
@@ -35,20 +33,20 @@ include layouts/menu
 											- })			
 
 									- if(item.siteurl)
-										a(href=item.siteurl).siteurl
+										a(href=item.siteurl, rel='external').siteurl
 											i.icon-globe.icon-white
 											=item.siteurl		
 
 								.hidden-desktop
 									a.back
 										i.icon-circle-arrow-left.icon-white
-										=_("Retour")
+										=_("Back")
 								
 									h3 !{item.title}
 									article !{item.content}
 
 									- if(item.siteurl)
-										a(href=item.siteurl).siteurl
+										a(href=item.siteurl, rel='external').siteurl
 											i.icon-globe.icon-white
 											=item.siteurl							
 				- })
@@ -66,25 +64,42 @@ include layouts/menu
 			.pp
 				img(src="/images/team/nkb.jpg")
 			.link
-				a(href="http://nkb.fr")
-					i.left05.icon-play.icon-white
+				a(href="http://twitter.com/nicolaskb", rel='external')
+					img(src="/images/twitter-bird-dark-bgs.png").left05
 			h3 Nicolas Kayser-Bril 
-			p CEO &bullet; Data-journalist
-		li.span2.offset1
+			p=_("CEO &bullet; Data-journalist")
+		li.span2
 			.pp
 				img(src="/images/team/pr.jpg")
 			.link
-				a(href="http://pirhoo.com")
-					i.left05.icon-play.icon-white
+				a(href="http://twitter.com/pirhoo", rel='external')
+					img(src="/images/twitter-bird-dark-bgs.png").left05
 			h3 Pierre Romera 
-			p CTO &bullet; Développeur
-		li.span2.offset1
+			p=_("CTO &bullet; Developer")
+		li.span2
 			.pp
 				img(src="/images/team/alb.jpg")
 			.link
-				a(href="")
-					i.left05.icon-play.icon-white
+				a(href="http://twitter.com/annelisebouyer", rel='external')
+					img(src="/images/twitter-bird-dark-bgs.png").left05
 			h3 Anne-Lise Bouyer 
-			p Chef de projet
+			p=_("Project manager")
+		li.span2
+			.pp
+				img(src="/images/team/b2v.jpg")
+			.link
+				a(href="http://twitter.com/verycourt", rel='external')
+					img(src="/images/twitter-bird-dark-bgs.png").left05
+			h3 Bertrand de V&eacute;ricourt 
+			p=_("Developer")
+
+	-if( about )
+		hr.soften
+
+		#about
+			.row
+				.span10.offset1
+					h2 !{about.title}
+					article !{about.content}
 
 include layouts/footer

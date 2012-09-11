@@ -62,7 +62,18 @@ header {
 	li {
 		display:inline;
 		padding:4px 6px;
-		margin-left:6px;		
+		margin-left:6px;	
+		white-space:nowrap;	
+	}
+
+	.about {
+		position:relative;
+		font-weight:bold;
+		font-family: 'Averia Sans Libre', sans-serif;
+		padding-right:15px;
+		margin-right:5px;
+		border-right:1px solid white;
+		.box-shadow(1px 0 0 fade(@grayLight, 80%) );
 	}
 
 	.active {
@@ -84,6 +95,9 @@ header {
 	overflow: hidden;	
 
 	.js-card {
+
+		float:left;
+
 						transition:transform 0.8s;
 				 -o-transition:-o-transform 0.8s;
 				-ms-transition:-ms-transform 0.8s;
@@ -104,13 +118,18 @@ header {
 		.transform( rotateX(180deg )   );
 
 		.about {
+			display:block;
 			z-index:120;		
 			.opacity(100);
 		}
 
 		.view {	
 			z-index:115;
-			.opacity(0);			
+			.opacity(0);	
+
+			.lt-ie8 & {
+				display:none;
+			}		
 		}
 	}
 
@@ -141,23 +160,25 @@ header {
 		padding:0;
 		margin:0;
 
-
-		.about, .view {	
+		.about, .view {			
 			.transition(opacity 0.8s);
-		  backface-visibility: hidden;
+		  backface-visibility: hidden;		  
 		}
 
 		.about {
-
-			z-index:115;
+			// unvisible on webkit to avoid a stack bug
+			.ios &, .webkit & {
+				display:none;
+				.opacity(100);	
+			}
 			position:absolute;
+			z-index:115;
 			top:0; left:0;
 			.opacity(0);			
 			.transform( rotateX( 180deg ) );			
 
 			.row {
-
-				position:relative;
+				position:relative;				
 				top:-30px;
 
 				margin:0 50px;	
@@ -170,8 +191,14 @@ header {
 
 				.shadow-large();
 
+
+				.no-csstransforms3d & {
+					top:30px;
+				}
+
 				.back {
 					cursor:pointer;
+					color:white;
 					i {
 						position:relative;
 						top:2px;
@@ -188,6 +215,7 @@ header {
 					background:fade(white, 40%);
 					.box-shadow(inset 0 0 2px 0 @linkColor);					
 					.border-radius(3px);
+					color:white;
 
 					i {
 						color:lighten(@linkColor, 10%);
@@ -202,7 +230,7 @@ header {
 				}
 
 				a {
-					color:white;
+					color:lighten(@linkColor, 40%);
 				}
 
 				h3 {
@@ -288,8 +316,8 @@ header {
 
 		.view {
 
-			z-index:120;
 			position:relative;
+			z-index:120;
 			margin:30px 50px;					
 			background: #555;
 			.transform( rotateX( 0deg ) );
@@ -311,11 +339,16 @@ header {
 				.box-shadow( 0 5px 5px 0 fade(black, 40%) );
 
 				background:fade(black, 50%);
+				.no-rgba & { background: @textColor; }
 
 				h2 {
 					color:fade(white, 90%);
+					.no-rgba & { color: @white; }
+
 					text-shadow:1px 1px 0 black;
 					margin-bottom:20px;
+					position:relative;
+					z-index:500;
 				}
 
 				&:before {
@@ -327,12 +360,23 @@ header {
 					border:5px solid fade(black, 60%);
 					border-top-color:transparent;
 					border-left-color:transparent;
+					.no-rgba & { 
+						border:5px solid @gray; 
+						border-top-color:@grayLighter;
+						border-left-color:@grayLighter;
+					}
+				}
+
+				.btn {
+					position:relative;
+					z-index:1000;
 				}
 
 			}
 
 			.wrapper {
 				position: relative;
+				z-index:100;
 				width:100%;
 				background:white;
 				overflow:hidden;
@@ -350,6 +394,7 @@ header {
 
 				img {
 					width:100%;
+					background:white;
 				}
 
 				&:after {
@@ -370,19 +415,25 @@ header {
 
 	padding:20px 50px;
 	padding-bottom: 0px;
-	height:20px;
+	height:15px;
 	text-align:center;
 
 	li {
 
-		display:inline-block;	
-		width:20px;
-		height:20px;
+		display:inline-block;					
+		width:15px;
+		height:15px;
 		overflow:hidden;
 		cursor:pointer;
 		.border-radius(50%);
 		.box-shadow(inset 0 0 2px 0 fade(black, 60%));				
 		.transition(0.2s);
+
+		.lt-ie8 & {
+			display:inline;
+		}
+
+		.no-rgba & { background: @grayLight; }
 
 		&.active, &.active:hover {
 			background:@linkColor;
@@ -393,6 +444,7 @@ header {
 		}
 	}
 }
+
 
 #team {
 
@@ -421,13 +473,7 @@ header {
 			margin:auto;
 			margin-bottom:20px;
 
-			.transition(0.7s);
-
-			img {
-				width:100px;
-				z-index:-1;
-				.border-radius(50%);
-			}
+			.transition(0.7s);		
 
 			&:after {
 				content:"";
@@ -440,6 +486,16 @@ header {
 				.border-radius(50%);
 				.box-shadow(inset 0 0 10px fade(black, 50%) );
 				.transition(0.7s);
+			}
+
+		}
+
+		.pp {
+
+			img {
+				width:100px;
+				z-index:-1;
+				.border-radius(50%);
 			}
 
 		}
@@ -457,6 +513,10 @@ header {
 			.transition(0.7s);
 			.opacity(0);
 			.transform( rotateY(180deg) );
+
+			.no-csstransforms3d & {
+				display:none;
+			}
 
 			a {
 				position:absolute;
@@ -481,12 +541,17 @@ header {
 			.link {
 				.transform( rotateY( 0deg ) );
 				.opacity(100);
+
+				.no-csstransforms3d & {
+					display:block;
+				}
 			}
 		}
 
 
 	}
 }
+
 
 footer {
 
@@ -498,4 +563,93 @@ footer {
 	&:hover {
 		color:#000;
 	}
+}
+
+
+// Tablets & small desktops only
+@media (min-width: 768px) and (max-width: 979px) {
+
+	h1 small {
+		display:block;
+		margin-left:0 !important;
+	}
+
+	#portfolio-nav {
+		height:20px;
+		li {
+			width:20px;
+			height:20px;
+		}
+	}
+
+}
+
+
+// Phones only
+@media (max-width: 767px) {
+	
+	h1 small {
+		display:block;
+		margin-left:0 !important;
+	}
+	#portfolio-nav {
+		height:20px;
+		li {
+			width:20px;
+			height:20px;
+		}
+	}
+
+	#portfolio {
+
+		&:before, &:after {
+			display:none !important;
+		}
+
+		.span12 {
+			float:left !important;
+			width:100px;
+		}
+
+		.view, .about .row {
+			margin:0;
+		}
+
+		.legend {
+			width:80% !important;
+			right:10%;
+			text-align: right !important;
+
+			.hidden-phone {
+				display:block !important;
+				position:absolute;
+				top:999999px;
+				left:999999px;
+				width:150px;
+			}
+		}
+	}
+
+	#team {
+		
+		li {			
+			clear:left;
+			text-align:left !important;		
+
+			h3 {
+				padding-top:20px;	
+			}
+		}
+
+		.pp {
+			float:left !important;
+			margin-right:20px !important;
+		}
+
+		.link {
+			left:55px !important;
+			text-align:center;
+		}
+	}
+
 }

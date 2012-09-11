@@ -1,20 +1,18 @@
 {
-    "name": "jquest"
+    "name": "jplusplus"
   , "version": "0.0.1"
-  , "private": true
+  , "private": false
   , "dependencies": {  	 
       "express"         : "2.5.10"
     , "less-middleware" : "latest"
     , "jade"            : "latest"
-    , "oauth"           : ">= 0.9.7"
-    , "enc"             : "0.0.1"
     , "restler"         : "latest"
     , "memory-cache"    : "latest"
     , "async"           : "latest"
-    , "i18n"            : "latest"
+    , "i18n"            : "0.3.5"
   }
   , "engines": {
     "node": "0.6.18",
-    "npm": "1.1.32"
+    "npm": "1.1.41"
   }
 }

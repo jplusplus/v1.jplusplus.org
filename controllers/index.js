@@ -15,11 +15,30 @@ module.exports = function(app, db, controllers) {
 	 */
 	app.get('/', function(req, res){
 
-		req.session.lang = module.exports.getUserLang(req);
+		// Refresh the cache
+		if(typeof req.query["refresh-cache"] != "undefined") {
+			console.log("Cache refresfed.");
+			cache.clear();
+		}
 
-		module.exports.getPosts(req.session.lang, function(posts) {
+		// Get and set the language in (or from) session
+		req.session.language = module.exports.getUserLang(req);
 
-		  res.render('index.jade', 
+		async.parallel({
+		    getPosts: function(callback){
+	        module.exports.getPosts(req.session.language, function(posts) {
+	          callback(null, posts);
+	        });
+		    },
+		    getAbout: function(callback){
+	        module.exports.getPage("a-propos-de-journalism", req.session.language, function(page) {
+	          callback(null, page);
+	        });
+		    }
+		},
+		function(err, results){
+
+			res.render('index.jade', 
 				{ 
 					title: 'Journalism++', 
 					stylesheets: [
@@ -39,9 +58,11 @@ module.exports = function(app, db, controllers) {
 						, "/javascripts/vendor/glfx.js"																	
 						, "/javascripts/global.js"																	
 					],
-					posts: posts
+					posts: results.getPosts,
+					about: results.getAbout
 				}
 			);
+
 		});
 
 	});
@@ -49,8 +70,8 @@ module.exports = function(app, db, controllers) {
 	/*
 	 * Chnage the user language
 	 */
-	app.get('/lang/:lang', function(req, res){
-		req.session.lang = ["fr", "en"].indexOf(req.params.lang) > -1 ? req.params.lang : "fr";
+	app.get('/lang/:ln', function(req, res){
+		req.session.language = ["fr", "en", "de"].indexOf(req.params.ln) > -1 ? req.params.ln : "fr";		
 		res.redirect("/");
 	});
 
@@ -60,9 +81,10 @@ module.exports = function(app, db, controllers) {
  * @author Pirhoo
  * @description Get the current user lang according to the given request
  */
-module.exports.getUserLang = function(request) {
-	return request.session.lang || "fr";
+module.exports.getUserLang = function(request) {	
+	return request.session.language || i18n.getLocale(request) || "fr";
 };
+
 
 /**
  * @author Pirhoo
@@ -74,7 +96,7 @@ module.exports.getPosts = function(lang, complete) {
     // Get data from cache first
     function getFromCache(fallback) {      
       // Get the course from the cache
-      if( cache.get('posts-list-'+lang) ) complete( cache.get('posts-list-'+lang) );
+      if( !! cache.get('posts-list-'+lang) ) complete( cache.get('posts-list-'+lang) );
       // Or get the colletion from the fallback function
       else fallback();
     },
@@ -95,6 +117,44 @@ module.exports.getPosts = function(lang, complete) {
 
         // Call the complete function
         complete( data.posts );
+
+      });
+    }        
+  ]);
+
+};
+
+
+/**
+ * @author Pirhoo
+ * @description Get a page from the API or from the cache
+ */
+module.exports.getPage = function(id, lang, complete) {
+
+	var cacheSlug = 'page-'+lang+'-'+id;
+
+  async.series([
+    // Get data from cache first
+    function getFromCache(fallback) {      
+      // Get the course from the cache
+      if( !! cache.get(cacheSlug) ) complete( cache.get(cacheSlug) );
+      // Or get the colletion from the fallback function
+      else fallback();
+    },
+    // Get data from the API 
+    function getFromAPI() {
+
+    	var uri  = "http://jplusplus.oeildupirate.com/";
+    			uri += isNaN( parseFloat(id) ) ? id + "?" : "?p=" + id;
+
+      // get_category_index request from the external "WordPress API"
+      rest.get(uri +"&json=1&lang=" + lang).on("complete", function(data) {
+
+        // Put the data in the cache 
+        cache.put(cacheSlug, data.page);
+
+        // Call the complete function
+        complete( data.page );
 
       });
     }        

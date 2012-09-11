@@ -74,11 +74,12 @@
     	, overflow: "visible"
 		},
 		$wrappers = that.el.$portfolio.find(".wrapper"),
+		$cards = that.el.$portfolio.find(".js-card").css("width", that.el.$portfolio.innerWidth() ),
 		// Determine the portfolio height according the width
 		height = $wrappers.outerWidth() * 0.5;
 
 		// Change the wrappers height
-		$wrappers.css("height", height);
+		$wrappers.css("height", height);		
 		that.el.$portfolio.find(".about .row").css("height", height);
 
 		// First time we initialize the portfolio
@@ -94,16 +95,38 @@
 			.µSlide(option)
 			// Event after the slide to update the bullet list
 			.on("after-slide", that.changePortfolioNav)
-			// Flip event
-			.on("click", ".legend, .about .back, .about h3:first", function() {
-				$(this).parents(".js-card").toggleClass("fliped");
+			// Flip event (open)
+			.on("click touchend", ".legend, .legend .btn", function() {				
+				// Stops auto slide
+				if(that.autoSlide) clearInterval( that.autoSlide );
+				$(this).parents(".js-card").addClass("fliped");
+			})
+			// Flip event (close)
+			.on("click touchend", ".about .back, .about h3:first", function() {
+				$(this).parents(".js-card").removeClass("fliped");
+			})
+			// Stop auto slide
+			.on("mousedown touchstart", function() {				
+				if(that.autoSlide) clearInterval( that.autoSlide );
 			});
 
 			// Bullets navigation
 			that.el.$portfolioNav.delegate("li", "click", function(el) {
+				// Stops auto slide
+				if(that.autoSlide) clearInterval( that.autoSlide );
 				that.el.$portfolio.data("µSlide").slideTo( $(this).index() );
 			});
+
+			// Auto slide after 3000 milliseconds
+			that.autoSlide = setInterval(function() {
+
+				that.el.$portfolio.data("µSlide").slideTo("next");
+
+			}, 4000);
 		}
+
+
+
 	};
 
 
@@ -112,7 +135,6 @@
 	 *
 	 */
 	that.slabTextHeadlines = function() {
-		
 		$(".slabtexted").slabText();
 	};
 
@@ -121,6 +143,10 @@
 	 *
 	 */
 	$(that.init = function() {	
+		// iOs detection
+		if( navigator.userAgent.match(/(iphone|ipod|ipad)/i) != null ) $("html").addClass("ios");
+		// webKit detection
+		if( navigator.userAgent.match(/(webkit)/i) != null ) $("html").addClass("webkit");
 		
 		that.initElements();
 		
@@ -132,6 +158,32 @@
 		$(".lettering-words").lettering('words');
 		setTimeout(that.slabTextHeadlines, 1000);
 
+		// Smooth anchor scrolling
+    $("a[href^='#']").on("click", function(event) {
+
+      event.preventDefault();
+      
+      var $this = $(this),
+          target = this.hash,
+          $target = $(target),
+          scrollElement = 'html, body';
+
+      if(target === "" || target === "#") return;
+
+      $(scrollElement).stop().animate({
+          'scrollTop': $target.offset().top // minus the height of the fixed top menu
+      }, 500, 'linear', function() {
+      	window.location.hash = target;
+      });
+
+      return false;
+        
+    }); 
+
+		// Open external links in a new tab
+		$("a[rel$='external']").on("click", function(){
+		     this.target = "_blank";
+		});
 
 	});
 

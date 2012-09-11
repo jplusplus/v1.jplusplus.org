@@ -4,5 +4,6 @@
 	"Back": "Zurück",
 	"CEO &bullet; Data-journalist": "CEO • Datenjournalist",
 	"CTO &bullet; Developer": "CTO • Entwickler",
-	"Project manager": "Projektleiterin"
+	"Project manager": "Projektleiterin",
+	"Developer": "Entwickler"
 }

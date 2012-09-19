@@ -8,12 +8,16 @@ var rest = require('restler')
  * @description Home route binder
  *
  */
-module.exports = function(app, db, controllers) {
+module.exports =  function(app, db, controllers) {
 
 	/*
 	 * GET home page.
 	 */
 	app.get('/', function(req, res){
+
+    return res.render('500.jade',
+      {title: 'Journalism++'}
+    );
 
 		// Refresh the cache
 		if(typeof req.query["refresh-cache"] != "undefined") {

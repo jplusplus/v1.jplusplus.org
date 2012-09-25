@@ -15,9 +15,9 @@ module.exports =  function(app, db, controllers) {
 	 */
 	app.get('/', function(req, res){
 
-    /* return res.render('500.jade',
+    return res.render('500.jade',
       {title: 'Journalism++'}
-    ); */
+    );
 
 		// Refresh the cache
 		if(typeof req.query["refresh-cache"] != "undefined") {

@@ -15,9 +15,9 @@ module.exports =  function(app, db, controllers) {
 	 */
 	app.get('/', function(req, res){
 
-    return res.render('500.jade',
+    /*return res.render('500.jade',
       {title: 'Journalism++'}
-    );
+    ); */
 
 		// Refresh the cache
 		if(typeof req.query["refresh-cache"] != "undefined") {
@@ -108,7 +108,7 @@ module.exports.getPosts = function(lang, complete) {
     function getFromAPI() {
 
       // get_category_index request from the external "WordPress API"
-      rest.get("http://jplusplus.oeildupirate.com/?count=100&json=1&custom_fields=siteurl&lang=" + lang).on("complete", function(data) {
+      rest.get("http://oeildupirate.com/jplusplus/?count=100&json=1&custom_fields=siteurl&lang=" + lang).on("complete", function(data) {
 
       	// Filters custom fields
       	for(var index in data.posts) {
@@ -148,7 +148,7 @@ module.exports.getPage = function(id, lang, complete) {
     // Get data from the API 
     function getFromAPI() {
 
-    	var uri  = "http://jplusplus.oeildupirate.com/";
+    	var uri  = "http://oeildupirate.com/jplusplus/";
     			uri += isNaN( parseFloat(id) ) ? id + "?" : "?p=" + id;
 
       // get_category_index request from the external "WordPress API"

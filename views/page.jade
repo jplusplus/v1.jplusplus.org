@@ -1,0 +1,33 @@
+
+
+include layouts/menu
+
+#main.container
+  .left50.top20
+      a(href="/")=_("← Back to the homepage!")
+  .top20.row
+    .span7      
+      .left50.top40
+        h2=page.title
+        !=page.content  
+    .span4.offset1
+      .right50.top40
+        - if(typeof page.thumbnail != "undefined")
+          img(src=page.thumbnail).thumbnail.bottom20
+
+        .tr
+          a(href="https://twitter.com/share", class="twitter-share-button", data-via="jplusplus_", data-related="jplusplus_", data-lang="fr") Tweeter
+          script
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+          
+          .fb-like(data-send="false",data-layout="button_count",data-width="60",data-show-faces="true", style="top:-2px")
+          #fb-root
+          script
+            (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=191017014304174";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+          

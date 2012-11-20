@@ -54,7 +54,8 @@ hr.little{height:5px;border:0;border-top:1px solid rgba(0, 0, 0, 0.5);border-bot
 .relative{position:relative;}
 h1,h2,h3,h4,.brand,fieldset legend{font-family:'Averia Sans Libre',sans-serif;text-shadow:1px 1px 0 white;}
 body{background:url("../images/bg.png");}
-header h1{white-space:nowrap;}header h1 small{font-size:25px;padding-top:1px;color:rgba(148, 30, 56, 0.8);}
+header h1{white-space:nowrap;}header h1 a,header h1 a:hover,header h1 a:visited{color:inherit;text-decoration:inherit;}
+header h1 small{font-size:25px;padding-top:1px;color:rgba(148, 30, 56, 0.8);}
 .slabtexted .slabtext:nth-child(1){line-height:1.1;}
 .shadow-large{position:relative;-webkit-box-shadow:0 0 20px 0 rgba(0, 0, 0, 0.2);-moz-box-shadow:0 0 20px 0 rgba(0, 0, 0, 0.2);box-shadow:0 0 20px 0 rgba(0, 0, 0, 0.2);}.shadow-large:after,.shadow-large:before{content:"";position:absolute;z-index:-1;bottom:15px;width:50%;height:1px;-webkit-box-shadow:0 0 30px 5px #000000;-moz-box-shadow:0 0 30px 5px #000000;box-shadow:0 0 30px 5px #000000;}
 .shadow-large:after{left:20px;-webkit-transform:rotate(-3deg);-moz-transform:rotate(-3deg);-ms-transform:rotate(-3deg);-o-transform:rotate(-3deg);transform:rotate(-3deg);}

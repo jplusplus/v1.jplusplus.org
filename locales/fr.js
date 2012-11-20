@@ -9,5 +9,8 @@
 	"Well... It's embarassing!": "Well... It's embarassing!",
 	"We have been under attack!!": "We have been under attack!!",
 	"Well... It's ambarassing!": "Well... It's ambarassing!",
-	"Sorry, we surely have been under attack!!": "Sorry, we surely have been under attack!!"
+	"Sorry, we surely have been under attack!!": "Sorry, we surely have been under attack!!",
+	"We didn't find the page you are looking for.": "We didn't find the page you are looking for.",
+	"Back to the homepage!": "Back to the homepage!",
+	"← Back to the homepage!": "← Back to the homepage!"
 }

@@ -79,6 +79,15 @@ module.exports =  function(app, db, controllers) {
 		res.redirect("/");
 	});
 
+  app.use(function(req, res, next){
+    res.status(404);
+    // respond with html page
+    if (req.accepts('html')) {
+      res.redirect('/404');
+      return;
+    }
+  });
+
 };
 
 /**

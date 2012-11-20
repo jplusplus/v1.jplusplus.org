@@ -122,6 +122,7 @@ exports.boot = function(){
     },
   });
 
+
   // all models and controller on this scope
   app.controllers = app.models = {};
 

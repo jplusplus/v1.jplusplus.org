@@ -12,5 +12,6 @@
 	"Sorry, we surely have been under attack!!": "Sorry, we surely have been under attack!!",
 	"We didn't find the page you are looking for.": "We didn't find the page you are looking for.",
 	"Back to the homepage!": "Back to the homepage!",
-	"← Back to the homepage!": "← Back to the homepage!"
+	"← Back to the homepage!": "← Back to the homepage!",
+	"Well... It's ambarrassing!": "Well... It's ambarrassing!"
 }

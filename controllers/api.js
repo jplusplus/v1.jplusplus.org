@@ -72,8 +72,14 @@ module.exports.getPage = function(id, lang, complete) {
         // Put the data in the cache 
         cache.put(cacheSlug, data.page);
 
-        // Call the complete function
-        complete( data.page );
+        // We didn't find the page, try the english version
+        if(!data.page && lang != "en") {
+          module.exports.getPage(id, "en", complete);
+        } else {
+          if(data.page) data.page.lang = lang;
+          // Call the complete function
+          complete( data.page );
+        }
 
       });
     }        

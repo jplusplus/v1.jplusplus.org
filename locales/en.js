@@ -5,5 +5,8 @@
 	"CEO &bullet; Data-journalist": "CEO • Data-journalist",
 	"CTO &bullet; Developer": "CTO • Developer",
 	"Project manager": "Project manager",
-	"Developer": "Developer"
+	"Developer": "Developer",
+	"← Back to the homepage!": "← Back to the homepage!",
+	"Well... It's ambarrassing!": "Well... It's ambarrassing!",
+	"We didn't find the page you are looking for.": "We didn't find the page you are looking for."
 }

@@ -6,10 +6,13 @@ include layouts/menu
   .left50.top20
       a(href="/")=_("← Back to the homepage!")
   .top20.row
-    .span7      
+    .span7     
       .left50.top40
+        if page.lang != session.language && page.lang == "en"
+          .alert.alert-info
+            =_("This page is only available in English. We're working on translating it in your language.")        
         h2=page.title
-        !=page.content  
+        .rich-text!=page.content  
     .span4.offset1
       .right50.top40
         - if(typeof page.thumbnail != "undefined")

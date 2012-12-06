@@ -1,20 +1,28 @@
 @import "tools.less";
 
 h1, h2, h3, h4, .brand, fieldset legend {
-	font-family: 'Averia Sans Libre', sans-serif;
-	text-shadow:1px 1px 0 white;
+	font-family: 'Dinl', sans-serif;
+	text-shadow:1px 1px 0 white;	
+}
+
+h2 {
+    padding-bottom:10px;
 }
 
 body {
 	background:url("../images/bg.png");
 }
 
+blockquote {
+    border:0;
+}
 
 header {	
 
 	h1 {
 		
 		white-space:nowrap;
+		color:@linkColor;		
 
 		a, a:hover, a:visited {
 			color:inherit;
@@ -24,7 +32,7 @@ header {
 		small {
 			font-size:25px;
 			padding-top:1px;		
-			color:fade(@linkColor, 80%);
+			color:black;
 		}
 	}
 }
@@ -75,7 +83,7 @@ header {
 	.about {
 		position:relative;
 		font-weight:bold;
-		font-family: 'Averia Sans Libre', sans-serif;
+		font-family: 'Dinl', sans-serif;
 		padding-right:15px;
 		margin-right:5px;
 		border-right:1px solid white;

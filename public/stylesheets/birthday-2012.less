@@ -73,7 +73,7 @@ html body a, html body a:visited, .link-color {
     iframe {
       overflow:hidden;
       height:500px;
-      width:100%;
+      width:600px;
     }
 
     &.roundabout-moveable-item {      
@@ -115,11 +115,26 @@ html body a, html body a:visited, .link-color {
   .full-banner {
     
     height:auto;
+    margin-bottom:20px;
 
     .huge-message {
       font-size:300%;
       color:black;
       position:static;
+      text-shadow:1px 1px 0 white;
     }
   }
+
+  #main, .carousel {
+    overflow:visible;
+  }
+
+  .carousel li {
+    .box-shadow(0 0 5px 0 fade(black, 20%) );
+    
+    iframe {
+      width:100%;
+    }
+  }
+
 }

@@ -74,7 +74,7 @@ module.exports =  function(app, db, controllers) {
 	 */
 	app.get('/lang/:ln', function(req, res){
 		req.session.language = ["fr", "en", "de"].indexOf(req.params.ln) > -1 ? req.params.ln : "fr";		
-		res.redirect("/");
+		res.redirect(req.query.path || "back" || "/");
 	});
 
 	/**

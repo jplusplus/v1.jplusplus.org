@@ -8,5 +8,6 @@
 	"Developer": "Developer",
 	"← Back to the homepage!": "← Back to the homepage!",
 	"Well... It's ambarrassing!": "Well... It's ambarrassing!",
-	"We didn't find the page you are looking for.": "We didn't find the page you are looking for."
+	"We didn't find the page you are looking for.": "We didn't find the page you are looking for.",
+	"We're turning <span class='link-color'>one</span>!": "We're turning <span class='link-color'>one</span>!"
 }

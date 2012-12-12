@@ -120,6 +120,9 @@ exports.boot = function(){
     session: function(req, res){
       return req.session;
     },
+    path: function(req) {
+      return req.path;
+    }
   });
 
 

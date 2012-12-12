@@ -8,10 +8,10 @@ html body a,html body a:visited,.link-color{color:#f24405;}
 .full-banner{height:600px;overflow:hidden;position:relative;}.full-banner img{width:100%;height:auto;}
 .full-banner .huge-message{position:absolute;font-size:70px;line-height:80px;top:70px;left:0;right:0;text-align:center;color:white;text-shadow:0 0 20px black;}
 .carousel{list-style:none;padding:0;margin:0 auto;}.carousel.roundabout-holder{width:100%;max-width:900px;height:550px;margin-top:-400px;}
-.carousel li{padding:0;overflow:hidden;background-color:white;text-align:center;cursor:pointer;position:relative;border:5px solid white;-webkit-box-shadow:0 0 20px 0 rgba(0, 0, 0, 0.2);-moz-box-shadow:0 0 20px 0 rgba(0, 0, 0, 0.2);box-shadow:0 0 20px 0 rgba(0, 0, 0, 0.2);margin:auto;margin-bottom:20px;}.carousel li iframe{overflow:hidden;height:500px;width:100%;}
+.carousel li{padding:0;overflow:hidden;background-color:white;text-align:center;cursor:pointer;position:relative;border:5px solid white;-webkit-box-shadow:0 0 20px 0 rgba(0, 0, 0, 0.2);-moz-box-shadow:0 0 20px 0 rgba(0, 0, 0, 0.2);box-shadow:0 0 20px 0 rgba(0, 0, 0, 0.2);margin:auto;margin-bottom:20px;}.carousel li iframe{overflow:hidden;height:500px;width:600px;}
 .carousel li.roundabout-moveable-item{width:600px;height:500px;}
 .carousel li.roundabout-moveable-item:after{content:"";position:absolute;top:0;left:0;bottom:0;right:0;background:rgba(255, 255, 255, 0.8);display:block;}
 .carousel li.roundabout-in-focus{cursor:default;}.carousel li.roundabout-in-focus:after{display:none;}
 .carousel li span{display:block;padding-top:6em;}
 .carousel #carbonads-container .carbonad{margin:0 auto;}
-@media (max-width:767px){.full-banner{height:auto;}.full-banner .huge-message{font-size:300%;color:black;position:static;}}
+@media (max-width:767px){.full-banner{height:auto;margin-bottom:20px;}.full-banner .huge-message{font-size:300%;color:black;position:static;text-shadow:1px 1px 0 white;} #main,.carousel{overflow:visible;} .carousel li{-webkit-box-shadow:0 0 5px 0 rgba(0, 0, 0, 0.2);-moz-box-shadow:0 0 5px 0 rgba(0, 0, 0, 0.2);box-shadow:0 0 5px 0 rgba(0, 0, 0, 0.2);}.carousel li iframe{width:100%;}}

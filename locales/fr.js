@@ -13,5 +13,7 @@
 	"We didn't find the page you are looking for.": "We didn't find the page you are looking for.",
 	"Back to the homepage!": "Back to the homepage!",
 	"← Back to the homepage!": "← Back to the homepage!",
-	"Well... It's ambarrassing!": "Well... It's ambarrassing!"
+	"Well... It's ambarrassing!": "Well... It's ambarrassing!",
+	"We're turning 1!": "We're turning 1!",
+	"We're turning <span class='link-color'>1</span>!": "We're turning <span class='link-color'>1</span>!"
 }

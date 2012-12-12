@@ -77,6 +77,27 @@ module.exports =  function(app, db, controllers) {
 		res.redirect("/");
 	});
 
+	/**
+	 * Birthday page 
+	 */
+	app.get('/birthday/2012', function(req, res) {
+		res.render("birthday",
+			{ 
+				title: 'Journalism++', 
+				stylesheets: [
+					,"http://fonts.googleapis.com/css?family=Share:400,700|Leckerli+One|Averia+Sans+Libre:400,700,300,300italic,400italic,700italic"
+					,"/stylesheets/style.css"
+					,"/stylesheets/birthday-2012.css"
+				], 
+				javascripts: [
+					  "/javascripts/vendor/bootstrap/bootstrap.min.js"									
+					, "/javascripts/vendor/jquery.roundabout.min.js"							
+					, "/javascripts/birthday.js"																	
+				]
+			}
+		);
+	});
+
   app.use(function(req, res, next){
     res.status(404);
     // respond with html page

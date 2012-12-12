@@ -1,0 +1,125 @@
+@import "vendor/bootstrap/mixins.less";
+
+@linkColor: #F24405;
+
+
+html body a, html body a:visited, .link-color {
+  color:@linkColor;
+}
+
+.logo {
+    
+  background:url("/images/jpp-orange.png") no-repeat 0 0;
+
+  img {
+    visibility:hidden;
+  }
+}
+
+#main {
+  overflow:hidden;
+}
+
+.full-banner {
+  
+  height:600px;
+  overflow:hidden;
+  position:relative;
+
+  img {
+    width:100%;
+    height:auto;
+  }
+
+  .huge-message {
+    position:absolute;
+    font-size:70px;
+    line-height:80px;
+    top:70px;
+    left:0; right:0;
+
+    text-align:center;
+    color:white;
+    text-shadow:0 0 20px black;
+  }
+}
+
+.carousel {
+  
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  
+  &.roundabout-holder {
+    width:100%;
+    max-width:900px;
+    height: 550px;
+    margin-top:-400px;    
+  }
+  
+  li {
+    padding:0;
+    overflow:hidden;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    position:relative;
+    border:5px solid white;
+    .box-shadow(0 0 20px 0 fade(black, 20%) );
+    
+    margin:auto;
+    margin-bottom:20px;
+    
+    iframe {
+      overflow:hidden;
+      height:500px;
+      width:100%;
+    }
+
+    &.roundabout-moveable-item {      
+      width: 600px;
+      height: 500px;
+    }
+
+    &.roundabout-moveable-item:after {
+      content:"";
+      position:absolute;      
+      top:0; left:0;
+      bottom:0; right:0;
+      background:fade(white, 80%);
+      display:block;
+    }
+    
+    &.roundabout-in-focus {
+      cursor: default;
+
+      &:after { display:none; }
+    }
+    
+    span {
+      display: block;
+      padding-top: 6em;
+    }
+  }
+
+
+  #carbonads-container .carbonad {
+    margin: 0 auto;
+  }
+
+}
+
+
+@media (max-width: 767px) { 
+
+  .full-banner {
+    
+    height:auto;
+
+    .huge-message {
+      font-size:300%;
+      color:black;
+      position:static;
+    }
+  }
+}

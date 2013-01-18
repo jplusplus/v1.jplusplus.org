@@ -30,7 +30,7 @@ $(document).ready(function() {
     // Create the roundabout holder
     } else if( wWidth > 767 && $carousel.is(":not(.roundabout-holder)") ) {
 
-      $carousel.roundabout({ responsive: true, minOpacity:1,  minScale: 0.1 });
+      $carousel.roundabout({ responsive: true, minOpacity:1,  minScale: 0.1, enableDrag: true });
     }
 
   })();

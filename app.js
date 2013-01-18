@@ -5,7 +5,6 @@ var express         = require('express')
   , fs              = require('fs')
   , i18n            = require("i18n")
   , lessMiddleware  = require("less-middleware")
-  , subdomain       = require('subdomain')
   , config          = require('config');
 
 /**

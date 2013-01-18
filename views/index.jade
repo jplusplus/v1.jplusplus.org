@@ -1,103 +1,35 @@
 
 
 include layouts/menu
-#main.container
+#main
 
-	#portfolio
-		ul.unstyled.js-wrapper.row
-			- if(typeof posts !== "array")
-				- posts.forEach(function(item) {
-					li.js-card
-						.view
-							.wrapper
-								img(src=item.thumbnail)
-							.legend
-								h2.slabtexted.hidden-phone !{item.title}
-								h2.visible-phone.tl !{item.title}
-								.btn.btn-primary.btn=_("See more")
-						.about		
-							.row	
-							
-								.visible-desktop
-									a.back
-										i.icon-circle-arrow-left.icon-white
-										=_("Back")
-								
-									h3 !{item.title}
-									article !{item.content}
+	#jpp-intro
+		.container
+			.right60.left60=_("Journalism++ is a network of Data-Journalists that aims to build great stories and tools with data.")
+	#jpp-network
+		img(src="/images/jppnet_hd.jpg").world.hidden-phone
+		ul.place-markers.hidden-phone
+			li.place.paris
+				a(href="//paris.jplusplus.org")
+					span.bg Paris
+			li.place.berlin
+				a(href="//berlin.jplusplus.org")
+					span.bg Berlin
+			li.place.stockholm
+				a(href="//stockholm.jplusplus.org")
+					span.bg Stockholm		
+		ul.unstyled.visible-phone.place-list
+			li
+				a(href="//paris.jplusplus.org") Paris
+			li
+				a(href="//berlin.jplusplus.org") Berlin
+			li
+				a(href="//stockholm.jplusplus.org") Stockholm
 
-									- if(item.tags.length > 0)
-										ul.tags.unstyled
-											- item.tags.forEach(function(tag) {
-												li=tag.title
-											- })			
-
-									- if(item.siteurl)
-										a(href=item.siteurl, rel='external').siteurl
-											i.icon-globe.icon-white
-											=item.siteurl		
-
-								.hidden-desktop
-									a.back
-										i.icon-circle-arrow-left.icon-white
-										=_("Back")
-								
-									h3 !{item.title}
-									article !{item.content}
-
-									- if(item.siteurl)
-										a(href=item.siteurl, rel='external').siteurl
-											i.icon-globe.icon-white
-											=item.siteurl							
-				- })
-
-	- if(typeof posts !== "array")
-		ul#portfolio-nav.unstyled
-			- posts.forEach(function(item) {
-					li.right10
-			- })	
-
-	hr.soften
-
-	ul#team.row.no-bullet.top40
-		li.span2.offset2
-			.pp
-				img(src="/images/team/nkb.jpg")
-			.link
-				a(href="http://twitter.com/nicolaskb", rel='external')
-					img(src="/images/twitter-bird-dark-bgs.png").left05
-			h3 Nicolas<br />Kayser-Bril 
-			p=_("CEO &bullet; Data-journalist")
-		li.span2
-			.pp
-				img(src="/images/team/pr.jpg")
-			.link
-				a(href="http://twitter.com/pirhoo", rel='external')
-					img(src="/images/twitter-bird-dark-bgs.png").left05
-			h3 Pierre<br />Romera 
-			p=_("CTO &bullet; Developer")
-		li.span2
-			.pp
-				img(src="/images/team/alb.jpg")
-			.link
-				a(href="http://twitter.com/annelisebouyer", rel='external')
-					img(src="/images/twitter-bird-dark-bgs.png").left05
-			h3 Anne-Lise<br />Bouyer 
-			p=_("Project manager")
-		li.span2
-			.pp
-				img(src="/images/team/ed.jpg")
-			.link
-				a(href="http://twitter.com/vied12", rel='external')
-					img(src="/images/twitter-bird-dark-bgs.png").left05
-			h3 Edouard<br />Richard 
-			p=_("Developer")
-
-	-if( about )
-		hr.soften
-
-		#about
-			.row
-				.span10.offset1
-					h2 !{about.title}
-					article !{about.content}
+	.container.top40
+		if manifest
+			#manifest
+				.row
+					.span10.offset1
+						h2 !{manifest.title}
+						article !{manifest.content}

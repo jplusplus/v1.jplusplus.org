@@ -10,6 +10,7 @@
     , "memory-cache"    : "latest"
     , "async"           : "latest"
     , "i18n"            : "0.3.5"
+    , "config"          : "latest"
   }
   , "engines": {
     "node": "0.6.18",

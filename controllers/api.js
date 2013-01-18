@@ -1,6 +1,7 @@
 var rest = require('restler')
  , async = require('async')
- , cache = require('memory-cache');
+ , cache = require('memory-cache')
+, config = require('config');
 
 
 module.exports=function() { };
@@ -23,7 +24,7 @@ module.exports.getPosts = function(lang, complete) {
     function getFromAPI() {
 
       // get_category_index request from the external "WordPress API"
-      rest.get("http://oeildupirate.com/jplusplus/?count=100&json=1&custom_fields=siteurl&lang=" + lang).on("complete", function(data) {
+      rest.get(config.api + "?count=100&json=1&custom_fields=siteurl&lang=" + lang).on("complete", function(data) {
 
         // Filters custom fields
         for(var index in data.posts) {
@@ -63,7 +64,7 @@ module.exports.getPage = function(id, lang, complete) {
     // Get data from the API 
     function getFromAPI() {
 
-      var uri  = "http://oeildupirate.com/jplusplus/";
+      var uri  = config.api;
           uri += isNaN( parseFloat(id) ) ? id + "?" : "?p=" + id;
 
       // get_category_index request from the external "WordPress API"

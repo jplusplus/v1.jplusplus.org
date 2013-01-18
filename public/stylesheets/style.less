@@ -566,6 +566,137 @@ header {
 	}
 }
 
+#jpp-intro {
+	margin:0;
+	margin-top:60px;
+	background:@linkColor;
+	color:white;
+	font-family: 'Dinl', sans-serif;
+	font-size:16px;
+	font-weight:bold;
+	padding:5px 0;
+}
+
+
+
+#jpp-network {
+	position:relative;
+	overflow:hidden;
+	.box-shadow(~"0 0 80px 0 #B4131D inset, 0 1px 0 0 rgba(255,255,255,1)");
+	border:1px solid fade(#B4131D, 40%);
+	
+	.world {
+		width:100%;
+		min-width:100%;
+		max-width:100%;
+		.opacity(80);
+	}
+
+	.place-list {
+		margin:0;
+		padding:0;
+		a {
+			padding:20px;
+			background:#E2D6D3;
+			display:block;
+			font-size:18px;
+			font-weight:bold;
+			text-align:center;
+		}
+	}
+	.place-markers {
+		position:absolute;
+		top:0;
+		left:0;
+		bottom:0;
+		right:0;
+		padding:0;
+		margin:0;
+		
+		.place {
+			@markerWidth:100px;
+			@markerTickWidth:6px;
+			list-style:none;
+			margin:0;
+			padding:0;
+			
+			position:absolute;
+			top:0;
+			left:0;
+			
+			width:@markerWidth;
+			height:0;
+			text-align:center;
+			
+			&.paris { top:53%; left:48%; }
+			&.berlin { top:39%; left:54%; }
+			&.stockholm { top:16.6%; left:57%; }
+			
+			a {
+				font-family: 'Dinl', sans-serif;
+				font-weight:bold;
+				position:relative;
+				z-index:10;
+				display:block;
+				
+				position:absolute;		
+				width:@markerWidth;		
+				bottom:@markerTickWidth;
+				left:@markerWidth/-2px;
+				padding:3px 0;
+				text-align:center;
+
+				.bg {
+					position:relative;
+					padding:3px 6px;
+					background:@linkColor;	
+					color:white;				
+					.box-shadow(0 0 10px 0 fade(@linkColor, 60%) );		
+					.border-radius(2px);					
+				}
+				
+				
+				
+				&:hover {
+					text-decoration:none;	
+					.bg:before {
+						right:-16px;
+						color:white;
+					}								
+				}
+
+				& .bg:before {
+					content:"▸";
+					line-height:20px;
+					font-size:16px;
+					color:@linkColor;
+					position:absolute;
+					z-index:-1;
+					top:0;
+					bottom:0;
+					right:0;
+					width:20px;
+					background:@linkColor;
+					.border-radius(0 2px 2px 0);
+					.transition(0.4s);
+				}
+				
+				&:after {
+					content:"";
+					border:@markerTickWidth transparent solid;
+					border-top:@markerTickWidth solid @linkColor;
+					position:absolute;
+					top:99%;
+					left:50%;
+					margin-top:-1px;
+					margin-left:-1px*@markerTickWidth/2px;
+				}
+			}
+			
+		}
+	}
+}
+
 
 footer {
 

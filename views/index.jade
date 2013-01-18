@@ -26,9 +26,9 @@ include layouts/menu
 			li
 				a(href="//stockholm.jplusplus.org") Stockholm
 
-	.container.top40
-		if manifest
-			#manifest
+	if manifest
+		.container.top40
+			#manifest.rich-text
 				.row
 					.span10.offset1
 						h2 !{manifest.title}

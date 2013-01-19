@@ -52,8 +52,8 @@ module.exports =  function(app, db, controllers) {
 				break;
 
 			default:
-				//parisBerlinRoute(req, res, subdomain);
-				rootRoute(req, res, subdomain);
+				parisBerlinRoute(req, res, subdomain);
+				//rootRoute(req, res, subdomain);
 				break;
 
 		}

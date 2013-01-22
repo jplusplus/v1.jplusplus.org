@@ -52,11 +52,7 @@ module.exports =  function(app, db, controllers) {
 				break;
 
 			default:
-				if(false || req.query.beta !== undefined) {
-					rootRoute(req, res, subdomain);
-				} else {
-					parisBerlinRoute(req, res, subdomain);
-				}
+				rootRoute(req, res, subdomain);				
 				break;
 
 		}

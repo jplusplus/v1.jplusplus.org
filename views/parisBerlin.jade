@@ -3,6 +3,11 @@
 include layouts/menu
 #main.container
 
+
+    if locals.about && about.lang != session.language        
+        .alert.alert-info.top30.left50.right50
+            =_("This page is only available in English. We're working on translating it in your language.")  
+
     #portfolio
         ul.unstyled.js-wrapper.row
             - if(typeof posts !== "array")

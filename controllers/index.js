@@ -67,7 +67,7 @@ module.exports =  function(app, db, controllers) {
 	 * Chnage the user language
 	 */
 	app.get('/lang/:ln', function(req, res){
-		req.session.language = ["fr", "en", "de"].indexOf(req.params.ln) > -1 ? req.params.ln : "fr";		
+		req.session.language = ["fr", "en", "de", "se"].indexOf(req.params.ln) > -1 ? req.params.ln : "en";		
 		res.redirect(req.query.path || "back" || "/");
 	});
 
@@ -108,7 +108,15 @@ var parisBerlinRoute = function(req, res, subdomain) {
 	async.parallel({
 	    getPosts: function(callback){
 	        api.getPosts(req.session.language, function(posts) {
-	          callback(null, posts);
+	        	var defaultLanguage = "en";
+	        	// If no posts, load the english ones
+	        	if(posts.length === 0 && req.session.language != defaultLanguage) {
+			        api.getPosts(defaultLanguage, function(posts) {
+	          			callback(null, posts);
+			        });
+	        	} else {
+	          		callback(null, posts);
+	        	}
 	        });
 	    },
 	    getAbout: function(callback){
@@ -187,6 +195,6 @@ var rootRoute = function(req, res, subdomain) {
  * @description Get the current user lang according to the given request
  */
 module.exports.getUserLang = function(request) {	
-	return request.session.language || i18n.getLocale(request) || "fr";
+	return request.session.language || i18n.getLocale(request) || "en";
 };
 

@@ -22,17 +22,24 @@ header {
 	h1 {
 		
 		white-space:nowrap;
-		color:@linkColor;		
+		color:@linkColor;	
+		line-height:1.1em;	
 
 		a, a:hover, a:visited {
 			color:inherit;
 			text-decoration: inherit;
 		}
 
-		small {
+		small, .city {
 			font-size:25px;
-			padding-top:1px;		
+			padding-top:0;		
 			color:black;
+			font-weight:normal;
+			color:#888888;
+			
+			&.city {
+				padding-left:4px;
+			}
 		}
 	}
 }

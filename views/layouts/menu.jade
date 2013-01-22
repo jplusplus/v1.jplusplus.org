@@ -1,13 +1,19 @@
 .container
 	header.top20
 		.row
-			.span8
+			.span7
 				.logo.left50.pull-left.right30
 					img(src="/images/jpp.png")
 				h1
-					a(href="/") Journalism++<br />
-					small=_("we build data-first newsrooms")
-			.span4
+					a(href="/") Journalism++
+					
+					if locals.city
+						span.city!=" | " + locals.city + "<br />"
+					else
+						!="<br />"
+
+					small=_("Data-driven stories")
+			.span5
 				ul.tr.unstyled.select-lang.right50 									
 					- if(typeof about != "undefined")
 						li.about

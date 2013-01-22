@@ -47,13 +47,16 @@ module.exports =  function(app, db, controllers) {
 				parisBerlinRoute(req, res, subdomain);
 				break;
 
-			case "root":
-				rootRoute(req, res, subdomain);
+			case "stockholm":
+				res.redirect("http://jplusplus.se");
 				break;
 
 			default:
-				parisBerlinRoute(req, res, subdomain);
-				//rootRoute(req, res, subdomain);
+				if(false || req.query.beta !== undefined) {
+					rootRoute(req, res, subdomain);
+				} else {
+					parisBerlinRoute(req, res, subdomain);
+				}
 				break;
 
 		}
@@ -135,7 +138,8 @@ var parisBerlinRoute = function(req, res, subdomain) {
 					, "/javascripts/global.js"																	
 				],
 				posts: results.getPosts,
-				about: results.getAbout
+				about: results.getAbout,
+				city: subdomain ? subdomain.charAt(0).toUpperCase() + subdomain.slice(1) : undefined
 			}
 		);
 

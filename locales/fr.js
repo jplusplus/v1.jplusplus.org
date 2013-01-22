@@ -16,5 +16,7 @@
 	"Well... It's ambarrassing!": "Well... It's ambarrassing!",
 	"We're turning <span class='link-color'>one</span>!": "We're turning <span class='link-color'>one</span>!",
 	"This page is only available in English. We're working on translating it in your language.": "This page is only available in English. We're working on translating it in your language.",
-	"Journalism++ is a network of Data-Journalists that aims to build great stories and tools with data.": "Journalism++ is a network of Data-Journalists that aims to build great stories and tools with data."
+	"Journalism++ is a network of Data-Journalists that aims to build great stories and tools with data.": "Journalism++ is a network of Data-Journalists that aims to build great stories and tools with data.",
+	"data-driven stories": "data-driven stories",
+	"Data-driven stories": "Data-driven stories"
 }

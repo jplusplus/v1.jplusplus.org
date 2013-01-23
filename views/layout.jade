@@ -15,7 +15,7 @@ html(class='no-js', lang='en')
 
     title!= typeof title !== "undefined" ? title : "Journalism++"
 
-    meta(name='description', content='We founded Journalism++ to accompany newsrooms in their transitions towards the web of data. From data collection to analysis to publishing, our expertise is known worldwide.')
+    meta(name='description', content=_("Journalism++ is a network of datajournalists that aims to build great stories and tools with data."))
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
 
     - if(typeof posts != "undefined")       
@@ -25,6 +25,8 @@ html(class='no-js', lang='en')
 
     meta(property="og:image",content="http://jplusplus.org/images/jpp.png")
     meta(property="og:image",content="http://jplusplus.org/images/jpp-orange.png")    
+    meta(property="og:image",content="http://jplusplus.org/images/jppnet_hd.jpg")
+    meta(property="og:image",content="http://jplusplus.org/images/jppnet_hd_red.jpg")
 
     meta(property="og:image",content="http://jplusplus.org/images/team/nkb.jpg")
     meta(property="og:image",content="http://jplusplus.org/images/team/pr.jpg")
@@ -32,6 +34,7 @@ html(class='no-js', lang='en')
 
     meta(property="og:url'",content="http://jplusplus.org")
     meta(property="og:title'",content="Journaslim++")
+    meta(property="og:description'",content=_("Journalism++ is a network of datajournalists that aims to build great stories and tools with data."))
     
     - if(typeof stylesheets !== "undefined")
       - stylesheets.forEach(function(item) {

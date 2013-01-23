@@ -150,13 +150,15 @@
 		
 		that.initElements();
 		
-		that.initPortfolio();
-		$(window).on("resize", that.initPortfolio);
+		if( that.el.$portfolio.length > 0 ) {
+            that.initPortfolio();
+		    $(window).on("resize", that.initPortfolio);
+    		$(".lettering").lettering();
+    		$(".lettering-lines").lettering('lines');
+    		$(".lettering-words").lettering('words');
+    		setTimeout(that.slabTextHeadlines, 1000);
+        }
 
-		$(".lettering").lettering();
-		$(".lettering-lines").lettering('lines');
-		$(".lettering-words").lettering('words');
-		setTimeout(that.slabTextHeadlines, 1000);
 
 		// Smooth anchor scrolling
     $("a[href^='#']").on("click", function(event) {

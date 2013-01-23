@@ -95,17 +95,17 @@ exports.boot = function(){
   
   i18n.configure({
     // setup some locales
-    locales:['fr', 'en', 'de', 'se']
+    locales:['fr', 'en', 'de', 'sv']
   });
 
   // Register helpers for use in templates
   app.helpers({
     _: function(msg) {
-      i18n.setLocale(this.session.language || "fr");
+      i18n.setLocale(this.session.language || "en");
       return i18n.__(msg);
     },
     _n: function(singular, plural, count) {
-      i18n.setLocale(this.session.language || "fr");
+      i18n.setLocale(this.session.language || "en");
       return i18n.__n(singular, plural, count);
     },
   });

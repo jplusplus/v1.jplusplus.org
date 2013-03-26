@@ -98,16 +98,11 @@ include layouts/menu
             h3 Edouard<br />Richard 
             p=_("Developer")
 
-    -if( about )
-        hr.soften
+    hr.soften
+    
+    h2.left100=_("Clients & Partners")
 
-        #about
-            .row
-                .span10.offset1
-                    h2 !{about.title}
-                    article !{about.content}
-
-#references
+#references.bottom20
     .container
         .row    
             .active.span2.offset1
@@ -141,5 +136,16 @@ include layouts/menu
             .span2
                 img(src="/images/logo/rue89.png", alt="rue89")
             .span2
-                img(src="/images/logo/ldm.png", alt="ldm")
+                img(src="/images/logo/lemonde.png", alt="lemonde")
+
+
+.container
+    -if( about )
+
+        #about
+            .row
+                .span10.offset1
+                    h2 !{about.title}
+                    article !{about.content}
+
 

@@ -62,9 +62,8 @@
         var spanToToggle = Math.round(Math.random()*4);
         var rowToShow = Math.round(Math.random()*2);
         that.el.$referencesRow.each(function(i, row) {
-            $(row).find(".span2").eq(spanToToggle).toggleClass("active", i !== rowToShow);
-        })
-        console.log(spanToToggle, rowToShow);
+            $(row).find(".span2").eq(spanToToggle).toggleClass("active", i == rowToShow);
+        });
     };
 
 	/**
@@ -172,7 +171,7 @@
     		setTimeout(that.slabTextHeadlines, 1000);
         }
 
-        setInterval(that.toggleReferences, 1000);
+        setInterval(that.toggleReferences, 1500);
 
 
 		// Smooth anchor scrolling

@@ -10,7 +10,7 @@ include layouts/menu
 
     #portfolio
         ul.unstyled.js-wrapper.row
-            - if(typeof posts !== "array")
+            - if(posts && typeof posts !== "array")
                 - posts.forEach(function(item) {
                     li.js-card
                         .view
@@ -106,3 +106,40 @@ include layouts/menu
                 .span10.offset1
                     h2 !{about.title}
                     article !{about.content}
+
+#references
+    .container
+        .row    
+            .active.span2.offset1
+                img(src="/images/logo/afp.png", alt="afp")
+            .active.span2
+                img(src="/images/logo/guardian.png", alt="guardian")
+            .active.span2
+                img(src="/images/logo/arte.png", alt="arte")
+            .active.span2
+                img(src="/images/logo/abzv.png", alt="abzv")
+            .active.span2
+                img(src="/images/logo/esj.png", alt="esj")
+        .row     
+            .span2.offset1
+                img(src="/images/logo/lemonde.png", alt="lemonde")
+            .span2
+                img(src="/images/logo/scpo.png", alt="scpo")
+            .span2
+                img(src="/images/logo/lexpress.png", alt="lexpress")
+            .span2
+                img(src="/images/logo/nouvelobs.png", alt="nouvelobs")
+            .span2
+                img(src="/images/logo/nzz.png", alt="nzz")
+        .row
+            .span2.offset1
+                img(src="/images/logo/afp.png", alt="afp")
+            .span2
+                img(src="/images/logo/idf.png", alt="idf")
+            .span2                
+                img(src="/images/logo/owni.png", alt="owni")
+            .span2
+                img(src="/images/logo/rue89.png", alt="rue89")
+            .span2
+                img(src="/images/logo/ldm.png", alt="ldm")
+

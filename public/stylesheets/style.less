@@ -866,3 +866,55 @@ footer {
 	font-size:14px;
 	line-height:20px;
 }
+
+#references {
+	margin-top:20px;
+	height:100px;
+	background:white;
+	.opacity(70);
+	.box-shadow(0 1px 4px 0 fade(#000, 50) inset);	
+	
+	.container {
+
+		position:relative;
+		height:100px;
+		
+		.row {
+			position:absolute;
+			top:10px;
+			left:0;
+			overflow:hidden;
+			
+			.span2 {
+				.opacity(0);
+				//.scale(2);
+				.transition(0.6s);
+				position:relative;
+				height:80px;
+				line-height:80px;
+				text-align:center;
+				background:white;
+				
+				&:after {			
+					content:"";		
+					position:absolute;
+					right:-15px;
+					top:0;
+					height: 80px;
+					width:1px;
+					background-image: -webkit-linear-gradient(bottom, fade(black,0), fade(black,10), fade(black,0));
+					background-image:    -moz-linear-gradient(bottom, fade(black,0), fade(black,10), fade(black,0));
+					background-image:     -ms-linear-gradient(bottom, fade(black,0), fade(black,10), fade(black,0));
+					background-image:      -o-linear-gradient(bottom, fade(black,0), fade(black,10), fade(black,0));
+					border: 0;
+				}
+
+				&.active {
+					.opacity(100);				
+					.scale(1);
+					z-index:100;
+				}
+			}
+		}
+	}
+}

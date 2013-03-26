@@ -8,8 +8,9 @@
 	 */
 	that.initElements = function() {
 		that.el = {
-			$portfolio 		: $("#portfolio"),
-			$portfolioNav : $("#portfolio-nav")
+			$portfolio 	  : $("#portfolio"),
+            $portfolioNav : $("#portfolio-nav"),
+            $referencesRow: $("#references .row")
 		};
 	};
 
@@ -53,6 +54,18 @@
 		});
 
 	};
+
+    /**
+     * 
+     */
+    that.toggleReferences = function() {
+        var spanToToggle = Math.round(Math.random()*4);
+        var rowToShow = Math.round(Math.random()*2);
+        that.el.$referencesRow.each(function(i, row) {
+            $(row).find(".span2").eq(spanToToggle).toggleClass("active", i !== rowToShow);
+        })
+        console.log(spanToToggle, rowToShow);
+    };
 
 	/**
 	 * @function
@@ -158,6 +171,8 @@
     		$(".lettering-words").lettering('words');
     		setTimeout(that.slabTextHeadlines, 1000);
         }
+
+        setInterval(that.toggleReferences, 1000);
 
 
 		// Smooth anchor scrolling

@@ -106,7 +106,7 @@ var parisBerlinRoute = function(req, res, subdomain) {
 	        api.getPosts(req.session.language, function(posts) {
 	        	var defaultLanguage = "en";
 	        	// If no posts, load the english ones
-	        	if(posts.length === 0 && req.session.language != defaultLanguage) {
+	        	if(posts && posts.length === 0 && req.session.language != defaultLanguage) {
 			        api.getPosts(defaultLanguage, function(posts) {
 	          			callback(null, posts);
 			        });

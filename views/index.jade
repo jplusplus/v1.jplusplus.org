@@ -2,12 +2,6 @@
 
 include layouts/menu
 #main
-	
-	if locals.manifest && manifest.lang != session.language        
-		.container	
-			.alert.alert-info.top30.left50.right50            
-				=_("This page is only available in English. We're working on translating it in your language.")  
-
 
 	#jpp-intro
 		.container
@@ -39,3 +33,9 @@ include layouts/menu
 					.span10.offset1
 						h2 !{manifest.title}
 						article !{manifest.content}
+
+	if locals.manifest && manifest.lang != session.language        
+		.container	
+			.alert.alert-info.top30.left50.right50            
+				=_("This page is only available in English. We're working on translating it in your language.")  
+

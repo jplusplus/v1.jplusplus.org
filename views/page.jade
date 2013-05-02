@@ -7,12 +7,13 @@ include layouts/menu
       a(href="/")=_("← Back to the homepage!")
   .top20.row
     .span7     
-      .left50.top40
+      .left50.top40     
+        h2=page.title
+        .rich-text!=page.content
+        
         if page.lang != session.language && page.lang == "en"
           .alert.alert-info
-            =_("This page is only available in English. We're working on translating it in your language.")        
-        h2=page.title
-        .rich-text!=page.content  
+            =_("This page is only available in English. We're working on translating it in your language.")   
     .span4.offset1
       .right50.top40
         - if(typeof page.thumbnail != "undefined")

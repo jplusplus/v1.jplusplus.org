@@ -4,13 +4,13 @@
   , "private": false
   , "dependencies": {  	 
       "express"         : "2.5.10"
-    , "less-middleware" : "latest"
-    , "jade"            : "latest"
-    , "restler"         : "latest"
-    , "memory-cache"    : "latest"
-    , "async"           : "latest"
+    , "less-middleware" : "0.1.8"
+    , "jade"            : "0.27.7"
+    , "restler"         : "2.0.1"
+    , "memory-cache"    : "0.0.4"
+    , "async"           : "0.1.22"
     , "i18n"            : "0.3.5"
-    , "config"          : "latest"
+    , "config"          : "0.4.18"
   }
   , "engines": {
     "node": "0.10.5",

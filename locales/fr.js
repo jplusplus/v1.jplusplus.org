@@ -16,5 +16,6 @@
 	"This page is only available in English. We're working on translating it in your language.": "Cette page n'est disponible qu'en anglais. Nous sommes en train de la traduire en français.",
 	"Data-driven stories": "Data-driven stories",
 	"Journalism++ is a network of datajournalists that aims to build great stories and tools with data.": "Journalism++ est un réseau de journalistes de données qui développent des récits à partir de données.",
-	"Clients & Partners": "Clients & Partners"
+	"Clients & Partners": "Clients & Partners",
+	"Well... It's ambarrassing!": "Well... It's ambarrassing!"
 }

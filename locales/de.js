@@ -12,5 +12,5 @@
 	"This page is only available in English. We're working on translating it in your language.": "Diese Seite ist leider nur auf Englisch verfügbar. Wollen Sie sie übersetzen? Schicken Sie uns eine Email unter contact@jplusplus.org",
 	"We're turning <span class='link-color'>one</span>!": "We're turning <span class='link-color'>one</span>!",
 	"Data-driven stories": "Data-driven stories",
-	"Journalism++ is a network of datajournalists that aims to build great stories and tools with data.": "Journalism++ ist ein Netzwerk von Datenjournalisten, die Geschichten mit Daten entwickeln."
+	"Journalism++ is a network of datajournalists that aims to build great stories and tools with data.": "Journalism++ ist ein Netzwerk von Datenjournalisten, die aus großen Datenmengen relevante, interessante und verblüffende Geschichten filtern."
 }

@@ -92,7 +92,7 @@ var parisBerlinRoute = function(req, res, subdomain) {
 
 	async.parallel({
 	    getPosts: function(callback){
-	        api.getPosts(req.session.language, function(posts) {
+	        api.getPosts(req.session.language, subdomain, function(posts) {
 	        	var defaultLanguage = "en";
 	        	// If no posts, load the english ones
 	        	if(posts && posts.length === 0 && req.session.language != defaultLanguage) {
@@ -128,7 +128,7 @@ var amsterdamRoute = function(req, res, subdomain) {
 
 	async.parallel({
 	    getPosts: function(callback){
-	        api.getPosts(req.session.language, function(posts) {
+	        api.getPosts(req.session.language, subdomain, function(posts) {
 	        	var defaultLanguage = "en";
 	        	// If no posts, load the english ones
 	        	if(posts && posts.length === 0 && req.session.language != defaultLanguage) {

@@ -31,7 +31,7 @@ app.configure(function(){
 
   // Assets managers
   var pubDir = path.join(__dirname, "public");
-  app.use( require("connect-assets")({src: pubDir, build: true}) )
+  app.use( require("connect-assets")({src: pubDir}) )
   app.use( express.static(pubDir) )
 
 

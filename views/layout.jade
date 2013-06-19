@@ -35,12 +35,11 @@ html(class='no-js', lang='en')
     meta(property="og:url'",content="http://jplusplus.org")
     meta(property="og:title'",content="Journaslim++")
     meta(property="og:description'",content=_("Journalism++ is a network of datajournalists that aims to build great stories and tools with data."))
-    
-    
+        
     block css
-      link(href="http://fonts.googleapis.com/css?family=Share:400,700|Leckerli+One|Averia+Sans+Libre:400,700,300,300italic,400italic,700italic", type='text/css', rel='stylesheet')
-      link(href="/stylesheets/style.css", type='text/css', rel='stylesheet')
-      link(href="/stylesheets/vendor/slabtext.css", type='text/css', rel='stylesheet')
+      !=css("http://fonts.googleapis.com/css?family=Share:400,700|Leckerli+One|Averia+Sans+Libre:400,700,300,300italic,400italic,700italic")
+      !=css("/stylesheets/style.css")
+      !=css("/stylesheets/vendor/slabtext.css")
 
   body
     //if lte IE 7
@@ -57,18 +56,18 @@ html(class='no-js', lang='en')
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
     script window.jQuery || document.write('<script src=/javascripts/vendor/jquery.min.js><\\/script>')
 
-    script(src='/javascripts/vendor/modernizr.custom.js')
-    script(src='/javascripts/vendor/less.min.js')
+    !=js('/javascripts/vendor/modernizr.custom.js')
+    !=js('/javascripts/vendor/less.min.js')
 
     block js
-      script(src="/javascripts/vendor/bootstrap/bootstrap.min.js")
-      script(src="/javascripts/vendor/iScroll.class.js")
-      script(src="/javascripts/vendor/jquery.scrollTo-min.js")
-      script(src="/javascripts/vendor/jquery.µSlide.js")
-      script(src="/javascripts/vendor/jquery.lettering-0.6.1.min.js")
-      script(src="/javascripts/vendor/jquery.slabtext.min.js")
-      script(src="/javascripts/vendor/glfx.js")
-      script(src="/javascripts/global.js")
+      !=js("/javascripts/vendor/bootstrap/bootstrap.min.js")
+      !=js("/javascripts/vendor/iScroll.class.js")
+      !=js("/javascripts/vendor/jquery.scrollTo-min.js")
+      !=js("/javascripts/vendor/jquery.µSlide.js")
+      !=js("/javascripts/vendor/jquery.lettering-0.6.1.min.js")
+      !=js("/javascripts/vendor/jquery.slabtext.min.js")
+      !=js("/javascripts/vendor/glfx.js")
+      !=js("/javascripts/global.js")
 
     script
       var _gaq=[['_setAccount','UA-26208352-1'],['_trackPageview']];

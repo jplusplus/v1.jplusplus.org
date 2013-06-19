@@ -1,3 +1,5 @@
-public/*    # public files
+public      # public files
+views       # views
 README.md   # a specific file
 node_modules
+.git

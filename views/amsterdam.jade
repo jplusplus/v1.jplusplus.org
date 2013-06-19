@@ -1,0 +1,46 @@
+extends layout
+block body
+    include layouts/menu
+    #main.container
+        if locals.about && about.lang != session.language        
+            .alert.alert-info.top30.left50.right50            
+                =_("This page is only available in English. We're working on translating it in your language.")  
+
+
+        hr.soften
+
+        ul#team.row.no-bullet.top40
+            li.span2.offset3
+                .pp
+                    img(src="/images/team/ddjelle.jpg")
+                .link
+                    a(href="http://twitter.com/ddjelle", rel='external')
+                        img(src="/images/twitter-bird-dark-bgs.png").left05
+                h3 Jelle<br />Kamsma
+                p=_("Datajournalist")
+            li.span2
+                .pp
+                    img(src="/images/team/yordidam.jpg")
+                .link
+                    a(href="http://twitter.com/yordidam", rel='external')
+                        img(src="/images/twitter-bird-dark-bgs.png").left05
+                h3 Yordi<br />Dam
+                p=_("Designer")
+            li.span2
+                .pp
+                    img(src="/images/team/ehwillems.jpg")
+                .link
+                    a(href="http://twitter.com/ehwillems", rel='external')
+                        img(src="/images/twitter-bird-dark-bgs.png").left05
+                h3 Erik<br />Willems
+                p=_("Programmer")
+
+    hr.soften
+
+    .container
+        -if( about )
+            #about
+                .row
+                    .span10.offset1
+                        h2 !{about.title}
+                        article !{about.content}

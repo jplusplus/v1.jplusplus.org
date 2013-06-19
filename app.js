@@ -44,32 +44,18 @@ app.configure(function(){
   app.use(function(req, res, next) {
 
     res.locals._ = function(msg) {
-      if(req.session)
-        i18n.setLocale(req.session.language || "en");
+      i18n.setLocale(req.session.language || "en");
       return i18n.__(msg);
     };
 
     res.locals._n = function(singular, plural, count) {
-      if(req.session)
-        i18n.setLocale(req.session.language || "en");
+      i18n.setLocale(req.session.language || "en");
       return i18n.__n(singular, plural, count);
     };
 
-    res.locals.currentUser = function () {
-      return req.session.currentUser;
-    };
-
-    res.locals.currentRoute = function() {
-      return req.route;
-    };
-
-    res.locals.session = function(res){
-      return req.session;
-    };
-
-    res.locals.path = function() {
-      return req.path;
-    };
+    res.locals.currentRoute = req.route;
+    res.locals.session = req.session;  
+    res.locals.path = req.path;    
 
     next();
   });

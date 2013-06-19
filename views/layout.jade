@@ -37,7 +37,7 @@ html(class='no-js', lang='en')
     meta(property="og:description'",content=_("Journalism++ is a network of datajournalists that aims to build great stories and tools with data."))
         
     block css
-      !=css("http://fonts.googleapis.com/css?family=Share:400,700|Leckerli+One|Averia+Sans+Libre:400,700,300,300italic,400italic,700italic")
+      link(href="http://fonts.googleapis.com/css?family=Share:400,700|Leckerli+One|Averia+Sans+Libre:400,700,300,300italic,400italic,700italic", type='text/css', rel="stylesheet")
       !=css("/stylesheets/style.css")
       !=css("/stylesheets/vendor/slabtext.css")
 
@@ -54,7 +54,7 @@ html(class='no-js', lang='en')
     include layouts/footer
 
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
-    script window.jQuery || document.write('<script src=/javascripts/vendor/jquery.min.js><\\/script>')
+    script. window.jQuery || document.write('<script src=/javascripts/vendor/jquery.min.js><\\/script>')
 
     !=js('/javascripts/vendor/modernizr.custom.js')
     !=js('/javascripts/vendor/less.min.js')
@@ -69,7 +69,7 @@ html(class='no-js', lang='en')
       !=js("/javascripts/vendor/glfx.js")
       !=js("/javascripts/global.js")
 
-    script
+    script.
       var _gaq=[['_setAccount','UA-26208352-1'],['_trackPageview']];
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
       g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';

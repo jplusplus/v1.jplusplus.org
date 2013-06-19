@@ -26,7 +26,6 @@ module.exports =  function(app, db, controllers) {
 	 */
 	app.get('/', function(req, res){
 
-		
 		// Refresh the cache
 		if(typeof req.query["refresh-cache"] != "undefined") {
 			console.log("Cache refresfed.");
@@ -75,11 +74,7 @@ module.exports =  function(app, db, controllers) {
 	 * Birthday page 
 	 */
 	app.get('/birthday/2012', function(req, res) {
-		res.render("birthday",
-			{ 
-				title: 'Journalism++'
-			}
-		);
+		res.render("birthday", {});
 	});
 
 	app.use(function(req, res, next){
@@ -118,8 +113,7 @@ var parisBerlinRoute = function(req, res, subdomain) {
 	function(err, results){
 
 		res.render('parisBerlin.jade', 
-			{ 
-				title: 'Journalism++', 
+			{ 				
 				posts: results.getPosts,
 				about: results.getAbout,
 				city: subdomain ? subdomain.charAt(0).toUpperCase() + subdomain.slice(1) : undefined
@@ -132,6 +126,37 @@ var parisBerlinRoute = function(req, res, subdomain) {
 
 var amsterdamRoute = function(req, res, subdomain) {
 
+	async.parallel({
+	    getPosts: function(callback){
+	        api.getPosts(req.session.language, function(posts) {
+	        	var defaultLanguage = "en";
+	        	// If no posts, load the english ones
+	        	if(posts && posts.length === 0 && req.session.language != defaultLanguage) {
+			        api.getPosts(defaultLanguage, function(posts) {
+	          			callback(null, posts);
+			        });
+	        	} else {
+	          		callback(null, posts);
+	        	}
+	        });
+	    },
+	    getAbout: function(callback){
+	        api.getPage("about-amsterdam", req.session.language, function(page) {
+	          callback(null, page);
+	        });
+	    }
+	},
+	function(err, results){
+
+		res.render('amsterdam.jade', 
+			{ 				
+				posts: results.getPosts,
+				about: results.getAbout,
+				city: subdomain ? subdomain.charAt(0).toUpperCase() + subdomain.slice(1) : undefined
+			}
+		);
+
+	});
 }
 
 var rootRoute = function(req, res, subdomain) {
@@ -144,14 +169,7 @@ var rootRoute = function(req, res, subdomain) {
 	    }
 	},
 	function(err, results){
-
-		res.render('index.jade', 
-			{ 
-				title: 'Journalism++', 
-				manifest: results.getManifest
-			}
-		);
-
+		res.render('index.jade', { manifest: results.getManifest });
 	});
 }
 

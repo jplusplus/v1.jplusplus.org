@@ -36,11 +36,11 @@ html(class='no-js', lang='en')
     meta(property="og:title'",content="Journaslim++")
     meta(property="og:description'",content=_("Journalism++ is a network of datajournalists that aims to build great stories and tools with data."))
     
-    - if(typeof stylesheets !== "undefined")
-      - stylesheets.forEach(function(item) {
-        - var rel = item.indexOf(".less") > -1 ? 'stylesheet/less' : 'stylesheet';
-        link(href=item, type='text/css', rel='stylesheet')
-      - })
+    
+    block css
+      link(href="http://fonts.googleapis.com/css?family=Share:400,700|Leckerli+One|Averia+Sans+Libre:400,700,300,300italic,400italic,700italic", type='text/css', rel='stylesheet')
+      link(href="/stylesheets/style.css", type='text/css', rel='stylesheet')
+      link(href="/stylesheets/vendor/slabtext.css", type='text/css', rel='stylesheet')
 
   body
     //if lte IE 7
@@ -51,7 +51,7 @@ html(class='no-js', lang='en')
           | <b><a href="http://browsehappy.com/">Upgrade to a different browser</a></b> or
           | <b><a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a></b>
           | to experience this site.
-    != body
+    block body    
     include layouts/footer
 
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
@@ -60,10 +60,15 @@ html(class='no-js', lang='en')
     script(src='/javascripts/vendor/modernizr.custom.js')
     script(src='/javascripts/vendor/less.min.js')
 
-    - if(typeof javascripts !== "undefined")
-      - javascripts.forEach(function(item) {
-        script(src=item, type='text/javascript')
-      - }) 
+    block js
+      script(src="/javascripts/vendor/bootstrap/bootstrap.min.js")
+      script(src="/javascripts/vendor/iScroll.class.js")
+      script(src="/javascripts/vendor/jquery.scrollTo-min.js")
+      script(src="/javascripts/vendor/jquery.µSlide.js")
+      script(src="/javascripts/vendor/jquery.lettering-0.6.1.min.js")
+      script(src="/javascripts/vendor/jquery.slabtext.min.js")
+      script(src="/javascripts/vendor/glfx.js")
+      script(src="/javascripts/global.js")
 
     script
       var _gaq=[['_setAccount','UA-26208352-1'],['_trackPageview']];

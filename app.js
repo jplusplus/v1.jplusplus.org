@@ -3,6 +3,7 @@
  */
 var express = require('express')
   , fs      = require('fs')
+  , http    = require('http')
   , i18n    = require("i18n")
   , path    = require("path")
   , config  = require('config');
@@ -10,130 +11,86 @@ var express = require('express')
 /**
  * Global objects
  */
-var app = sequelize = null;
+var app = express();
 
-
-/**
- * @author Pirhoo
- *
- * @function
- * @description Loads all requires automaticly from a directory
- */
-function loadAllRequires(dirname, where) {  
-  // Change the root of the directory to analyse following the given parameter
-  var dir = dirname || __dirname;
-  // Var to record the require
-  where = typeof(where) === "object" ? where : {};    
+// Configuration
+app.configure(function(){
   
-  // Grab a list of our route files/directories
-  fs.readdirSync(dir).forEach(function(name){
-    
-    // Find the file path
-    var path = dir + '/' + name
-    // Query the entry
-     , stats = fs.lstatSync(path)
-    // Name simplitfy
-     , slug  = name.replace(/(\.js)/, "");
-
-    // If it's a directory...
-    if( stats.isDirectory() ) {
-      // Recursive calling
-      loadAllRequires(path);      
-    // If it's a regular file...
-    }else {      
-      // Require the route file with app and sequelize variables
-      where[slug] = require(path)(app, sequelize);    
-    }
-  });
-}
-
-
-/**
-* @author Pirhoo
-*
-* @function
-* @description
-*/
-exports.boot = function(){
-
   // Environement configuration
-  process.env.PORT = process.env.PORT || 3000;
-
-  // Creates Express server
-  app = module.exports = express.createServer();
+  app.set("port", process.env.PORT || 3000);
+  app.set('views', __dirname + '/views');
+  app.set('view engine', 'jade');
   
-  // Configuration
-  app.configure(function(){
-    
-    app.set('views', __dirname + '/views');
-    app.set('view engine', 'jade');
-    
-    // using 'accept-language' header to guess language settings
-    app.use(i18n.init);
+  // using 'accept-language' header to guess language settings
+  app.use(i18n.init);
 
-    app.use(express.bodyParser());
-    app.use(express.methodOverride());
-    app.use(express.cookieParser());
-    app.use(express.session({ secret: 'L7mdcS4K5JZI097PQWTaVdTGp4uZi4ifgF0ht2bkET' }));
+  app.use(express.bodyParser());
+  app.use(express.methodOverride());
+  app.use(express.cookieParser());
+  app.use(express.session({ secret: 'L7mdcS4K5JZI097PQWTaVdTGp4uZi4ifgF0ht2bkET' }));
 
-    // Assets managers
-    var pubDir = path.join(__dirname, "public");
-    app.use( require("connect-assets")({src: pubDir}) )
-    app.use( express.static(pubDir) )
+  // Assets managers
+  var pubDir = path.join(__dirname, "public");
+  app.use( require("connect-assets")({src: pubDir}) )
+  app.use( express.static(pubDir) )
 
-  });
 
-  app.configure('development', function(){
-    app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-  });
-
-  app.configure('production', function(){
-    app.use( express.errorHandler() );
-  });
-  
   i18n.configure({
     // setup some locales
     locales:['fr', 'en', 'de', 'sv']
   });
 
   // Register helpers for use in templates
-  app.helpers({
-    _: function(msg) {
-      i18n.setLocale(this.session.language || "en");
+  app.use(function(req, res, next) {
+
+    res.locals._ = function(msg) {
+      if(req.session)
+        i18n.setLocale(req.session.language || "en");
       return i18n.__(msg);
-    },
-    _n: function(singular, plural, count) {
-      i18n.setLocale(this.session.language || "en");
+    };
+
+    res.locals._n = function(singular, plural, count) {
+      if(req.session)
+        i18n.setLocale(req.session.language || "en");
       return i18n.__n(singular, plural, count);
-    },
-  });
+    };
 
-  // Dynamic view's helpers
-  app.dynamicHelpers({
-    currentUser: function (req, res) {
+    res.locals.currentUser = function () {
       return req.session.currentUser;
-    },
-    currentRoute: function(req, res) {
+    };
+
+    res.locals.currentRoute = function() {
       return req.route;
-    },
-    session: function(req, res){
+    };
+
+    res.locals.session = function(res){
       return req.session;
-    },
-    path: function(req) {
+    };
+
+    res.locals.path = function() {
       return req.path;
-    }
+    };
+
+    next();
   });
 
+  // Load every controllers
+  require("./controllers/404.js")(app)
+  require("./controllers/api.js")(app)
+  require("./controllers/index.js")(app)
+  require("./controllers/page.js")(app)
 
-  // all models and controller on this scope
-  app.controllers = app.models = {};
+});
 
-  // Load all controllers from the /controllers directory
-  loadAllRequires(__dirname + "/controllers", app.controllers);
+app.configure('development', function(){
+  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+});
 
-  return app;
-};
-
-exports.boot().listen(process.env.PORT, function(){
-  console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+app.configure('production', function(){
+  app.use( express.errorHandler() );
+});
+  
+// Then create the express server
+http.createServer(app).listen( app.get("port"), function() {    
+  console.log("Express server listening on port " + app.get("port"))
 });

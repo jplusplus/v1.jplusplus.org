@@ -1,159 +1,158 @@
+extends layout
+block body
+    include layouts/menu
+    #main.container
 
+        if locals.about && about.lang != session.language        
+            .alert.alert-info.top30.left50.right50            
+                =_("This page is only available in English. We're working on translating it in your language.")  
 
-include layouts/menu
-#main.container
+        #portfolio
+            ul.unstyled.js-wrapper.row
+                - if(posts && typeof posts !== "array")
+                    - posts.forEach(function(item) {
+                        li.js-card
+                            .view
+                                .wrapper
+                                    img(src=item.thumbnail)
+                                .legend
+                                    h2.slabtexted.hidden-phone !{item.title}
+                                    h2.visible-phone.tl !{item.title}
+                                    .btn.btn-primary.btn=_("See more")
+                            .about      
+                                .row    
+                                
+                                    .visible-desktop
+                                        a.back
+                                            i.icon-circle-arrow-left.icon-white
+                                            =_("Back")
+                                    
+                                        h3 !{item.title}
+                                        article !{item.content}
 
+                                        - if(item.tags.length > 0)
+                                            ul.tags.unstyled
+                                                - item.tags.forEach(function(tag) {
+                                                    li=tag.title
+                                                - })            
 
-    if locals.about && about.lang != session.language        
-        .alert.alert-info.top30.left50.right50            
-            =_("This page is only available in English. We're working on translating it in your language.")  
+                                        - if(item.siteurl)
+                                            a(href=item.siteurl, rel='external').siteurl
+                                                i.icon-globe.icon-white
+                                                =item.siteurl       
 
-    #portfolio
-        ul.unstyled.js-wrapper.row
-            - if(posts && typeof posts !== "array")
+                                    .hidden-desktop
+                                        a.back
+                                            i.icon-circle-arrow-left.icon-white
+                                            =_("Back")
+                                    
+                                        h3 !{item.title}
+                                        article !{item.content}
+
+                                        - if(item.siteurl)
+                                            a(href=item.siteurl, rel='external').siteurl
+                                                i.icon-globe.icon-white
+                                                =item.siteurl                           
+                    - })
+
+        - if(typeof posts !== "array")
+            ul#portfolio-nav.unstyled
                 - posts.forEach(function(item) {
-                    li.js-card
-                        .view
-                            .wrapper
-                                img(src=item.thumbnail)
-                            .legend
-                                h2.slabtexted.hidden-phone !{item.title}
-                                h2.visible-phone.tl !{item.title}
-                                .btn.btn-primary.btn=_("See more")
-                        .about      
-                            .row    
-                            
-                                .visible-desktop
-                                    a.back
-                                        i.icon-circle-arrow-left.icon-white
-                                        =_("Back")
-                                
-                                    h3 !{item.title}
-                                    article !{item.content}
+                        li.right10
+                - })    
 
-                                    - if(item.tags.length > 0)
-                                        ul.tags.unstyled
-                                            - item.tags.forEach(function(tag) {
-                                                li=tag.title
-                                            - })            
+        hr.soften
 
-                                    - if(item.siteurl)
-                                        a(href=item.siteurl, rel='external').siteurl
-                                            i.icon-globe.icon-white
-                                            =item.siteurl       
+        ul#team.row.no-bullet.top40
+            li.span2.offset1
+                .pp
+                    img(src="/images/team/nkb.jpg")
+                .link
+                    a(href="http://twitter.com/nicolaskb", rel='external')
+                        img(src="/images/twitter-bird-dark-bgs.png").left05
+                h3 Nicolas<br />Kayser-Bril 
+                p=_("CEO &bullet; Data-journalist")
+            li.span2
+                .pp
+                    img(src="/images/team/pr.jpg")
+                .link
+                    a(href="http://twitter.com/pirhoo", rel='external')
+                        img(src="/images/twitter-bird-dark-bgs.png").left05
+                h3 Pierre<br />Romera 
+                p=_("CTO &bullet; Developer")
+            li.span2
+                .pp
+                    img(src="/images/team/alb.jpg")
+                .link
+                    a(href="http://twitter.com/annelisebouyer", rel='external')
+                        img(src="/images/twitter-bird-dark-bgs.png").left05
+                h3 Anne-Lise<br />Bouyer 
+                p=_("Project manager")
+            li.span2
+                .pp
+                    img(src="/images/team/ed.jpg")
+                .link
+                    a(href="http://twitter.com/vied12", rel='external')
+                        img(src="/images/twitter-bird-dark-bgs.png").left05
+                h3 Edouard<br />Richard 
+                p=_("Developer")
+            li.span2
+                .pp
+                    img(src="/images/team/toutenrab.jpg")
+                .link
+                    a(href="http://twitter.com/toutenrab", rel='external')
+                        img(src="/images/twitter-bird-dark-bgs.png").left05
+                h3 Pierre<br />Bellon
+                p=_("Developer")
 
-                                .hidden-desktop
-                                    a.back
-                                        i.icon-circle-arrow-left.icon-white
-                                        =_("Back")
-                                
-                                    h3 !{item.title}
-                                    article !{item.content}
+        hr.soften
+        
+        h2.left100=_("Clients & Partners")
 
-                                    - if(item.siteurl)
-                                        a(href=item.siteurl, rel='external').siteurl
-                                            i.icon-globe.icon-white
-                                            =item.siteurl                           
-                - })
-
-    - if(typeof posts !== "array")
-        ul#portfolio-nav.unstyled
-            - posts.forEach(function(item) {
-                    li.right10
-            - })    
-
-    hr.soften
-
-    ul#team.row.no-bullet.top40
-        li.span2.offset1
-            .pp
-                img(src="/images/team/nkb.jpg")
-            .link
-                a(href="http://twitter.com/nicolaskb", rel='external')
-                    img(src="/images/twitter-bird-dark-bgs.png").left05
-            h3 Nicolas<br />Kayser-Bril 
-            p=_("CEO &bullet; Data-journalist")
-        li.span2
-            .pp
-                img(src="/images/team/pr.jpg")
-            .link
-                a(href="http://twitter.com/pirhoo", rel='external')
-                    img(src="/images/twitter-bird-dark-bgs.png").left05
-            h3 Pierre<br />Romera 
-            p=_("CTO &bullet; Developer")
-        li.span2
-            .pp
-                img(src="/images/team/alb.jpg")
-            .link
-                a(href="http://twitter.com/annelisebouyer", rel='external')
-                    img(src="/images/twitter-bird-dark-bgs.png").left05
-            h3 Anne-Lise<br />Bouyer 
-            p=_("Project manager")
-        li.span2
-            .pp
-                img(src="/images/team/ed.jpg")
-            .link
-                a(href="http://twitter.com/vied12", rel='external')
-                    img(src="/images/twitter-bird-dark-bgs.png").left05
-            h3 Edouard<br />Richard 
-            p=_("Developer")
-        li.span2
-            .pp
-                img(src="/images/team/toutenrab.jpg")
-            .link
-                a(href="http://twitter.com/toutenrab", rel='external')
-                    img(src="/images/twitter-bird-dark-bgs.png").left05
-            h3 Pierre<br />Bellon
-            p=_("Developer")
-
-    hr.soften
-    
-    h2.left100=_("Clients & Partners")
-
-#references.bottom20
-    .container
-        .row    
-            .active.span2.offset1
-                img(src="/images/logo/afp.png", alt="afp")
-            .active.span2
-                img(src="/images/logo/guardian.png", alt="guardian")
-            .active.span2
-                img(src="/images/logo/arte.png", alt="arte")
-            .active.span2
-                img(src="/images/logo/abzv.png", alt="abzv")
-            .active.span2
-                img(src="/images/logo/esj.png", alt="esj")
-        .row     
-            .span2.offset1
-                img(src="/images/logo/lemonde.png", alt="lemonde")
-            .span2
-                img(src="/images/logo/scpo.png", alt="scpo")
-            .span2
-                img(src="/images/logo/lexpress.png", alt="lexpress")
-            .span2
-                img(src="/images/logo/nouvelobs.png", alt="nouvelobs")
-            .span2
-                img(src="/images/logo/nzz.png", alt="nzz")
-        .row
-            .span2.offset1
-                img(src="/images/logo/afp.png", alt="afp")
-            .span2
-                img(src="/images/logo/idf.png", alt="idf")
-            .span2                
-                img(src="/images/logo/owni.png", alt="owni")
-            .span2
-                img(src="/images/logo/rue89.png", alt="rue89")
-            .span2
-                img(src="/images/logo/lemonde.png", alt="lemonde")
-
-
-.container
-    -if( about )
-
-        #about
+    #references.bottom20
+        .container
+            .row    
+                .active.span2.offset1
+                    img(src="/images/logo/afp.png", alt="afp")
+                .active.span2
+                    img(src="/images/logo/guardian.png", alt="guardian")
+                .active.span2
+                    img(src="/images/logo/arte.png", alt="arte")
+                .active.span2
+                    img(src="/images/logo/abzv.png", alt="abzv")
+                .active.span2
+                    img(src="/images/logo/esj.png", alt="esj")
+            .row     
+                .span2.offset1
+                    img(src="/images/logo/lemonde.png", alt="lemonde")
+                .span2
+                    img(src="/images/logo/scpo.png", alt="scpo")
+                .span2
+                    img(src="/images/logo/lexpress.png", alt="lexpress")
+                .span2
+                    img(src="/images/logo/nouvelobs.png", alt="nouvelobs")
+                .span2
+                    img(src="/images/logo/nzz.png", alt="nzz")
             .row
-                .span10.offset1
-                    h2 !{about.title}
-                    article !{about.content}
+                .span2.offset1
+                    img(src="/images/logo/afp.png", alt="afp")
+                .span2
+                    img(src="/images/logo/idf.png", alt="idf")
+                .span2                
+                    img(src="/images/logo/owni.png", alt="owni")
+                .span2
+                    img(src="/images/logo/rue89.png", alt="rue89")
+                .span2
+                    img(src="/images/logo/lemonde.png", alt="lemonde")
+
+
+    .container
+        -if( about )
+
+            #about
+                .row
+                    .span10.offset1
+                        h2 !{about.title}
+                        article !{about.content}
 
 

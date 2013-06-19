@@ -1,22 +1,32 @@
+extends layout
 
+block css 
+  !=css("http://fonts.googleapis.com/css?family=Share:400,700|Leckerli+One|Averia+Sans+Libre:400,700,300,300italic,400italic,700italic")
+  !=css("/stylesheets/style.css")
+  !=css("/stylesheets/birthday-2012.css")
 
-include layouts/menu
+block js  
+  !=js("/javascripts/vendor/bootstrap/bootstrap.min.js")
+  !=js("/javascripts/vendor/jquery.roundabout.min.js")
+  !=js("/javascripts/birthday.js")
+  
+block body
+  include layouts/menu
+  #main
+    .container
+      .left50.top20
+        a(href="/")=_("← Back to the homepage!")
+      .top20.row
 
-#main
-  .container
-    .left50.top20
-      a(href="/")=_("← Back to the homepage!")
-    .top20.row
+    .full-banner
+      img(src="/images/cake.jpg", alt="Chris zielecki 2012").hidden-phone
+      h3.huge-message!=_("We're turning <span class='link-color'>one</span>!")
 
-  .full-banner
-    img(src="/images/cake.jpg", alt="Chris zielecki 2012").hidden-phone
-    h3.huge-message!=_("We're turning <span class='link-color'>one</span>!")
-
-  ul.carousel
-    li <iframe src="http://charts-datawrapper.s3.amazonaws.com/L80ep/index.html" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="500"></iframe>
-    li <iframe src="http://charts-datawrapper.s3.amazonaws.com/Dd1CI/index.html" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="500"></iframe>
-    li <iframe src="http://charts-datawrapper.s3.amazonaws.com/6wdbT/index.html" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="500"></iframe>
-    li <iframe src="http://charts-datawrapper.s3.amazonaws.com/zGZIa/index.html" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="500"></iframe>
-    li <iframe src="http://charts-datawrapper.s3.amazonaws.com/vJh43/index.html" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="500"></iframe>
-    li <iframe src="http://charts-datawrapper.s3.amazonaws.com/rkJCV/index.html" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="500"></iframe>
-    li <iframe src="http://charts-datawrapper.s3.amazonaws.com/fHmgD/index.html" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="500"></iframe>
+    ul.carousel
+      li <iframe src="http://charts-datawrapper.s3.amazonaws.com/L80ep/index.html" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="500"></iframe>
+      li <iframe src="http://charts-datawrapper.s3.amazonaws.com/Dd1CI/index.html" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="500"></iframe>
+      li <iframe src="http://charts-datawrapper.s3.amazonaws.com/6wdbT/index.html" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="500"></iframe>
+      li <iframe src="http://charts-datawrapper.s3.amazonaws.com/zGZIa/index.html" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="500"></iframe>
+      li <iframe src="http://charts-datawrapper.s3.amazonaws.com/vJh43/index.html" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="500"></iframe>
+      li <iframe src="http://charts-datawrapper.s3.amazonaws.com/rkJCV/index.html" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="500"></iframe>
+      li <iframe src="http://charts-datawrapper.s3.amazonaws.com/fHmgD/index.html" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="500"></iframe>

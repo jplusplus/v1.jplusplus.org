@@ -1,11 +1,11 @@
 /**
  * Module dependencies.
  */
-var express         = require('express')
-  , fs              = require('fs')
-  , i18n            = require("i18n")
-  , lessMiddleware  = require("less-middleware")
-  , config          = require('config');
+var express = require('express')
+  , fs      = require('fs')
+  , i18n    = require("i18n")
+  , path    = require("path")
+  , config  = require('config');
 
 /**
  * Global objects
@@ -76,12 +76,10 @@ exports.boot = function(){
     app.use(express.cookieParser());
     app.use(express.session({ secret: 'L7mdcS4K5JZI097PQWTaVdTGp4uZi4ifgF0ht2bkET' }));
 
-    app.use(lessMiddleware({
-        src: __dirname + '/public',
-        compress: true
-    }));
-
-    app.use(express.static(__dirname + '/public'));
+    // Assets managers
+    var pubDir = path.join(__dirname, "public");
+    app.use( require("connect-assets")({src: pubDir}) )
+    app.use( express.static(pubDir) )
 
   });
 

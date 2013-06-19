@@ -4,7 +4,8 @@
   , "private": false
   , "dependencies": {  	 
       "express"         : "2.5.10"
-    , "less-middleware" : "0.1.8"
+    , "less"            : "*"
+    , "connect-assets"  : "*"
     , "jade"            : "0.27.7"
     , "restler"         : "2.0.1"
     , "memory-cache"    : "0.0.4"

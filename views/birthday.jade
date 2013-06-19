@@ -2,13 +2,13 @@ extends layout
 
 block css 
   link(href="http://fonts.googleapis.com/css?family=Share:400,700|Leckerli+One|Averia+Sans+Libre:400,700,300,300italic,400italic,700italic", type='text/css', rel="stylesheet")
-  !=css("/stylesheets/style.css")
-  !=css("/stylesheets/birthday-2012.css")
+  !=css("style")
+  !=css("birthday-2012")
 
 block js  
-  !=js("/javascripts/vendor/bootstrap/bootstrap.min.js")
-  !=js("/javascripts/vendor/jquery.roundabout.min.js")
-  !=js("/javascripts/birthday.js")
+  !=js("vendor/bootstrap/bootstrap.min.js")
+  !=js("vendor/jquery.roundabout.min.js")
+  !=js("birthday.js")
 
 block body
   include layouts/menu
@@ -19,7 +19,7 @@ block body
       .top20.row
 
     .full-banner
-      img(src="/images/cake.jpg", alt="Chris zielecki 2012").hidden-phone
+      img(src="/img/cake.jpg", alt="Chris zielecki 2012").hidden-phone
       h3.huge-message!=_("We're turning <span class='link-color'>one</span>!")
 
     ul.carousel

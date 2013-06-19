@@ -96,7 +96,7 @@ var parisBerlinRoute = function(req, res, subdomain) {
 	        	var defaultLanguage = "en";
 	        	// If no posts, load the english ones
 	        	if(posts && posts.length === 0 && req.session.language != defaultLanguage) {
-			        api.getPosts(defaultLanguage, function(posts) {
+			        api.getPosts(defaultLanguage, subdomain, function(posts) {
 	          			callback(null, posts);
 			        });
 	        	} else {
@@ -132,7 +132,7 @@ var amsterdamRoute = function(req, res, subdomain) {
 	        	var defaultLanguage = "en";
 	        	// If no posts, load the english ones
 	        	if(posts && posts.length === 0 && req.session.language != defaultLanguage) {
-			        api.getPosts(defaultLanguage, function(posts) {
+			        api.getPosts(defaultLanguage, subdomain,  function(posts) {
 	          			callback(null, posts);
 			        });
 	        	} else {

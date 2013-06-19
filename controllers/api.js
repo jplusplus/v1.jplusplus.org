@@ -26,8 +26,7 @@ module.exports.getPosts = function(lang, city, complete) {
     function getFromAPI() {
 
       // get_category_index request from the external "WordPress API"
-      rest.get(config.api + "tag/" + city +"/?count=100&json=1&custom_fields=siteurl&lang=" + lang).once("complete", function(data) {
-
+      rest.get(config.api + "tag/" + city +"/?count=100&json=1&custom_fields=siteurl&lang=" + lang).once("complete", function(data) {        
         // Filters custom fields
         for(var index in data.posts) {
           var post = data.posts[index];

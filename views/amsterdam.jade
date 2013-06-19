@@ -6,6 +6,59 @@ block body
             .alert.alert-info.top30.left50.right50            
                 =_("This page is only available in English. We're working on translating it in your language.")  
 
+        #portfolio
+            ul.unstyled.js-wrapper.row
+                - if(posts && typeof posts !== "array")
+                    - posts.forEach(function(item) {
+                        li.js-card
+                            .view
+                                .wrapper
+                                    img(src=item.thumbnail)
+                                .legend
+                                    h2.slabtexted.hidden-phone !{item.title}
+                                    h2.visible-phone.tl !{item.title}
+                                    .btn.btn-primary.btn=_("See more")
+                            .about      
+                                .row    
+                                
+                                    .visible-desktop
+                                        a.back
+                                            i.icon-circle-arrow-left.icon-white
+                                            =_("Back")
+                                    
+                                        h3 !{item.title}
+                                        article !{item.content}
+
+                                        - if(item.tags.length > 0)
+                                            ul.tags.unstyled
+                                                - item.tags.forEach(function(tag) {
+                                                    li=tag.title
+                                                - })            
+
+                                        - if(item.siteurl)
+                                            a(href=item.siteurl, rel='external').siteurl
+                                                i.icon-globe.icon-white
+                                                =item.siteurl       
+
+                                    .hidden-desktop
+                                        a.back
+                                            i.icon-circle-arrow-left.icon-white
+                                            =_("Back")
+                                    
+                                        h3 !{item.title}
+                                        article !{item.content}
+
+                                        - if(item.siteurl)
+                                            a(href=item.siteurl, rel='external').siteurl
+                                                i.icon-globe.icon-white
+                                                =item.siteurl                           
+                    - })
+
+        - if(typeof posts !== "array")
+            ul#portfolio-nav.unstyled
+                - posts.forEach(function(item) {
+                        li.right10
+                - })    
 
         hr.soften
 

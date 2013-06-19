@@ -16,5 +16,6 @@
 	"This page is only available in English. We're working on translating it in your language.": "This page is only available in English. We're working on translating it in your language.",
 	"Datajournalist": "Datajournalist",
 	"Designer": "Designer",
-	"Programmer": "Programmer"
+	"Programmer": "Programmer",
+	"Clients & Partners": "Clients & Partners"
 }

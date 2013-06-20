@@ -1,41 +1,41 @@
+extends layout
+block body
+	include layouts/menu
+	#main
 
+		#jpp-intro
+			.container
+				.right60.left60=_("Journalism++ is a network of datajournalists that aims to build great stories and tools with data.")
+		#jpp-network
+			img(src="/img/jppnet_hd.jpg").world.hidden-phone
+			ul.place-markers.hidden-phone
+				li.place.paris
+					a(href="//paris.jplusplus.org")
+						span.bg Paris
+				li.place.berlin
+					a(href="//berlin.jplusplus.org")
+						span.bg Berlin
+				li.place.stockholm
+					a(href="//jplusplus.se")
+						span.bg Stockholm		
+			ul.unstyled.visible-phone.place-list
+				li
+					a(href="//paris.jplusplus.org") Paris
+				li
+					a(href="//berlin.jplusplus.org") Berlin
+				li
+					a(href="//stockholm.jplusplus.org") Stockholm
 
-include layouts/menu
-#main
+		if manifest
+			.container.top40
+				#manifest.rich-text
+					.row
+						.span10.offset1
+							h2 !{manifest.title}
+							article !{manifest.content}
 
-	#jpp-intro
-		.container
-			.right60.left60=_("Journalism++ is a network of datajournalists that aims to build great stories and tools with data.")
-	#jpp-network
-		img(src="/images/jppnet_hd.jpg").world.hidden-phone
-		ul.place-markers.hidden-phone
-			li.place.paris
-				a(href="//paris.jplusplus.org")
-					span.bg Paris
-			li.place.berlin
-				a(href="//berlin.jplusplus.org")
-					span.bg Berlin
-			li.place.stockholm
-				a(href="//jplusplus.se")
-					span.bg Stockholm		
-		ul.unstyled.visible-phone.place-list
-			li
-				a(href="//paris.jplusplus.org") Paris
-			li
-				a(href="//berlin.jplusplus.org") Berlin
-			li
-				a(href="//stockholm.jplusplus.org") Stockholm
-
-	if manifest
-		.container.top40
-			#manifest.rich-text
-				.row
-					.span10.offset1
-						h2 !{manifest.title}
-						article !{manifest.content}
-
-	if locals.manifest && manifest.lang != session.language        
-		.container	
-			.alert.alert-info.top30.left50.right50            
-				=_("This page is only available in English. We're working on translating it in your language.")  
+		if locals.manifest && manifest.lang != session.language        
+			.container	
+				.alert.alert-info.top30.left50.right50            
+					=_("This page is only available in English. We're working on translating it in your language.")  
 

@@ -10,13 +10,15 @@ module.exports=function() { };
  * @author Pirhoo
  * @description Get the posts from the API or from the cache
  */
-module.exports.getPosts = function(lang, complete) {
+module.exports.getPosts = function(lang, city, complete) {
+
+  var slug = 'posts-list-'+lang+'-'+city;
 
   async.series([
     // Get data from cache first
     function getFromCache(fallback) {      
       // Get the course from the cache
-      if( !! cache.get('posts-list-'+lang) ) complete( cache.get('posts-list-'+lang) );
+      if( !! cache.get(slug) ) complete( cache.get(slug) );
       // Or get the colletion from the fallback function
       else fallback();
     },
@@ -24,8 +26,7 @@ module.exports.getPosts = function(lang, complete) {
     function getFromAPI() {
 
       // get_category_index request from the external "WordPress API"
-      rest.get(config.api + "?count=100&json=1&custom_fields=siteurl&lang=" + lang).once("complete", function(data) {
-
+      rest.get(config.api + "tag/" + city +"/?count=100&json=1&custom_fields=siteurl&lang=" + lang).once("complete", function(data) {        
         // Filters custom fields
         for(var index in data.posts) {
           var post = data.posts[index];
@@ -33,7 +34,7 @@ module.exports.getPosts = function(lang, complete) {
         }
 
         // Put the data in the cache 
-        cache.put('posts-list-'+lang, data.posts);
+        cache.put(slug, data.posts);
 
         // Call the complete function
         complete( data.posts );

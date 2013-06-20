@@ -13,5 +13,9 @@
 	"Journalism++ is a network of Data-Journalists that aims to build great stories and tools with data.": "Journalism++ is a network of Data-Journalists that aims to build great stories and tools with data.",
 	"Data-driven stories": "Data-driven stories",
 	"Journalism++ is a network of datajournalists that aims to build great stories and tools with data.": "Journalism++ is a network of datajournalists that aims to build great stories and tools with data.",
-	"This page is only available in English. We're working on translating it in your language.": "This page is only available in English. We're working on translating it in your language."
+	"This page is only available in English. We're working on translating it in your language.": "This page is only available in English. We're working on translating it in your language.",
+	"Datajournalist": "Datajournalist",
+	"Designer": "Designer",
+	"Programmer": "Programmer",
+	"Clients & Partners": "Clients & Partners"
 }

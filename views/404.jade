@@ -1,9 +1,11 @@
-include layouts/menu
-.container
-  .left50.top20
-    a(href="/")=_("← Back to the homepage!")
-  .row    
-    .span8
-      .left50.right50.top40
-        h2=_("Well... It's ambarrassing!")
-        p=_("We didn't find the page you are looking for.")
+extends layout
+block body
+  include layouts/menu
+  .container
+    .left50.top20
+      a(href="/")=_("← Back to the homepage!")
+    .row    
+      .span8
+        .left50.right50.top40
+          h2=_("Well... It's ambarrassing!")
+          p=_("We didn't find the page you are looking for.")

@@ -26,7 +26,6 @@ module.exports =  function(app, db, controllers) {
 	 */
 	app.get('/', function(req, res){
 
-		
 		// Refresh the cache
 		if(typeof req.query["refresh-cache"] != "undefined") {
 			console.log("Cache refresfed.");
@@ -45,6 +44,10 @@ module.exports =  function(app, db, controllers) {
 
 			case "berlin":
 				parisBerlinRoute(req, res, subdomain);
+				break;
+
+			case "amsterdam":
+				amsterdamRoute(req, res, subdomain);
 				break;
 
 			case "stockholm":
@@ -71,21 +74,7 @@ module.exports =  function(app, db, controllers) {
 	 * Birthday page 
 	 */
 	app.get('/birthday/2012', function(req, res) {
-		res.render("birthday",
-			{ 
-				title: 'Journalism++', 
-				stylesheets: [
-					,"http://fonts.googleapis.com/css?family=Share:400,700|Leckerli+One|Averia+Sans+Libre:400,700,300,300italic,400italic,700italic"
-					,"/stylesheets/style.css"
-					,"/stylesheets/birthday-2012.css"
-				], 
-				javascripts: [
-					  "/javascripts/vendor/bootstrap/bootstrap.min.js"									
-					, "/javascripts/vendor/jquery.roundabout.min.js"							
-					, "/javascripts/birthday.js"																	
-				]
-			}
-		);
+		res.render("birthday", {});
 	});
 
 	app.use(function(req, res, next){
@@ -103,11 +92,11 @@ var parisBerlinRoute = function(req, res, subdomain) {
 
 	async.parallel({
 	    getPosts: function(callback){
-	        api.getPosts(req.session.language, function(posts) {
+	        api.getPosts(req.session.language, subdomain, function(posts) {
 	        	var defaultLanguage = "en";
 	        	// If no posts, load the english ones
 	        	if(posts && posts.length === 0 && req.session.language != defaultLanguage) {
-			        api.getPosts(defaultLanguage, function(posts) {
+			        api.getPosts(defaultLanguage, subdomain, function(posts) {
 	          			callback(null, posts);
 			        });
 	        	} else {
@@ -124,23 +113,7 @@ var parisBerlinRoute = function(req, res, subdomain) {
 	function(err, results){
 
 		res.render('parisBerlin.jade', 
-			{ 
-				title: 'Journalism++', 
-				stylesheets: [
-					,"http://fonts.googleapis.com/css?family=Share:400,700|Leckerli+One|Averia+Sans+Libre:400,700,300,300italic,400italic,700italic"
-					,"/stylesheets/style.css"
-					,"/stylesheets/vendor/slabtext.css"
-				], 
-				javascripts: [
-					  "/javascripts/vendor/bootstrap/bootstrap.min.js"																
-					, "/javascripts/vendor/iScroll.class.js"																
-					, "/javascripts/vendor/jquery.scrollTo-min.js"																
-					, "/javascripts/vendor/jquery.µSlide.js"																	
-					, "/javascripts/vendor/jquery.lettering-0.6.1.min.js"											
-					, "/javascripts/vendor/jquery.slabtext.min.js"																
-					, "/javascripts/vendor/glfx.js"																	
-					, "/javascripts/global.js"																	
-				],
+			{ 				
 				posts: results.getPosts,
 				about: results.getAbout,
 				city: subdomain ? subdomain.charAt(0).toUpperCase() + subdomain.slice(1) : undefined
@@ -149,6 +122,42 @@ var parisBerlinRoute = function(req, res, subdomain) {
 
 	});
 };
+
+
+var amsterdamRoute = function(req, res, subdomain) {
+
+	async.parallel({
+	    getPosts: function(callback){
+	        api.getPosts(req.session.language, subdomain, function(posts) {
+	        	var defaultLanguage = "en";
+	        	// If no posts, load the english ones
+	        	if(posts && posts.length === 0 && req.session.language != defaultLanguage) {
+			        api.getPosts(defaultLanguage, subdomain,  function(posts) {
+	          			callback(null, posts);
+			        });
+	        	} else {
+	          		callback(null, posts);
+	        	}
+	        });
+	    },
+	    getAbout: function(callback){
+	        api.getPage("about-amsterdam", req.session.language, function(page) {
+	          callback(null, page);
+	        });
+	    }
+	},
+	function(err, results){
+
+		res.render('amsterdam.jade', 
+			{ 				
+				posts: results.getPosts,
+				about: results.getAbout,
+				city: subdomain ? subdomain.charAt(0).toUpperCase() + subdomain.slice(1) : undefined
+			}
+		);
+
+	});
+}
 
 var rootRoute = function(req, res, subdomain) {
 
@@ -160,29 +169,7 @@ var rootRoute = function(req, res, subdomain) {
 	    }
 	},
 	function(err, results){
-
-		res.render('index.jade', 
-			{ 
-				title: 'Journalism++', 
-				stylesheets: [
-					,"http://fonts.googleapis.com/css?family=Share:400,700|Leckerli+One|Averia+Sans+Libre:400,700,300,300italic,400italic,700italic"
-					,"/stylesheets/style.css"
-					,"/stylesheets/vendor/slabtext.css"
-				], 
-				javascripts: [
-					  "/javascripts/vendor/bootstrap/bootstrap.min.js"																
-					, "/javascripts/vendor/iScroll.class.js"																
-					, "/javascripts/vendor/jquery.scrollTo-min.js"																
-					, "/javascripts/vendor/jquery.µSlide.js"																	
-					, "/javascripts/vendor/jquery.lettering-0.6.1.min.js"											
-					, "/javascripts/vendor/jquery.slabtext.min.js"																
-					, "/javascripts/vendor/glfx.js"																	
-					, "/javascripts/global.js"																	
-				],
-				manifest: results.getManifest
-			}
-		);
-
+		res.render('index.jade', { manifest: results.getManifest });
 	});
 }
 

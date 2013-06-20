@@ -17,5 +17,8 @@
 	"Data-driven stories": "Data-driven stories",
 	"Journalism++ is a network of datajournalists that aims to build great stories and tools with data.": "Journalism++ est un réseau de journalistes de données qui développent des récits à partir de données.",
 	"Clients & Partners": "Clients & Partners",
-	"Well... It's ambarrassing!": "Well... It's ambarrassing!"
+	"Well... It's ambarrassing!": "Well... It's ambarrassing!",
+	"Datajournalist": "Datajournalist",
+	"Designer": "Designer",
+	"Programmer": "Programmer"
 }

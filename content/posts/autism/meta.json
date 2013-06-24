@@ -1,0 +1,12 @@
+{
+    "siteurl":"http://google.de",
+    "domain": "paris",
+    "thumbnail":"http://i.imgur.com/xScYNq9.jpg",
+    "title": {
+        "en": "Data for autism",
+        "fr": "Des donnés pour l'autism"
+    },
+    "tags": [
+      "tag1", "tag2"
+    ]
+}

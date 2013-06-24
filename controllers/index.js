@@ -2,6 +2,7 @@ var async = require('async')
   , cache = require('memory-cache')
   ,  i18n = require("i18n")
   ,   api = require("./api")
+ , content = require("./content")
  , config = require("config");
 
 
@@ -92,19 +93,15 @@ var parisBerlinRoute = function(req, res, subdomain) {
 
 	async.parallel({
 	    getPosts: function(callback){
-	        api.getPosts(req.session.language, subdomain, function(posts) {
-	        	var defaultLanguage = "en";
-	        	// If no posts, load the english ones
-	        	if(posts && posts.length === 0 && req.session.language != defaultLanguage) {
-			        api.getPosts(defaultLanguage, subdomain, function(posts) {
-	          			callback(null, posts);
-			        });
-	        	} else {
-	          		callback(null, posts);
-	        	}
-	        });
+				content.getPosts(req.session.language, function(posts){
+    			callback(null, posts);
+	    	});
 	    },
 	    getAbout: function(callback){
+	    	// callback(null, null);
+	    	// content.getPage('about', req.session.language, function(page){
+	    	// 	callback(null, page);
+	    	// });
 	        api.getPage("a-propos-de-journalism", req.session.language, function(page) {
 	          callback(null, page);
 	        });

@@ -638,7 +638,23 @@ header {
 			&.paris { top:53%; left:48%; }
 			&.berlin { top:39%; left:54%; }
 			&.stockholm { top:16.6%; left:57%; }
-			
+			&.amsterdam { top:39.1%; left:49.3%; }
+
+			&.from-right a{
+				margin-left:-26px;
+				&:after {
+					margin-left:25px;
+				}
+			}
+
+			&.from-left a{
+				margin-left:20px;
+				&:after {
+					margin-left:-25px;
+				}
+			}
+
+				
 			a {
 				font-family: 'Dinl', sans-serif;
 				font-weight:bold;
@@ -675,8 +691,8 @@ header {
 					text-decoration:none;
 					.bg {					
 						padding-right:0;	
-						margin-left:-6px;	
-						.transition(0.4s);
+						margin-left:-6px;
+						.border-radius(2px 0 0 2px);	
 					}
 					.bg:before {
 						right:-15px;
@@ -697,7 +713,6 @@ header {
 					width:20px;
 					background:@linkColor;
 					.border-radius(0 2px 2px 0);
-					.transition(0.4s);
 				}
 				
 				&:after {

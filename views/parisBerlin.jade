@@ -29,12 +29,12 @@ block body
                                     
                                         h3 !{item.title}
                                         article !{item.content}
-
-                                        - if(item.tags.length > 0)
-                                            ul.tags.unstyled
-                                                - item.tags.forEach(function(tag) {
-                                                    li=tag
-                                                - })            
+                                        - if(item.tags !== undefined)
+                                            - if(item.tags.length > 0)
+                                                ul.tags.unstyled
+                                                    - item.tags.forEach(function(tag) {
+                                                        li=tag
+                                                    - })            
 
                                         - if(item.siteurl)
                                             a(href=item.siteurl, rel='external').siteurl
@@ -58,7 +58,7 @@ block body
         - if(typeof posts !== "array")
             ul#portfolio-nav.unstyled
                 - posts.forEach(function(item) {
-                        li.right10
+                    li.right10
                 - })    
 
         hr.soften
@@ -145,56 +145,8 @@ block body
                 .span2
                     img(src="/img/logo/lemonde.png", alt="lemonde")
 
-    ul#team.row.no-bullet.top40
-        li.span2.offset1
-            .pp
-                img(src="/images/team/nkb.jpg")
-            .link
-                a(href="http://twitter.com/nicolaskb", rel='external')
-                    img(src="/images/twitter-bird-dark-bgs.png").left05
-            h3 Nicolas<br />Kayser-Bril 
-            p=_("CEO &bullet; Data-journalist")
-        li.span2
-            .pp
-                img(src="/images/team/pr.jpg")
-            .link
-                a(href="http://twitter.com/pirhoo", rel='external')
-                    img(src="/images/twitter-bird-dark-bgs.png").left05
-            h3 Pierre<br />Romera 
-            p=_("CTO &bullet; Developer")
-        li.span2
-            .pp
-                img(src="/images/team/alb.jpg")
-            .link
-                a(href="http://twitter.com/annelisebouyer", rel='external')
-                    img(src="/images/twitter-bird-dark-bgs.png").left05
-            h3 Anne-Lise<br />Bouyer 
-            p=_("Project manager")
-        li.span2
-            .pp
-                img(src="/images/team/ed.jpg")
-            .link
-                a(href="http://twitter.com/vied12", rel='external')
-                    img(src="/images/twitter-bird-dark-bgs.png").left05
-            h3 Edouard<br />Richard 
-            p=_("Developer")
-        li.span2
-            .pp
-                img(src="/images/team/toutenrab.jpg")
-            .link
-                a(href="http://twitter.com/toutenrab", rel='external')
-                    img(src="/images/twitter-bird-dark-bgs.png").left05
-            h3 Pierre<br />Bellon
-            p=_("Developer")
-
-    hr.soften
-    
-    h2.left100=_("Clients & Partners")
-
-#references.bottom20
     .container
         -if( about )
-
             #about
                 .row
                     .span10.offset1

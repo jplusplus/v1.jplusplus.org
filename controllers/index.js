@@ -91,7 +91,6 @@ var parisBerlinRoute = function(req, res, subdomain) {
   async.parallel({
     getPosts: function(callback){
       getPostsForDomain(req.session.language, subdomain, function(error, results){
-      	console.log('parisBerlinRoute.getPosts: ', results);
       	callback(null, results);
       });
     },
@@ -118,7 +117,7 @@ var amsterdamRoute = function(req, res, subdomain) {
       getPostsForDomain(req.session.language, subdomain, callback);
     },
     getAbout: function(callback){
-        api.getPage("about-amsterdam", req.session.language, function(page) {
+        content.getPage("about-amsterdam", req.session.language, function(page) {
           callback(null, page);
         });
     }
@@ -151,9 +150,9 @@ var rootRoute = function(req, res, subdomain) {
 
   async.parallel({
       getManifest: function(callback){
-          api.getPage("manifest-journalism", req.session.language, function(page) {
-            callback(null, page);
-          });
+        content.getPage("manifest-journalism", req.session.language, function(page) {
+          callback(null, page);
+        });
       }
   },
   function(err, results){

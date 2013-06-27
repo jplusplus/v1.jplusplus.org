@@ -1,0 +1,3 @@
+@pirhoo und @nicolaskb nehmen oft an Konferenzen in ganz Europa teil. Sie sprachen bei Dutzenden von Veranstaltungen, unter anderem bei der [Re:publica 12](http://re-publica.de/12/person/nicolas-kayser-bril/) in Berlin, dem [World News Summit](http://www.news-worldsummit.org/2012/index.php/information-straight-to-the-reader/) in Paris und bei [Strata](http://strataconf.com/strataeu/public/schedule/speaker/139635) in London. Ihre Fachgebiete sind Datenjournalismus, offene Daten, Interaktionen zwischen Journalisten, Entwicklern und Mathematik für Journalisten.
+
+Darüber hinaus nehmen wir an Workshops und Hackathons teil, als Co-Organisatoren, Referenten oder Teilnehmer.

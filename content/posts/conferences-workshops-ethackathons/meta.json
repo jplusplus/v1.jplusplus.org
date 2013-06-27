@@ -1,0 +1,25 @@
+{
+  "author": "nicolaskb",
+  "comments": true,
+  "date": "2012-08-07 17:17:29 +0200",
+  "thumbnail":"http://oeildupirate.com/jplusplus/files/PRatHTP2.jpg",
+  "layout": "post",
+  "slug": "conferences-workshops-ethackathons",
+  "title": {
+    "fr": "Conférences workshops et hackathons",
+    "en": "Conferences workshops & hackathons",
+    "de": "Konferenzen Workshops & hackathons"
+  },
+  "wordpress_id": 65,
+  "domains": ["paris", "berlin"],
+  "categories": [
+    "Non classé"
+  ],
+  "tags": [
+    "berlin",
+    "conférences",
+    "hackathons",
+    "paris",
+    "workshops"
+  ]
+}

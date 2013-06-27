@@ -1,0 +1,5 @@
+@nicolaskb et @pirhoo interviennent régulièrement lors de conférences internationales. Ils ont notamment participé, au nom de Journalism++, à [Re:publica 12 ](http://re-publica.de/12/person/nicolas-kayser-bril/)à Berlin, au [World News Summit](http://www.news-worldsummit.org/2012/index.php/information-straight-to-the-reader/) à Paris, à [Strata](http://strataconf.com/strataeu/public/schedule/speaker/139635) à Londres, entre autres. Leurs champs d’intervention concernent le datajournalisme, l’open data, les interactions entre journalistes et développeurs et l’apprentissage des statistiques et des maths par les journalistes.
+
+Ils participent également à des workshops et à des hackathons, que ce soit en tant que co-organisateur, keynote speaker ou participants. @pirhoo a pris part au [hackathon Transilien ](http://opendata.transilien.com/blog/focus-sur-les-equipes-1-trainspot/)à Paris, par exemple, et @nicolaskb au [EuroHack](http://datadrivenjournalism.net/news_and_analysis/eurohack_one_day_data_journalism_competition_and_workshop_on_eu_spending) à Varsovie.
+
+Illustration: @Pirhoo lors de Hack The Press #2 CC-BY Ophélia Noor.

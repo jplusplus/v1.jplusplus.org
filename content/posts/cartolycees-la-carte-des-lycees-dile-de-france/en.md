@@ -1,0 +1,3 @@
+For the region Ile-de-France, Journalism++ developed a tool to offer guidance to students.
+
+Presented in the form of a map, Cartolycées offers a search tool for high schools or training centers for apprentices by address, grade (pre-graduation or post-graduation) or institution name. Click on the map and practical informations appear: time to reach on foot from the train stations, the presence of a **boarding s****cho****ol** or not, number of students and courses on offer and much more!

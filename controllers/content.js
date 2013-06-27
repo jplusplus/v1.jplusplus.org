@@ -16,6 +16,7 @@ module.exports = function(){
     gfm: true
   });
 };
+
 /**
  * Return the content of 
  */
@@ -147,11 +148,11 @@ var _getPostContent = function(post, lang, complete){
       _post = post;
     }
     if(!err){
-      console.log('post: ', _post);
       var meta = _post.meta; 
+      var title = meta.title[lang] || meta.title[defaultLanguage];
       _post = _.extend(_post, {
         content: marked.parse(content),
-        title: meta.title[lang],
+        title: title,
         tags: meta.tags,
         thumbnail: meta.thumbnail 
       });
@@ -196,9 +197,11 @@ var _getPage = function(page_name, lang, callback){
   if(meta){
     fs.readFile(page_path + lang + '.md', "utf-8", function(err, content){
       if(!err) {
+        var title = meta.title[lang] || meta.title[defaultLanguage];
+        console.log('title: ', title);
         var page = {
           meta: meta,
-          title: meta.title[lang],
+          title: title,
           content: marked.parse(content)
         };
         cache.put(cache_key, page);

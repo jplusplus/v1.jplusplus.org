@@ -96,10 +96,17 @@ var _getPosts = function(lang, domain, complete){
        */
       function filterPosts(posts, getPostsContent){
         async.filter(posts, 
-          function(element, filter){
-            var element_domain = element.meta.domain;
-            var is_filtered = (_.isUndefined(element_domain)) || (element_domain !== domain);
-            filter(!is_filtered);
+          function(post, filter){
+            var post_domains = post.meta.domains;
+            var filtered = true;
+            if(!post.disabled){
+              _.each(post_domains, function(post_domain){
+                if(post_domain === domain){
+                  filtered = false;
+                }
+              });
+            }
+            filter(!filtered);
           },
           function(results){
             getPostsContent(null, results);

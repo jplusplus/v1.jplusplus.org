@@ -34,10 +34,7 @@ module.exports.getPage = function(page_name, lang, complete){
       }
     },
     function getFromContent(){
-      var cache_key = 'page-' +  page_name + '-' + lang;
-      var page = getPage(page_name, lang);
-      cache.put(cache_key, page);
-      complete(page);
+      _getPage(page_name, lang, complete);
     }
   ]);
   
@@ -53,14 +50,14 @@ module.exports.getPosts = function(lang, domain, complete){
       var cache_key = 'posts-list-' + lang + '-' + domain;
       // Get the course from the cache
       if( !! cache.get(cache_key) ){
-        console.log('getPost from cache ');
+        // console.log('getPost from cache ');
         complete( cache.get(cache_key) );
       } 
       // Or get the colletion from the fallback function
       else fallback();
     },
     function getFromContent(){
-      getPosts(lang, domain, complete);
+      _getPosts(lang, domain, complete);
     }
   ]);
 };
@@ -68,7 +65,7 @@ module.exports.getPosts = function(lang, domain, complete){
 /**
  * Retrieve all elements from a directory 
  */ 
-var getPosts = function(lang, domain, complete){
+var _getPosts = function(lang, domain, complete){
   var posts_path = contentPath + 'posts/';
   async.waterfall(
     [
@@ -116,21 +113,16 @@ var getPosts = function(lang, domain, complete){
         async.map(posts,
           // map transform function for each post
           function(post, addPost){
-            var content = fs.readFileSync(post.path + lang + '.md', "utf-8");
-            var meta = post.meta; 
-            var post = _.extend(post, {
-              content: marked.parse(content),
-              title: meta.title[lang],
-              tags: meta.tags,
-              thumbnail: meta.thumbnail 
-            });
-            addPost(null, post);
+            _getPostContent(post, lang, addPost);
           },
           sendResults
         );
       },
     ],
     function sendResults(error, results){
+      if(error){
+        console.log(error);
+      }
       // console.log('getPosts.sendResult: results = ', results);
       if(results.length > 0){
         cache.put('posts-lists-'+lang, results);
@@ -138,6 +130,34 @@ var getPosts = function(lang, domain, complete){
       onPostsRetrieved(results, lang, domain, complete);
     }
   );
+};
+
+var _getPostContent = function(post, lang, complete){
+  var defaultLanguage = "en";
+  console.log('getPostContent - post: ', post.meta.title['en']);
+  fs.readFile(post.path + lang + '.md', "utf-8", function(err, content, _post){
+    if(!_post){
+      _post = post;
+    }
+    if(!err){
+      console.log('post: ', _post);
+      var meta = _post.meta; 
+      _post = _.extend(_post, {
+        content: marked.parse(content),
+        title: meta.title[lang],
+        tags: meta.tags,
+        thumbnail: meta.thumbnail 
+      });
+      complete(null, _post);
+    } else {
+      if (lang !== defaultLanguage) {
+        _getPostContent(_post, defaultLanguage, complete);
+      } else {
+        error = new Error('Couldn\'t find english markdown file for post: ' + post);
+        complete(error);
+      }
+    }
+  });
 };
 
 /** 
@@ -151,18 +171,45 @@ var onPostsRetrieved = function(posts, lang, domain, complete){
 
 
 var getElementMeta = function(path){
-  return require(path  + 'meta.json');
+  var meta;
+  try {
+    meta = require(path  + 'meta.json');
+  } catch(e){
+    console.log('ERROR - the requested meta at ', path, ' doesn\'t exist');
+  }
+  return meta;
 }
 
-var getPage = function(element_dir, lang){
+var _getPage = function(page_name, lang, callback){
+  var defaultLanguage = "en";
+  var cache_key = 'page-' +  page_name + '-' + lang;
   var pages_path = contentPath + 'pages/'; 
-  var page_path = pages_path + element_dir + '/';
+  var page_path = pages_path + page_name + '/';
   var meta = getElementMeta(page_path);
-  var content = fs.readFileSync(page_path + lang + '.md', "utf-8");
-  var page = {
-    meta: meta,
-    title: meta.title[lang],
-    content: marked.parse(content)
+  if(meta){
+    fs.readFile(page_path + lang + '.md', "utf-8", function(err, content){
+      if(!err) {
+        var page = {
+          meta: meta,
+          title: meta.title[lang],
+          content: marked.parse(content)
+        };
+        cache.put(cache_key, page);
+        callback(page);
+      } else {
+        if(lang !== defaultLanguage){
+          _getPage(page_name, defaultLanguage, function(page){
+            if(page){
+              cache.put(cache_key, page);
+            }
+            callback(page);
+          });
+        } else {
+          callback();
+        }
+      }
+    });
+  } else {
+    callback();
   }
-  return page;
 };

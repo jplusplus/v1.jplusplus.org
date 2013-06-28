@@ -1,0 +1,22 @@
+{
+  "author": "pirhoo",
+  "thumbnail":"http://jquest.s3.amazonaws.com/jplusplus/files/Explorer_mockup.jpg",
+  "comments": true,
+  "date": "2013-06-18 12:21:53 +0200",
+  "layout": "post",
+  "slug": "localfocus",
+  "siteurl": "http://www.localfocus.nl/",
+  "title": {
+    "en":"LocalFocus"
+  },
+  "wordpress_id": 2171,
+  "categories": [
+    "Non classé @en"
+  ],
+  "domains": ["amsterdam"],
+  "tags": [
+    "amsterdam",
+    "data",
+    "tool"
+  ]
+}

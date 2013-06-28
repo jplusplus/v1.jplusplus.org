@@ -1,0 +1,18 @@
+{
+  "author": "nicolaskb",
+  "thumbnail": "http://jquest.s3.amazonaws.com/jplusplus/files/Capture-d%E2%80%99%C3%A9cran-2013-03-25-%C3%A0-12.15.181.png",
+  "comments": true,
+  "date": "2013-03-25 12:26:25 +0100",
+  "layout": "post",
+  "slug": "cartolycees-la-carte-des-lycees-dile-de-france",
+  "siteurl": "http://cartolycees.iledefrance.fr/",
+  "title": {
+    "fr": "Cartolycées : la carte des lycées d'Ile de France",
+    "en": "Explore high schools in region Ile-de-France"
+  },
+  "domains":["paris", "berlin"],
+  "tags": [
+    "berlin",
+    "paris"
+  ]
+}

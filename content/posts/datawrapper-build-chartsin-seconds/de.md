@@ -1,0 +1,5 @@
+Journalism++ ist sehr stolz, am Datawrapper-Projekt teilzunehmen. Das Projekt wurde von Mirko Lorenz gestartet und wird von der [ABZV](http://abzv.de/) finanziert. Das Ziel ist, dass Journalisten einfache und korrekte Diagramme, die dann in Artikel eingebettet werden können, in Sekunden selbst bauen können.
+
+Journalisten lieben die Einfachheit des Produktes und die Tatsache, dass Datawrapper sie daran hindert, falscher Charts zu veröffentlichen. Das Charts Design folgt der Lehre von [Dona Wong](http://www.amazon.com/Street-Journal-Guide-Information-Graphics/dp/0393072959) vom Wall Street Journal. Datawrapper funktioniert so, dass jede Redaktion es einfach und schnell installieren und personalisieren kann.
+
+[@nicolaskb](https://twitter.com/#%21/nicolaskb/) hat den Prototyp für Datawrapper codiert. Version 1.0 wird jetzt von [@driven_by_data](https://twitter.com/driven_by_data) entwickelt. Datawrapper wird regelmäßig von [The Guardian](http://www.guardian.co.uk/), [Ruhr Nachrichten](http://www.ruhrnachrichten.de/) (Dortmund), [L’Avenir](http://www.lavenir.net/) (Belgien) und [RTL.nl](http://www.rtl.nl/experience/rtlnl/) u.a. verwendet.

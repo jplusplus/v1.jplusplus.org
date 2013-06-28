@@ -1,0 +1,26 @@
+{
+  "thumbnail": "http://oeildupirate.com/jplusplus/files/Alerte-Politique.png",
+  "author": "pirhoo",
+  "comments": true,
+  "date": "2012-03-07 13:36:32 +0100",
+  "layout": "post",
+  "slug": "rue89-alerte-politique",
+  "siteurl": "http://alertepolitique.fr/",
+  "title": {
+    "fr": "Rue89: Alerte Politique",
+    "en": "AlertePolitique: Open data on your mobile"
+  },
+  "wordpress_id": 13,
+  "categories": [
+    "Non classé"
+  ],
+  "domains":["paris","berlin"],
+  "tags": [
+    "Android",
+    "berlin",
+    "iOS",
+    "mobile",
+    "open data",
+    "paris"
+  ]
+}

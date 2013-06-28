@@ -1,0 +1,25 @@
+{
+  "author": "nicolaskb",
+  "comments": true,
+  "date": "2012-06-09 17:02:37 +0200",
+  "thumbnail":"http://jquest.s3.amazonaws.com/jplusplus/files/dw.png",
+  "layout": "post",
+  "slug": "datawrapper-build-chartsin-seconds",
+  "siteurl": "http://datawrapper.de",
+  "title": {
+    "fr":"Datawrapper: des visualisations en quelques secondes",
+    "en": "Datawrapper: Build charts in seconds",
+    "de": "Datawrapper: Open Source Datenvisualisierung "
+  },
+  "wordpress_id": 48,
+  "categories": [
+    "Non classé"
+  ],
+  "domains":["paris", "berlin"],
+  "tags": [
+    "berlin",
+    "Javascript",
+    "paris",
+    "visualisation"
+  ]
+}

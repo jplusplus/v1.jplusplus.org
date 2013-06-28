@@ -1,0 +1,5 @@
+Journalism++ is very proud to take part in [Datawrapper](http://datawrapper.de/). The project was started by Mirko Lorenz and is financed by [ABZV](http://abzv.de/), a German training institute for journalists. The goal is to let any journalist build simple and correct charts in seconds that can then be embedded in articles.
+
+Journalists love the simplicity of the product and the fact that Datawrapper prevents them from publishing wrong charts. The charts design follows the teaching of The Wall Street Journal’s [Dona Wong](http://www.amazon.com/Street-Journal-Guide-Information-Graphics/dp/0393072959). Datawrapper is built in such a way that any media organization can install and customize it quickly.
+
+[@nicolaskb](https://twitter.com/#%21/nicolaskb/) coded the prototype for Datawrapper. Version 1.0 is now developed by [@driven_by_data](https://twitter.com/driven_by_data). Datawrapper is used regularly by [The Guardian](http://www.guardian.co.uk/), [Ruhr Nachrichten](http://www.ruhrnachrichten.de/) (Dortmund), [L’Avenir](http://www.lavenir.net/) (Belgium) and [RTL.nl](http://www.rtl.nl/experience/rtlnl/) among others.

@@ -1,0 +1,5 @@
+Recognized as a disability in France since 1996, little information was available about autism in France. How many places are reserved for them? What access to dedicated structures? Are the persons caring for them professionals? Does the offered care and support fits to the needs?
+
+Born of a partnership with [lexpress.fr](http://www.lexpress.fr/actualite/sciences/sante/des-donnees-pour-l-autisme_1231706.html), France's second-biggest news magazine, "Data for Autism" aims at answering these questions. A crowdsourcing operation, use of official data and journalistic investigations will gradually enrich a database displayed on an interactive map.
+
+**Design and data collection were performed by [Damien Bruno](twitter.com/dbrunon), journalist in residence with Journalism++ for a month. It was then developed by [Pierre Romera.](twitter.com/pirhoo)**

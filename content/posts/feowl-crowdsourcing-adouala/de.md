@@ -1,0 +1,5 @@
+Feowl sammelt Daten über Stromausfälle in Douala, der größten Stadt Kameruns, und veröffentlicht sie. Das Projekt wird vom [International Press Institute](http://www.ipinewscontest.org/) finanziert und in Zusammenarbeit mit [Tesobe](http://www.tesobe.com/), [Internet Sans Frontières](http://www.internetsansfrontieres.com/) und [Wasamundi](http://www.wasamundi.com/) entwickelt.
+
+Feowl wirkt als eine Polling-Plattform. Benutzer können sich registrieren und werden dann gefragt, wie viele Stromausfälle sie an einem bestimmten Tag erleben. Polling erfolgt per Email oder SMS. Die gesammelten Daten werden dann bereinigt und analysiert, um aussagekräftige Statistiken über das Problem zu bieten.
+
+Das Projekt wird von lokalen und internationalen Journalisten verfolgt. Da es Open Source ist, können Andere ihre eigene Version von Feowl überall auf der Welt installieren, um langfristige Themen mitzubegleiten, wie Wasserausfälle oder Inflation. [Den Code können Sie auf GitHub ansehen](https://github.com/feowl/).

@@ -1,9 +1,9 @@
-var rest = require('restler')
- , async = require('async')
- , cache = require('memory-cache')
- ,  i18n = require("i18n")
- ,   api = require("./api")
- , index = require("./index");
+var   rest = require('restler')
+ ,   async = require('async')
+ ,   cache = require('memory-cache')
+ ,    i18n = require("i18n")
+ , content = require('./content')
+ ,   index = require("./index");
 
 /**
  * @author Pirhoo
@@ -22,15 +22,13 @@ module.exports =  function(app, db, controllers) {
 
     async.parallel({
       page: function(callback){
-        api.getPage(req.params.page, req.session.language, function(page) {
+        content.getPage(req.params.page, req.session.language, function(page) {
           callback(null, page);
         });
       }
     },
     function(err, results){
-
       if(!results.page) return res.redirect("/404");
-
       res.render('page.jade', 
         { 
           title: results.page.title + ' - Journalism++', 
@@ -45,7 +43,6 @@ module.exports =  function(app, db, controllers) {
           page: results.page,
         }
       );
-
     });
   });
 

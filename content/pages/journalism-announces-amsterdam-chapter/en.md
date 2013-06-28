@@ -1,0 +1,13 @@
+**Datajournalist [Jelle Kamsma](http://twitter.com/ddjelle), designer [Yordi Dam ](http://twitter.com/yordidam)and developer [Erik Willems ](http://twitter.com/ehwillems)will, starting June 25, operate the [Amsterdam chapter ](http://amsterdam.jplusplus.org/)of the Journalism++ Network.**
+
+They began their collaboration during the first half of 2013 on a data-driven news service for local and regional media under the name of [LocalFocus](http://localfocus.nl/). LocalFocus[ won _The Challenge_](http://www.persinnovatie.nl/10305/nl/winnaars-the-challenge-2013-bekendgemaakt), a competition for innovative ideas in journalism organized by the [Stimuleringsfonds voor de Pers](http://www.persinnovatie.nl/).
+
+Jelle started working in datajournalism in 2011 at the Dutch news site NU.nl. At the moment he’s involved in the production of the new season of[ Holland from Above](http://nederlandvanboven.vpro.nl/afleveringen/overzicht.html) and teaches a datajournalism course at Windesheim School for Journalism. Yordi is a journalist with a keen interest in information design and visual storytelling. He currently works as an infographics editor for Dutch newspapers NRC Handelsblad and nrc.next. Erik is a programmer and journalist. He uses the latest computer techniques to find, crunch and visualize large datasets. Web scraping and ‘investigation robots’ are his specialities.
+
+The 3 news nerds form a multidisciplinary team that exemplifies the principles of datajournalism. From Amsterdam, they will offer datajournalism solutions to media organizations, train journalists and storytellers on how to use data effectively and develop LocalFocus.
+
+After [Paris](http://paris.jplusplus.org/) and [Berlin](http://berlin.jplusplus.org) (operated by Journalism++ SAS) and [Stockholm](http://jplusplus.se/) (operated by Journalism++ Stockholm AB), Amsterdam marks the fourth city where news nerds united under a single brand.
+
+Journalism++ took part in projects in over 15 countries in the first half of 2013. [Datawrapper](http://datawrapper.de/), developed in part by Journalism++, was awarded the Startup for News Award at the Global Editors Network on June 21st and [won](http://africannewschallenge.org/2012-winners/) the African News Innovation Challenge in late 2012. As a result, Journalism++ staff will travel to Kenya and South Africa to set up data desks in select local newsrooms in the second half of 2013.
+
+Clients and partners of Journalism++ include Aftonbladet, The Guardian, Le Monde, Wikileaks, Neue Zürcher Zeitung, Fairfax Media, the World Bank Institute, Svenska Dagbladet, Région Île-de-France and others. Journalism++ was created in December, 2011, by developer Pierre Romera and datajournalist Nicolas Kayser-Bril.

@@ -62,7 +62,6 @@ app.configure(function(){
 
   // Load every controllers
   require("./controllers/404.js")(app)
-  require("./controllers/api.js")(app)
   require("./controllers/index.js")(app)
   require("./controllers/page.js")(app)
 

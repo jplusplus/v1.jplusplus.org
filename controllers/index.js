@@ -1,9 +1,8 @@
 var async = require('async')
   , cache = require('memory-cache')
   ,  i18n = require("i18n")
-  ,   api = require("./api")
- , content = require("./content")
- , config = require("config");
+ , config = require("config")
+, content = require("./content");
 
 
 function getSubdomain(req) {
@@ -27,61 +26,62 @@ module.exports =  function(app, db, controllers) {
    */
   app.get('/', function(req, res){
 
-  // Refresh the cache
-  if(typeof req.query["refresh-cache"] != "undefined") {
-  console.log("Cache refresfed.");
-  cache.clear();
-  }
-  
-  // Get and set the language in (or from) session
-  req.session.language = module.exports.getUserLang(req);
+    // Refresh the cache
+    if(typeof req.query["refresh-cache"] != "undefined") {
+      console.log("Cache refresfed.");
+      cache.clear();
+    }
+    
+    // Get and set the language in (or from) session
+    req.session.language = module.exports.getUserLang(req)
 
-  var subdomain = getSubdomain(req);
-  switch( subdomain ) {
-  case "paris":
-  parisBerlinRoute(req, res, subdomain);
-  break;
+    var subdomain = getSubdomain(req);
+    switch( subdomain ) {
+      case "paris":
+        parisBerlinRoute(req, res, subdomain);
+        break;
 
-  case "berlin":
-  parisBerlinRoute(req, res, subdomain);
-  break;
+      case "berlin":
+        parisBerlinRoute(req, res, subdomain);
+        break;
 
-  case "amsterdam":
-  amsterdamRoute(req, res, subdomain);
-  break;
+      case "amsterdam":
+        amsterdamRoute(req, res, subdomain);
+        break;
 
-  case "stockholm":
-  res.redirect("http://jplusplus.se");
-  break;
+      case "stockholm":
+        res.redirect("http://jplusplus.se");
+        break;
 
-  default:
-  rootRoute(req, res, subdomain);  
-  break;
-  }
+      default:
+        rootRoute(req, res, subdomain);  
+        break;
+    }
+
   });
 
   /*
    * Chnage the user language
    */
   app.get('/lang/:ln', function(req, res){
-  req.session.language = ["fr", "en", "de", "sv"].indexOf(req.params.ln) > -1 ? req.params.ln : "en";  
-  res.redirect(req.query.path || "back" || "/");
+    req.session.language = ["fr", "en", "de", "sv"].indexOf(req.params.ln) > -1 ? req.params.ln : "en";  
+    res.redirect(req.query.path || "back" || "/");
   });
 
   /**
    * Birthday page 
    */
   app.get('/birthday/2012', function(req, res) {
-  res.render("birthday", {});
+    res.render("birthday", {});
   });
 
   app.use(function(req, res, next){
-  res.status(404);
-  // respond with html page
-  if (req.accepts('html')) {
-    res.redirect('/404');
-    return;
-  }
+    res.status(404);
+    // respond with html page
+    if (req.accepts('html')) {
+      res.redirect('/404');
+      return;
+    }
   });
 
 };
@@ -95,8 +95,7 @@ var parisBerlinRoute = function(req, res, subdomain) {
       });
     },
     getAbout: function(callback){
-      content.getPage("a-propos-de-journalism", req.session.language, function(page) {
-      	console.log('parisBerlinRoute.getAbout: page = ', page);
+      content.getPage("a-propos-de-journalism", req.session.language, function(page) {        
         callback(null, page);
       });
     }
@@ -156,7 +155,7 @@ var rootRoute = function(req, res, subdomain) {
       }
   },
   function(err, results){
-  res.render('index.jade', { manifest: results.getManifest });
+    res.render('index.jade', { manifest: results.getManifest });
   });
 }
 

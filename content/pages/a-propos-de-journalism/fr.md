@@ -11,29 +11,11 @@ Début août 2012, l'excellente [@annelisebouyer](https://twitter.com/annelisebo
 
 ## Contactez-nous!
 
+![](http://oeildupirate.com/jplusplus/files/iconmonstr-twitter-5-icon.png) [@jplusplus_fr](http://twitter.com/jplusplus_fr)
 
-
-
-> 
-
-> 
-> ![](http://oeildupirate.com/jplusplus/files/iconmonstr-twitter-5-icon.png) [@jplusplus_fr](http://twitter.com/jplusplus_fr)
-> 
-> 
-
-
-> 
-> ![](http://oeildupirate.com/jplusplus/files/iconmonstr-email-10-icon.png) bonjour@jplusplus.org
-> 
-> 
-
-
-
-
+![](http://oeildupirate.com/jplusplus/files/iconmonstr-email-10-icon.png) bonjour@jplusplus.org
 
 ## Jobs
-
-
 Vous aimez jQuery, _Rue89_ et MongoDB? Envoyez-nous un tweet [@jplusplus_fr](https://twitter.com/jplusplus_fr)! (Ca marche aussi avec Mootools, _Le Monde_ et Postgres)
 
 

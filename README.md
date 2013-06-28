@@ -7,7 +7,11 @@ the posts meta (see #post meta)
 #### Post meta
 ```js
 {
-  "title": "Your post title",
+  "title": {
+    "en":"Your post title in english",
+    "fr":"Votre titre en français",
+    // etc...
+  },
   "thumbnail": "<the image to display into the carroussel>",
   "tags": ["an", "array", "of", "tags"],
   // will show the post on the given subdomains

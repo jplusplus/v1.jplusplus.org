@@ -35,7 +35,7 @@ module.exports.getPage = function(page_name, lang, complete){
       }
     },
     function getFromContent(){
-      _getPage(page_name, lang, complete);
+      getPageFromFile(page_name, lang, complete);
     }
   ]);
   
@@ -58,7 +58,7 @@ module.exports.getPosts = function(lang, domain, complete){
       else fallback();
     },
     function getFromContent(){
-      _getPosts(lang, domain, complete);
+      getPostsFromFiles(lang, domain, complete);
     }
   ]);
 };
@@ -66,7 +66,7 @@ module.exports.getPosts = function(lang, domain, complete){
 /**
  * Retrieve all elements from a directory 
  */ 
-var _getPosts = function(lang, domain, complete){
+var getPostsFromFiles = function(lang, domain, complete){
   var posts_path = contentPath + 'posts/';
   async.waterfall(
     [
@@ -121,7 +121,7 @@ var _getPosts = function(lang, domain, complete){
         async.map(posts,
           // map transform function for each post
           function(post, addPost){
-            _getPostContent(post, lang, addPost);
+            getPostContentExtended(post, lang, addPost);
           },
           sendResults
         );
@@ -140,9 +140,8 @@ var _getPosts = function(lang, domain, complete){
   );
 };
 
-var _getPostContent = function(post, lang, complete){
-  var defaultLanguage = "en";
-  console.log('getPostContent - post: ', post.meta.title['en']);
+var getPostContentExtended = function(post, lang, complete){
+  var defaultLanguage = "en";  
   fs.readFile(post.path + lang + '.md', "utf-8", function(err, content, _post){
     if(!_post){
       _post = post;
@@ -153,13 +152,15 @@ var _getPostContent = function(post, lang, complete){
       _post = _.extend(_post, {
         content: marked.parse(content),
         title: title,
+        lang: lang,
+        website: meta.website || "",
         tags: meta.tags,
         thumbnail: meta.thumbnail 
       });
       complete(null, _post);
     } else {
       if (lang !== defaultLanguage) {
-        _getPostContent(_post, defaultLanguage, complete);
+        getPostContentExtended(_post, defaultLanguage, complete);
       } else {
         error = new Error('Couldn\'t find english markdown file for post: ' + post);
         complete(error);
@@ -180,7 +181,7 @@ var onPostsRetrieved = function(posts, lang, domain, complete){
 
 var getElementMeta = function(path){
   var meta;
-  try {
+  try {    
     meta = require(path  + 'meta.json');
   } catch(e){
     console.log('ERROR - the requested meta at ', path, ' doesn\'t exist');
@@ -188,27 +189,28 @@ var getElementMeta = function(path){
   return meta;
 }
 
-var _getPage = function(page_name, lang, callback){
+var getPageFromFile = function(page_name, lang, callback){
   var defaultLanguage = "en";
   var cache_key = 'page-' +  page_name + '-' + lang;
   var pages_path = contentPath + 'pages/'; 
   var page_path = pages_path + page_name + '/';
+
   var meta = getElementMeta(page_path);
   if(meta){
     fs.readFile(page_path + lang + '.md', "utf-8", function(err, content){
       if(!err) {
-        var title = meta.title[lang] || meta.title[defaultLanguage];
-        console.log('title: ', title);
+        var title = meta.title[lang] || meta.title[defaultLanguage];        
         var page = {
           meta: meta,
           title: title,
+          lang: lang,
           content: marked.parse(content)
         };
         cache.put(cache_key, page);
         callback(page);
       } else {
         if(lang !== defaultLanguage){
-          _getPage(page_name, defaultLanguage, function(page){
+          getPageFromFile(page_name, defaultLanguage, function(page){
             if(page){
               cache.put(cache_key, page);
             }

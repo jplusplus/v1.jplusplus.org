@@ -20,5 +20,5 @@
     "node": "0.8.3",
     "npm": "1.2.18"
   }
-  ,"main": "app.js"
+  ,"main": "app.coffee"
 }

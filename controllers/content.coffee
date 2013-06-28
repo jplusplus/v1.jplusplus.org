@@ -69,7 +69,7 @@ getPostsFromFiles = (lang, domain, complete) ->
       , (error, results) -> filterPosts null, results)
 
     # We filter posts if they are not from the requested domain
-    (posts, getPostsContent) ->
+    (posts, filterPost) ->
       async.filter(posts, (post, filter) ->
         post_domains = post.meta.domains
         filtered = true
@@ -78,7 +78,11 @@ getPostsFromFiles = (lang, domain, complete) ->
             filtered = false  if post_domain is domain
 
         filter not filtered
-      , (results) -> getPostsContent null, results)    
+      , (results) -> filterPost null, results) 
+
+    # We sort the posts
+    (posts, getPostsContent)->
+      getPostsContent null, _.sortBy(posts, (p,i)-> -1 * (new Date(p.meta.date).getTime()) )
     # We get all post contents
     (posts, sendResults) ->    
       # map transform function for each post

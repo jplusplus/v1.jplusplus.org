@@ -5,6 +5,7 @@
   "thumbnail":"http://jquest.s3.amazonaws.com/jplusplus/files/dw.png",
   "layout": "post",
   "slug": "datawrapper-build-chartsin-seconds",
+  "siteurl": "http://datawrapper.de",
   "title": {
     "fr":"Datawrapper: des visualisations en quelques secondes",
     "en": "Datawrapper: Build charts in seconds",

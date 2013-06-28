@@ -153,7 +153,7 @@ var getPostContentExtended = function(post, lang, complete){
         content: marked.parse(content),
         title: title,
         lang: lang,
-        website: meta.website || "",
+        siteurl: meta.siteurl || false,
         tags: meta.tags,
         thumbnail: meta.thumbnail 
       });

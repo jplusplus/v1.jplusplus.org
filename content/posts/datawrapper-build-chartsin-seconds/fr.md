@@ -1,20 +1,3 @@
----
-author: nicolaskb
-comments: true
-date: 2012-06-09 15:02:37+00:00
-layout: post
-slug: datawrapper-publierdes-graphiques-enquelques-secondes
-title: 'Datawrapper: des visualisations en quelques secondes'
-wordpress_id: 48
-categories:
-- Non classé
-tags:
-- berlin
-- Javascript
-- paris
-- visualisation
----
-
 Journalism++ participe au projet [Datawrapper](http://datawrapper.de/), initié par Mirko Lorenz pour le compte de [ABZV](http://abzv.de/), un organisme de formation continue pour journalistes. L’objectif est de permettre à tous les journalistes de créer des diagrammes simples et corrects en quelques secondes, afin de les intégrer ensuite à leurs articles.
 
 Les journalistes aprécient la simplicité du produit et la justesse des visualisations produites, qui se fondent sur les enseignement de [Dona Wong](http://www.amazon.com/Street-Journal-Guide-Information-Graphics/dp/0393072959), du Wall Street Journal. Datawrapper permet à tout média de personnaliser facilement le design de l’outil en fonction de ses besoins.

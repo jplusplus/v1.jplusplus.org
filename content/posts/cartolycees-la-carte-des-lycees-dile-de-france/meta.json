@@ -5,8 +5,9 @@
   "date": "2013-03-25 12:26:25 +0100",
   "layout": "post",
   "slug": "cartolycees-la-carte-des-lycees-dile-de-france",
+  "siteurl": "http://cartolycees.iledefrance.fr/",
   "title": {
-    "fr":"Cartolycées : la carte des lycées d'Ile de France",
+    "fr": "Cartolycées : la carte des lycées d'Ile de France",
     "en": "Explore high schools in region Ile-de-France"
   },
   "domains":["paris", "berlin"],

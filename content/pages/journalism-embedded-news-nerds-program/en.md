@@ -29,12 +29,13 @@ Fields marked * are required.
 <div class="control-group">
 <div class="control-label">When are you available? *</div>
 <div class="controls"><label class="checkbox">
-<input id="group_154470554_3" type="checkbox" name="entry.154470554" value="July 2013" />July 2013</label><label class="checkbox">
-<input id="group_154470554_4" type="checkbox" name="entry.154470554" value="August 2013" />August 2013</label><label class="checkbox">
-<input id="group_154470554_5" type="checkbox" name="entry.154470554" value="September 2013" />September 2013</label><label class="checkbox">
-<input id="group_154470554_6" type="checkbox" name="entry.154470554" value="October 2013" />October 2013
+<input id="group_154470554_1" type="checkbox" name="entry.154470554" value="January 2014" />January 2014</label><label class="checkbox">
+<input id="group_154470554_2" type="checkbox" name="entry.154470554" value="February 2014" />February 2014</label><label class="checkbox">
+<input id="group_154470554_3" type="checkbox" name="entry.154470554" value="March 2014" />March 2014</label><label class="checkbox">
+<input id="group_154470554_4" type="checkbox" name="entry.154470554" value="April 2014" />April 2014</label><label class="checkbox">
+<input id="group_154470554_5" type="checkbox" name="entry.154470554" value="May 2014" />May 2014</label><label class="checkbox">
+<input id="group_154470554_6" type="checkbox" name="entry.154470554" value="June 2014" />June 2014
 </label><label class="checkbox">
-<input id="group_154470554_7" type="checkbox" name="entry.154470554" value="November 2013" />November 2013</label></div>
 </div>
 <div class="control-group">
 <div class="control-label">Where do you want to work from? *</div>

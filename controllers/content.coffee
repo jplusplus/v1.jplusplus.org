@@ -82,7 +82,7 @@ getPostsFromFiles = (lang, domain, complete) ->
 
     # We sort the posts
     (posts, getPostsContent)->
-      getPostsContent null, _.sortBy(posts, (p,i)-> -1 * (new Date(p.meta.date).getTime()) )
+      getPostsContent null, _.sortBy posts, (p)-> -1 * (new Date(p.meta.date).getTime())
     # We get all post contents
     (posts, sendResults) ->    
       # map transform function for each post

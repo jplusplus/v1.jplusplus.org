@@ -1,13 +1,3 @@
----
-author: nicolaskb
-comments: true
-date: 2013-01-22 18:33:07+00:00
-layout: page
-slug: journalism-welcomes-stockholm-team
-title: Journalism++ welcomes Stockholm team
-wordpress_id: 641
----
-
 Two of the finest datajournalists in Sweden, Jens Finnäs and Peter Grensund, are launching the Stockholm chapter of Journalism++. After Paris and Berlin, Stockholm is the third city where datajournalists and developers operating under the Journalism++ flag become active.
 
 

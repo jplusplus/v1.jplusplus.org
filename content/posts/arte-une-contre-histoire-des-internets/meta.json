@@ -1,0 +1,20 @@
+{
+  "author": "annelisebouyer",
+  "thumbnail": "<the image to display into the carroussel>",
+  "comments": true,
+  "date": "2013-08-16 16:26:25 +0100",
+  "layout": "post",
+  "slug": "Une-contre-histoire-des-internets",
+  "siteurl": "http://lesinternets.arte.tv/",
+   "disabled":true,
+  "title": {
+    "en":"The counter-history of the Internets",
+    "fr":"Une contre-histoire des Internets",
+    "de":"Eine gegengeschichte der Internetze"
+  },
+  "domains":["paris", "berlin"],
+  "tags": [
+    "berlin",
+    "paris"
+  ]
+}

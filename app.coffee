@@ -25,7 +25,7 @@ app.configure ->
   app.use express.bodyParser()
   app.use express.methodOverride()
   app.use express.cookieParser()
-  app.use express.session(secret: process.env.SESSION_SECRET)
+  app.use express.session(secret: process.env.SESSION_SECRET || "<SET A DEFAULT VALUE>")
   
   # Assets managers
   pubDir = path.join(__dirname, "public")

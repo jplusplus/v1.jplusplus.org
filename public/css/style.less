@@ -631,103 +631,93 @@ header {
 			top:0;
 			left:0;
 			
-			width:@markerWidth;
-			height:0;
+			width:1px;
+			height:1px;
 			text-align:center;
 			
-			&.paris { top:53%; left:48%; }
+			&.paris { top:50%; left:48%; }
 			&.berlin { top:39%; left:54%; }
 			&.stockholm { top:16.6%; left:57%; }
-			&.amsterdam { top:39.1%; left:49.3%; }
+			&.amsterdam { top:38.1%; left:49.5%; }
+			&.cologne { top:44%; left:50.8%; }
 
-			&.from-right a{
-				margin-left:-26px;
-				&:after {
-					margin-left:25px;
-				}
+			&:after {
+				content:"";
+				width:10px;
+				height:10px;
+				background:#E2B900;
+				border:1px solid darken(#E2B900, 10%);
+				position:absolute;					
+				top:-5px;
+				left:-5px;
+				z-index:1;
+				.border-radius(50%);
+				.opacity(30);
+				.box-shadow(0 0 4px 0 darken(#E2B900, 20%));
 			}
 
-			&.from-left a{
-				margin-left:20px;
-				&:after {
-					margin-left:-25px;
-				}
-			}
-
-				
 			a {
-				font-family: 'Dinl', sans-serif;
-				font-weight:bold;
 				position:relative;
 				z-index:10;
-				display:block;
-				white-space:nowrap;
-				
-				position:absolute;		
-				width:@markerWidth;		
-				bottom:@markerTickWidth;
-				left:@markerWidth/-2px;
-				padding:3px 0;
-				text-align:center;
+				padding:2px 5px;
+				padding-right:15px;
+				color:white;
+				font-weight:bold;
+				background:@linkColor;
+				top:-10px;
+				.transition(padding-right 0.4s);
 
-				.bg {
-					position:relative;
-					padding:3px 6px;
-					background:@linkColor;	
-					color:white;				
-					//.box-shadow(0 0 10px 0 fade(@linkColor, 60%) );		
-					.border-radius(2px);	
-					
-					&:after {
-						content:" +"; 
-						color:white;
-						line-height:20px;
-						font-size:16px;
-					}						
-				}
-				
-				
-				
-				&:hover {
-					text-decoration:none;
-					.bg {					
-						padding-right:0;	
-						margin-left:-6px;
-						.border-radius(2px 0 0 2px);	
-					}
-					.bg:before {
-						right:-15px;
-						color:white;
-					}								
-				}
-
-				& .bg:before {
-					content:"+";
-					line-height:21px;
-					font-size:16px;
-					color:@linkColor;
-					position:absolute;
-					z-index:-1;
-					top:0;
-					bottom:0;
-					right:0;
-					width:20px;
-					background:@linkColor;
-					.border-radius(0 2px 2px 0);
-				}
-				
 				&:after {
 					content:"";
-					border:@markerTickWidth transparent solid;
-					border-top:@markerTickWidth solid @linkColor;
+					position:absolute;					
+					top:5px;
+					border:@markerTickWidth solid transparent;
+				}
+
+				&:before {
+					z-index:1;
+					content:"++";
 					position:absolute;
-					top:99%;
-					left:50%;
-					margin-top:-1px;
-					margin-left:-1px*@markerTickWidth/2px;
+					right:5px;
+					top:1px;
+				}
+
+				&:hover {
+					text-decoration: none;
+					padding-right:25px;
+				}
+
+				.bg {
+					z-index:5;
+					position:relative;
+					background:inherit;
+					padding-right:2px;
+					margin-right:-2px;
 				}
 			}
 			
+			&.from-left {
+				a {
+					position:absolute;
+					left:@markerTickWidth;
+					&:after {
+						right:100%;
+						border-right-color:@linkColor;
+					}
+				}
+			}
+
+			&.from-right {
+				a {
+					position:absolute;
+					right:@markerTickWidth;
+					&:after {
+						left:100%;
+						border-left-color:@linkColor;
+					}
+				}
+			}
+
 		}
 	}
 }

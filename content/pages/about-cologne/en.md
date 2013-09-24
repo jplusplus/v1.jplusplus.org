@@ -1,1 +1,1 @@
-# FEED ME 
+<h1 class="label-warning">enter content into  `content/pages/about-cologne/en.md`</h1>

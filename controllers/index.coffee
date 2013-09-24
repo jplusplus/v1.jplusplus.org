@@ -35,13 +35,13 @@ module.exports = (app, db, controllers) ->
     subdomain = getSubdomain(req)
     switch subdomain
       when "paris"
-        parisBerlinRoute req, res, subdomain
+        parisBerlinRouter.getRoute req, res, subdomain
       when "berlin"
-        parisBerlinRoute req, res, subdomain
+        parisBerlinRouter.getRoute req, res, subdomain
       when "amsterdam"
-        amsterdamRoute req, res, subdomain
+        amsterdamRouter.getRoute req, res, subdomain
       when "cologne"        
-        cologneRoute req, res, subdomain
+        cologneRouter.getRoute req, res, subdomain
       when "stockholm"
         res.redirect "http://jplusplus.se"
       else
@@ -114,14 +114,6 @@ amsterdamRouter   = _.extend {}, genericRouter,
 cologneRouter     = _.extend {}, genericRouter,
   about_page: 'about-cologne'
   render_template: 'cologne.jade'
-
-
-
-
-
-parisBerlinRoute = (req, res, subdomain) -> parisBerlinRouter.getRoute(req, res, subdomain)
-amsterdamRoute   = (req, res, subdomain) -> amsterdamRouter.getRoute(req, res, subdomain)
-cologneRoute     = (req, res, subdomain) -> cologneRouter.getRoute(req, res, subdomain)
 
 rootRoute = (req, res, subdomain) ->
   async.parallel

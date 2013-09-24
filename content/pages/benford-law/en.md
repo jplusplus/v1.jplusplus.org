@@ -10,7 +10,7 @@ Tax recovery services like the IRS, for instance, use [Benford's Law](http://en.
 
 This law is not foolproof. It requires that your data spans several orders of magnitude, e.g. that it goes from 1 to 1000, or from millions to billions. It doesn't work if you work with percentages, for instance, or with heights. It also requires that your data represents a measurement of something. If you deal with a series of given numbers, like invoice numbers, Benford's law doesn't apply.
 
-<iframe src="http://benford.jplusplus.org/checker/52416b9a3a7b2c0200000001/chart" frameborder="0" allowtransparency="true" width="100%" height="450"></iframe>
+<iframe src="http://benford.jplusplus.org/checker/52416b9a3a7b2c0200000001/chart" frameborder="0" allowtransparency="true" width="100%" height="585"></iframe>
 
 ## Journalism++ gives you the best Benford's law checker
 

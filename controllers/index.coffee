@@ -87,6 +87,7 @@ genericRouter =
         callback null, posts
 
   getRoute: (req, res, subdomain) ->
+    # method that will be called to handle user request
     me = this
     async.parallel
       getPosts: (callback) ->
@@ -94,7 +95,6 @@ genericRouter =
           callback null, results
 
       getAbout: (callback) ->
-        console.log subdomain, me.about_page
         content.getPage me.about_page, req.session.language, (page) ->
           callback null, page
 

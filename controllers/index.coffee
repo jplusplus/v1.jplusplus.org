@@ -1,3 +1,4 @@
+_       = require("underscore")
 async   = require("async")
 cache   = require("memory-cache")
 i18n    = require("i18n")
@@ -39,6 +40,8 @@ module.exports = (app, db, controllers) ->
         parisBerlinRoute req, res, subdomain
       when "amsterdam"
         amsterdamRoute req, res, subdomain
+      when "cologne"        
+        cologneRoute req, res, subdomain
       when "stockholm"
         res.redirect "http://jplusplus.se"
       else
@@ -67,53 +70,58 @@ module.exports = (app, db, controllers) ->
       res.redirect "/404"
       return
 
+genericRouter = 
+  about_page: 'a-propos-de-journalism'
+  render_template: 'parisBerlin.jade'
 
-parisBerlinRoute = (req, res, subdomain) ->
-  async.parallel
-    getPosts: (callback) ->
-      getPostsForDomain req.session.language, subdomain, (error, results) ->
-        callback null, results
+  getPostsForDomain: (lang, domain, callback) ->
+    content.getPosts lang, domain, (posts) ->
+      defaultLanguage = "en"
+      
+      # If no posts, load the english ones
+      if posts and posts.length is 0 and lang isnt defaultLanguage
+        content.getPosts defaultLanguage, domain, (posts) ->
+          callback null, posts
 
-
-    getAbout: (callback) ->
-      content.getPage "a-propos-de-journalism", req.session.language, (page) ->
-        callback null, page
-
-  , (err, results) ->
-    res.render "parisBerlin.jade",
-      posts: results.getPosts
-      about: results.getAbout
-      city: (if subdomain then subdomain.charAt(0).toUpperCase() + subdomain.slice(1) else undefined)
-
-
-
-amsterdamRoute = (req, res, subdomain) ->
-  async.parallel
-    getPosts: (callback) ->
-      getPostsForDomain req.session.language, subdomain, callback
-
-    getAbout: (callback) ->
-      content.getPage "about-amsterdam", req.session.language, (page) ->
-        callback null, page
-
-  , (err, results) ->
-    res.render "amsterdam.jade",
-      posts: results.getPosts
-      about: results.getAbout
-      city: (if subdomain then subdomain.charAt(0).toUpperCase() + subdomain.slice(1) else undefined)
-
-getPostsForDomain = (lang, domain, callback) ->
-  content.getPosts lang, domain, (posts) ->
-    defaultLanguage = "en"
-    
-    # If no posts, load the english ones
-    if posts and posts.length is 0 and req.session.language isnt defaultLanguage
-      content.getPosts defaultLanguage, subdomain, (posts) ->
+      else
         callback null, posts
 
-    else
-      callback null, posts
+  getRoute: (req, res, subdomain) ->
+    me = this
+    async.parallel
+      getPosts: (callback) ->
+        me.getPostsForDomain req.session.language, subdomain, (error, results) ->
+          callback null, results
 
+      getAbout: (callback) ->
+        console.log subdomain, me.about_page
+        content.getPage me.about_page, req.session.language, (page) ->
+          callback null, page
+
+      , (err, results) ->
+        res.render me.render_template,
+          posts: results.getPosts
+          about: results.getAbout
+          city: (if subdomain? then subdomain.charAt(0).toUpperCase() + subdomain.slice(1) else undefined)
+
+# routers declaration & extension if needed 
+parisBerlinRouter = _.extend {}, genericRouter
+
+amsterdamRouter   = _.extend {}, genericRouter,
+  about_page: 'about-amsterdam'
+  render_template: 'amsterdam.jade'
+
+cologneRouter     = _.extend {}, genericRouter,
+  about_page: 'about-cologne'
+  render_template: 'cologne.jade'
+
+
+
+
+
+parisBerlinRoute = (req, res, subdomain) -> parisBerlinRouter.getRoute(req, res, subdomain)
+amsterdamRoute   = (req, res, subdomain) -> amsterdamRouter.getRoute(req, res, subdomain)
+cologneRoute     = (req, res, subdomain) -> cologneRouter.getRoute(req, res, subdomain)
 
 rootRoute = (req, res, subdomain) ->
   async.parallel

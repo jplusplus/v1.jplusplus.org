@@ -1,0 +1,1 @@
+Newsrooms should be able to work with code. Should be able to develop small, smart apps when needed. Not in two years, but in two weeks or - if need be - two days. As a team we are open to work with organizations interested in exploring the options that are available. 

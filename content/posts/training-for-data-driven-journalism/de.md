@@ -1,0 +1,1 @@
+Müssen Datenjournalisten selbst programmieren können? Wo finden sich Daten, wie lassen sie sich überprüfen? Welche Visualisierung ist richtig, wie werden Daten-Apps entwickelt? Innerhalb der letzten drei Jahre haben wir international Erfahrung beim Training für Datenjournalismus aufgebaut. Wenn Sie Interesse an einem Datenjournalismus-Training haben, nehmen Sie kurz Kontakt auf. 

@@ -6,7 +6,6 @@
   "layout": "post",
   "slug": "Training-for-data-driven-journalism",
   "title": {
-    "en": "Training for data-driven journalism",
     "de": "Schulungen für Datenjournalismus"
   },
   "categories": [
@@ -14,6 +13,6 @@
   ],
   "domains":["cologne"],
   "tags": [
-    "ddj, training, ausbildung, redakteure, journalisten, weiterbildung"
+    "ddj", "training", "ausbildung", "redakteure", "journalisten", "weiterbildung"
   ]
 }

@@ -17,5 +17,6 @@
 	"Datajournalist": "Datajournalist",
 	"Designer": "Designer",
 	"Programmer": "Programmer",
-	"Clients & Partners": "Clients & Partners"
+	"Clients & Partners": "Clients & Partners",
+	"Data-journalist": "Data-journalist"
 }

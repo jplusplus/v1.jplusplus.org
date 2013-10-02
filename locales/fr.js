@@ -20,5 +20,6 @@
 	"Well... It's ambarrassing!": "Well... It's ambarrassing!",
 	"Datajournalist": "Datajournalist",
 	"Designer": "Designer",
-	"Programmer": "Programmer"
+	"Programmer": "Programmer",
+	"Data-journalist": "Data-journalist"
 }

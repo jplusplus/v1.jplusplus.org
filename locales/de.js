@@ -13,5 +13,6 @@
 	"We're turning <span class='link-color'>one</span>!": "We're turning <span class='link-color'>one</span>!",
 	"Data-driven stories": "Data-driven stories",
 	"Journalism++ is a network of datajournalists that aims to build great stories and tools with data.": "Journalism++ ist ein Netzwerk von Datenjournalisten, die aus großen Datenmengen relevante, interessante und verblüffende Geschichten filtern.",
-	"Clients & Partners": "Clients & Partners"
+	"Clients & Partners": "Clients & Partners",
+	"Data-journalist": "Data-journalist"
 }

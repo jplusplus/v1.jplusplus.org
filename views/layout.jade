@@ -20,7 +20,8 @@ html(class='no-js', lang='en')
 
     - if(typeof posts != "undefined")       
         - posts.forEach(function(item) {
-          meta(property="og:image",content=item.thumbnail)
+          if item
+            meta(property="og:image",content=item.thumbnail)
         - })
 
     meta(property="og:image",content="http://jplusplus.org/img/jpp.png")

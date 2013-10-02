@@ -1,0 +1,20 @@
+{
+  "author": "mirkolorenz",
+  "comments": true,
+  "date": "2013-06-09 17:02:37 +0200",
+  "thumbnail":"http://blog.datawrapper.de/wp-content/uploads/2013/05/screenshot-2013-05-29-um-03.11.23.png",
+  "layout": "post",
+  "slug": "Datawrapper-Open-Source-Visulasierungstool",
+  "siteurl": "http://datawrapper.de",
+  "title": {
+    "en": "Datawrapper: Open Source Visulasierungstool",
+    "de": "Datawrapper: Open Source Visualisierungstool"
+  },
+  "categories": [
+    "Non classé"
+  ],
+  "domains":["cologne", "berlin","paris"],
+  "tags": [
+    "Datawrapper", "viz tool", "open source", "visualization", "bar chart", "line chart", "pie chart" 
+  ]
+}

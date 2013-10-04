@@ -4,7 +4,7 @@ We founded Journalism++ to accompany newsrooms in their transitions towards the 
 
 From data collection to analysis to publishing, our expertise is known worldwide. We are building [Feowl](http://www.feowl.com/comingsoon/), a new kind of crowdsourcing platform. We take part in [Datawrapper](http://datawrapper.de/), a super-easy tool for data visualization. And with [E-Diplomacy](http://ediplomacy.afp.com/), we manage to make sense out of millions of tweets.
 
-Journalism++ is based in Paris (rue Richer, near Metro 9 station Grands Boulevards) and in Berlin (Betahaus, U8 Moritzplatz).
+Journalism++ is based in Paris (rue Richer, near Metro 9 station Grands Boulevards) and in Berlin (Grimmstraße 10A, U8 Schönleinstraße).
 
 Since August 2012, Journalism++ is very happy to work with the best project manager this side of the Atlantic, [@annelisebouyer](https://twitter.com/annelisebouyer)!
 

@@ -8,6 +8,15 @@ Journalism++ wirkt aus Paris (rue Richer, nähe U-Bahn-Station Grands Boulevards
 
 Seit August 2012 ist Journalism++ sehr glücklich, mit der besten Projekt-Managerin zusammen zu arbeiten: [@annelisebouyer](https://twitter.com/annelisebouyer)!
 
+Journalism++ besteht aus einem Netzwerk unabhängiger Firmen.
+
+Bei Journalism++ SAS arbeiten die Gründer Nicolas Kayser-Bril und Pierre Romera, sowie Anne-Lise Bouyer, Edouard Richard, Pierre Bellon and Paul Joannon.
+
+In Stockholm arbeiten Jens Finnäs und Peter Grensund als Journalism++ Stockholm AB für verschiedene Medien, beraten Redaktionen und entwickeln eigene Anwendungen. 
+
+In den Niederlanden arbeiten aus Jelle Kamsma (Datenjournalist), Yordi Dam (Designer) und Erik Willems (Programmierer) als Journalism++ Amsterdam und entwickeln das Daten-Management Tool LocalFocus.
+
+Seit Oktober 2013 gehören Mirko Lorenz und Cosmin Cabulea zum Netzwerk als Journalism++ GmbH, die beiden arbeiten in Köln und konzentrieren sich auf die Weiterentwicklung des Datawrapper.
 
 ## Kontakt
 

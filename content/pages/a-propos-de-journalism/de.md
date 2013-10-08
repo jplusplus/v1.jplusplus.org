@@ -4,7 +4,7 @@ Wir haben Journalismus++ gegründet, um Redaktionen bei ihrer Übergang in Richt
 
 Von der Datensammlung über die Analyse bis hin zur Veröffentlichung ist unsere Expertise weltweit bekannt. Derzeit bauen wir an [Feowl](http://www.feowl.com/comingsoon/), einer neuen Art von Crowdsourcing-Plattform. Wir sind Mitbegründer von [Datawrapper](http://datawrapper.de/), einem super-einfachen Werkzeug zur Visualisierung von Daten. Und mit [E-Diplomacy](http://ediplomacy.afp.com/) gelingt es uns, Millionen von Tweets einen Sinn zu geben.
 
-Journalism++ wirkt aus Paris (rue Richer, nähe U-Bahn-Station Grands Boulevards) und Berlin (Betahaus, U8 Moritzplatz).
+Journalism++ wirkt aus Paris (rue Richer, nähe U-Bahn-Station Grands Boulevards) und Berlin (Grimmstraße, U8 Schönleinstraße).
 
 Seit August 2012 ist Journalism++ sehr glücklich, mit der besten Projekt-Managerin zusammen zu arbeiten: [@annelisebouyer](https://twitter.com/annelisebouyer)!
 

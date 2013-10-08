@@ -4,7 +4,7 @@ Nous nous sommes lancés dans Journalism++ pour accompagner les rédactions dans
 
 De la collecte de données à l’analyse et la publication, notre expertise est internationalement reconnue. Avec le projet [Feowl](http://www.feowl.com/comingsoon/), nous inventons un nouveau type de crowdsourcing. Avec [Datawrapper](http://datawrapper.de/), nous simplifions la publication de données. [E-Diplomacy](http://ediplomacy.afp.com/) montre comment nous pouvons créer du sens à partir du flot ininterrompu des tweets.
 
-Journalism++ est basé à Paris (rue Richer, [Métro ligne 8 & 9 Grands Boulevards](http://www.openstreetmap.org/?lat=48.870802&lon=2.349014&zoom=18&layers=M)) et à Berlin (Betahaus, [U-8 Mortizplatz](http://www.openstreetmap.org/?lat=52.503712&lon=13.410758&zoom=18&layers=M)).
+Journalism++ est basé à Paris (rue Richer, [Métro ligne 8 & 9 Grands Boulevards](http://www.openstreetmap.org/?lat=48.870802&lon=2.349014&zoom=18&layers=M)) et à Berlin (Grimmstraße, U-8 Schönleinstraße).
 
 Début août 2012, l'excellente [@annelisebouyer](https://twitter.com/annelisebouyer) a rejoint notre petite épicerie en tant que chef de projet.
 

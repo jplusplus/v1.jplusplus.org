@@ -1,6 +1,6 @@
 Journalism++ Cologne joined the network in October 2013. We share a belief that newsrooms and journalists should use technology for better reporting. 
 
-Our goal in Cologne is to work with media companies, train and develop cool data-driven news projects and apps. 
+Our goal in Cologne is to work with media companies, train journalists on how to work with data and to create data-driven news projects and apps. 
 Our main project is the successful "Datawrapper", an open source tool helping everyone to create basic, correct charts in very short time. 
 
 

@@ -1,6 +1,6 @@
 Journalism++  ist ein internationales Netzwerk aus Firmen und Spezialisten, die unter einem gemeinsamen Namen und mit gemeinsamer Zielsetzung arbeiten. Unser Manifest beschreibt zehn Punkte, die uns prägen und leiten.
 
-  1. Wir sind "news nerds". Wir sind Journalistinnen und Journalisten, Entwickler(innen), DesignerInnen und ProjektmanagerInnen, die eine Passion für Nachrichten und Technologie teilen. 
+  1. Wir sind "news nerds". Wir sind Journalistinnen und Journalisten, Entwickler(innen), Designer(innen) und Projektmanager(innen), die eine Passion für Nachrichten und Technologie teilen.
   
   2. Wir  glauben, dass sich journalistische Berichterstattung deutlich verbessern lässt, wenn wir im Journalismus konsequent außerhalb der engen Grenzen denken, die durch Printmedien, Radio und Fernsehen vorgegeben wurden. 
   

@@ -23,13 +23,7 @@ module.exports = (app, db, controllers) ->
   #
   #   * GET home page.
   #   
-  app.get "/", (req, res) ->
-    
-    # Refresh the cache
-    unless typeof req.query["refresh-cache"] is "undefined"
-      console.log "Cache refresfed."
-      cache.clear()
-    
+  app.get "/", (req, res) ->      
     # Get and set the language in (or from) session
     req.session.language = module.exports.getUserLang(req)
     subdomain = getSubdomain(req)
@@ -82,7 +76,6 @@ genericRouter =
       if posts and posts.length is 0 and lang isnt defaultLanguage
         content.getPosts defaultLanguage, domain, (posts) ->
           callback null, posts
-
       else
         callback null, posts
 

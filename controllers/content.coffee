@@ -116,9 +116,8 @@ getPostContentExtended = (post, lang, complete) ->
     else
       if lang isnt defaultLanguage
         getPostContentExtended _post, defaultLanguage, complete
-      else
-        error = new Error("Couldn't find english markdown file for post: " + post)
-        complete error
+      else        
+        complete null, null
 
 
 

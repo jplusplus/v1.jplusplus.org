@@ -16,5 +16,5 @@
 	"Clients & Partners": "Clients & Partners",
 	"Data-journalist": "Data-journalist",
 	"CEO &bullet; Data-journalist, Information&nbsp;Architect, Trainer": "CEO &nbsp; Datenjournalist, Information Architect, Trainer",
-	"Data-journalist, Developer": "Datenjournalist, Entwickler"
+	"Data-journalist, Developer, Trainer": "Datenjournalist, Entwickler, Trainer"
 }

@@ -14,5 +14,7 @@
 	"Data-driven stories": "Data-driven stories",
 	"Journalism++ is a network of datajournalists that aims to build great stories and tools with data.": "Journalism++ ist ein Netzwerk von Datenjournalisten, die aus großen Datenmengen relevante, interessante und verblüffende Geschichten filtern.",
 	"Clients & Partners": "Clients & Partners",
-	"Data-journalist": "Data-journalist"
+	"Data-journalist": "Data-journalist",
+	"CEO &bullet; Data-journalist, Information&nbsp;Architect, Trainer": "CEO &nbsp; Datenjournalist, Information Architect, Trainer",
+	"Data-journalist, Developer": "Datenjournalist, Entwickler"
 }

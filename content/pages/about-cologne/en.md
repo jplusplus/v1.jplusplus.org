@@ -1,10 +1,10 @@
-Journalism++ unterstützt Redaktionen beim Übergang zum "Web der Daten". Wir bieten Zusammenarbeit in den Bereichen Training an, beraten beim Aufbau von Zukunftsstrategien für journalistische Inhalte und entwickeln innovative HTML5- und Daten-Anwendungen. 
+Journalism++ Cologne joined the network in October 2013. We share a belief that newsrooms and journalists should use technology for better reporting. 
 
-Journalism++ Cologne ist Teil des Netzwerks unabhängiger Daten-Teams, die unter einem Namen arbeiten. Weitere Teams sind derzeit in Paris, Stockholm, Amsterdam und Berlin tätig. 
+Our goal in Cologne is to work with media companies, train and develop cool data-driven news projects and apps. 
+Our main project is the successful "Datawrapper", an open source tool helping everyone to create basic, correct charts in very short time. 
 
-Wir wollen neue Möglichkeiten aufzeigen und neue Modelle erarbeiten, ein zentrales Anliegen ist der Übergang von "Aufmerksamkeit zu Vertrauen" ('Attention to trust'). 
 
-## Fragen, Anregungen, Ideen?
+## Get in touch.
 
 ![](http://oeildupirate.com/jplusplus/files/iconmonstr-twitter-5-icon.png) [@jplusplus_de](http://twitter.com/jplusplus)
 

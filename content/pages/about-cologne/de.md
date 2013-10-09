@@ -1,10 +1,11 @@
-Journalism++ Cologne joined the network in October 2013. We share a belief that newsrooms and journalists should use technology for better reporting. 
+Journalism++ Cologne ist seit Oktober 2013 das fünfte Team im Journalism++-Netzwerk. Wir teilen die Überzeugung, dass Journalisten und Redaktionen die technischen Möglichkeiten nutzen können, um besser und vertieft zu informieren. 
 
-Our goal in Cologne is to work with media companies, train journalists on how to work with data and to create data-driven news projects and apps. 
-Our main project is the successful "Datawrapper", an open source tool helping everyone to create basic, correct charts in very short time. 
+Unser Ziel in Köln ist es, mit Medienunternehmen und Institutionen Ideen, Konzepte und Anwendungen zu entwickeln. Wir bieten Training für Datenjournalismus an, ein Bereich in dem wir in den letzten drei Jahren viel Erfahrung aufgebaut haben. Außerdem konzentrieren wir uns auf daten-getriebene Projekte und Anwendungen. 
 
+Unser wichtigstes Projekt ist der [Datawrapper](http://www.datawrapper.de"Datawrapper")
+, eine "Open Source"-Software, mit der sich in sehr kurzer Zeit korrekte Diagramme erstellen und einbetten lassen. Seit dem durch die ABZV (Bildungswerk der Zeitungen) geförderten Start des Projekts vor knapp zwei Jahren haben sich die Nutzerzahlen steil nach oben entwickelt. Eine Besonderheit des Datawrapper besteht darin, dass sich die Layouts an die jeweilige Marke des Mediums anpassen lassen.
 
-## Get in touch!
+## Kontaktmöglichkeiten: 
 
 ![](http://oeildupirate.com/jplusplus/files/iconmonstr-twitter-5-icon.png) [@jplusplus_de](http://twitter.com/jplusplus)
 

@@ -1,11 +1,12 @@
-We founded Journalism++ to accompany newsrooms in their transitions towards the web of data. With our clients, we do training sessions, consulting missions and build innovative HTML5 applications.
+Journalism++ unterstützt Redaktionen beim Übergang zum "Web der Daten". Wir bieten Zusammenarbeit in den Bereichen Training an, beraten beim Aufbau von Zukunftsstrategien für journalistische Inhalte und entwickeln innovative HTML5- und Daten-Anwendungen. 
 
-From data collection to analysis to publishing, our expertise is known worldwide.
+Journalism++ Cologne ist Teil des Netzwerks unabhängiger Daten-Teams, die unter einem Namen arbeiten. Weitere Teams sind derzeit in Paris, Stockholm, Amsterdam und Berlin tätig. 
 
+Wir wollen neue Möglichkeiten aufzeigen und neue Modelle erarbeiten, ein zentrales Anliegen ist der Übergang von "Aufmerksamkeit zu Vertrauen" ('Attention to trust'). 
 
-## Contact us!
+## Fragen, Anregungen, Ideen?
 
-![](http://oeildupirate.com/jplusplus/files/iconmonstr-twitter-5-icon.png) [@jplusplus_de](http://twitter.com/jplusplus_)
+![](http://oeildupirate.com/jplusplus/files/iconmonstr-twitter-5-icon.png) [@jplusplus_de](http://twitter.com/jplusplus)
 
 ![](http://oeildupirate.com/jplusplus/files/iconmonstr-email-10-icon.png) hallo@jplusplus.org
 

@@ -4,7 +4,7 @@ Our goal in Cologne is to work with media companies, train and develop cool data
 Our main project is the successful "Datawrapper", an open source tool helping everyone to create basic, correct charts in very short time. 
 
 
-## Get in touch.
+## Get in touch!
 
 ![](http://oeildupirate.com/jplusplus/files/iconmonstr-twitter-5-icon.png) [@jplusplus_de](http://twitter.com/jplusplus)
 

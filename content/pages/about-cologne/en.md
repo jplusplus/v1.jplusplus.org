@@ -6,7 +6,7 @@ Our main project is the successful "Datawrapper", an open source tool helping ev
 
 ## Get in touch!
 
-![](http://oeildupirate.com/jplusplus/files/iconmonstr-twitter-5-icon.png) [@jplusplus_de](http://twitter.com/jplusplus)
+![](http://oeildupirate.com/jplusplus/files/iconmonstr-twitter-5-icon.png) [@jplusplus_de](http://twitter.com/jplusplus_)
 
 ![](http://oeildupirate.com/jplusplus/files/iconmonstr-email-10-icon.png) hallo@jplusplus.org
 

@@ -5,11 +5,11 @@ Datenjournalismus beschränkt sich nicht auf Visualisierungen. Da geht noch mehr
 
 Beispiele für Projekte:
 
-- Investigative Datenprojekte, bei denen über einen längeren Zeitraum geeignete Formen der Analyse und Betrachtung von Ereignissen gesammelt werden. 
++Investigative Datenprojekte, bei denen über einen längeren Zeitraum geeignete Formen der Analyse und Betrachtung von Ereignissen gesammelt werden. 
 
-- Crowdsourcing-Anwendungen, um gemeinsam mit den Nutzern Informationen zu sammeln. 
++Crowdsourcing-Anwendungen, um gemeinsam mit den Nutzern Informationen zu sammeln. 
 
-- Applikationen, um bei der Entscheidungsfindung in verschiedenen Lebensbereichen zu unterstützen und so dauerhaft neue Angebote zu verankern, die von journalistischen Zielen getrieben sind (nicht der Datensammelei von Marketing-Organisationen). 
++Applikationen, um bei der Entscheidungsfindung in verschiedenen Lebensbereichen zu unterstützen und so dauerhaft neue Angebote zu verankern, die von journalistischen Zielen getrieben sind (nicht der Datensammelei von Marketing-Organisationen). 
 
 Wenn Sie über eine Idee oder ein mögliches Angebot nachdenken, sprechen Sie uns an. Wir begleiten solche Projekte in Phasen oder managen die Umsetzung vom leeren Blatt Papier bis zur fertigen Anwendung. 
 

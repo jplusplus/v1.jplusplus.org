@@ -2,7 +2,7 @@ Journalism++ Cologne ist seit Oktober 2013 das fünfte Team im Journalism++-Netz
 
 Unser Ziel in Köln ist es, mit Medienunternehmen und Institutionen Ideen, Konzepte und Anwendungen zu entwickeln. Wir bieten Training für Datenjournalismus an, ein Bereich in dem wir in den letzten drei Jahren viel Erfahrung aufgebaut haben. Außerdem konzentrieren wir uns auf daten-getriebene Projekte und Anwendungen. 
 
-Unser wichtigstes Projekt ist der [Datawrapper](http://www.datawrapper.de"Datawrapper")
+Unser wichtigstes Projekt ist der [Datawrapper](http://www.datawrapper.de "Datawrapper")
 , eine "Open Source"-Software, mit der sich in sehr kurzer Zeit korrekte Diagramme erstellen und einbetten lassen. 
 
 Seit dem Start des Projekts vor knapp zwei Jahren haben sich die Nutzerzahlen steil nach oben entwickelt, derzeit nutzen über 1000 Medien und Webangebote das Tool. Ermöglicht wurde das Projekt durch die Unterstützung der [ABZV](http://www.abzv.de "ABZV (Bildungswerk der Zeitungen)"). 

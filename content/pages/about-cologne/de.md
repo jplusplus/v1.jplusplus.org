@@ -18,7 +18,7 @@ Weitere Services bestehen in der Entwicklung spezifischer Workflows, um die Nutz
 
 ## Kontaktmöglichkeiten:
 
-![](http://oeildupirate.com/jplusplus/files/iconmonstr-twitter-5-icon.png) [@jplusplus_](http://twitter.com/jplusplus_)
+![](http://oeildupirate.com/jplusplus/files/iconmonstr-twitter-5-icon.png) [@jplusplus_de](http://twitter.com/jplusplus_de)
 
 ![](http://oeildupirate.com/jplusplus/files/iconmonstr-email-10-icon.png) hallo@jplusplus.org
 

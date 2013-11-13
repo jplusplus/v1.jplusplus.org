@@ -1,0 +1,22 @@
+{
+  "author": "anneliseb",
+  "thumbnail":"/img/gallery/benfords-law.png",
+  "comments": true,
+  "date": "2013-11-13 15:41:43 +0100",
+  "layout": "post",
+  "slug": "benfords-law",
+  "siteurl": "http://benford.jplusplus.org/",
+  "title": {
+    "fr":"\"La loi de Benford appliquées à vos données\"",
+    "en": "Benford's law checker"
+  },
+  "domains": ["paris", "berlin"],
+  "categories": [
+    "Non classé"
+  ],
+  "tags": [
+    "Benford's law",
+    "Loi de Benford",
+    "manipulation de données",
+  ]
+}

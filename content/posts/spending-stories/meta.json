@@ -1,0 +1,23 @@
+{
+  "author": "anneliseb",
+  "thumbnail":"/img/gallery/spending-stories.png",
+  "comments": true,
+  "date": "2013-11-13 15:41:43 +0100",
+  "layout": "post",
+  "slug": "spending-stories",
+  "siteurl": "http://okf-spendingstories.herokuapp.com/",
+  "title": {
+    "fr":"\"Spending stories\"",
+    "en": "Spending stories"
+  },
+  "domains": ["paris", "berlin"],
+  "categories": [
+    "Non classé"
+  ],
+  "tags": [
+    "budget",
+    "data",
+    "données",
+    "expenditures"
+  ]
+}

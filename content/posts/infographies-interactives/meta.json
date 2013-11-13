@@ -1,0 +1,22 @@
+{
+  "author": "anneliseb",
+  "thumbnail":"/img/gallery/infographies-interactives.png",
+  "comments": true,
+  "date": "2013-11-13 15:41:43 +0100",
+  "layout": "post",
+  "slug": "infographies-interactives",
+  "siteurl": "http://www.iledefrance.fr/action-quotidienne/se-loger",
+  "title": {
+    "fr":"\"Infographies interactives\"",
+    "en": "infographies interactives"
+  },
+  "domains": ["paris", "berlin"],
+  "categories": [
+    "Non classé"
+  ],
+  "tags": [
+    "infographics",
+    "data",
+    "infographies",
+  ]
+}

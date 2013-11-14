@@ -7,7 +7,7 @@
   "slug": "spending-stories",
   "siteurl": "http://okf-spendingstories.herokuapp.com/",
   "title": {
-    "fr":"\"Spending stories\"",
+    "fr": "Spending stories",
     "en": "Spending stories"
   },
   "domains": ["paris", "berlin"],

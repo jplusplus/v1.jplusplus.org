@@ -7,17 +7,14 @@
   "slug": "benfords-law",
   "siteurl": "http://benford.jplusplus.org/",
   "title": {
-    "fr":"\"La loi de Benford appliquées à vos données\"",
+    "fr": "La loi de Benford appliquées à vos données",
     "en": "Benford's law checker"
   },
-  "domains": ["paris", "berlin"],
-  "categories": [
-    "Non classé"
-  ],
   "domains":["paris", "berlin"],
   "tags": [
     "Benford's law",
     "Loi de Benford",
-    "manipulation de données",
+    "manipulation de données"
   ]
 }
+

@@ -5,6 +5,6 @@ Quand un jeu de données ne suit pas cette loi, cela peut-être un indice de man
 
 Certains services de recouvrement utilisent la loi de Benford pour acquérir des preuves supplémentaires de fraudes. Cette loi a même été utilisée en justice pour appuyer des preuves de fraudes fiscales.
 
-[Read more here](http://jplusplus.org/p/benford-law).
+[Plus d'info ici](http://jplusplus.org/p/benford-law).
 
-**Journalism++ a réalisé un outil permettant facilement de vérifier si vos données suivent la loi de Benford, codé par[Paul Joannon](http://www.twitter.com/paulloz), le dernier nerd arrivé chez Journalism++.**
+**Journalism++ a réalisé un outil permettant facilement de vérifier si vos données suivent la loi de Benford, codé par [Paul Joannon](http://www.twitter.com/paulloz), le dernier nerd arrivé chez Journalism++.**

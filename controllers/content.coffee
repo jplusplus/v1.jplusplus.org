@@ -5,7 +5,7 @@ contentPath = __dirname + "/../content/"
 fs          = require("fs")
 marked      = require("marked")
 
-module.exports = ->  
+module.exports = ->
   ###
   Initialization of marked module
   Enable git flavor markdown (it's a bonus)
@@ -17,15 +17,15 @@ module.exports = ->
 Return the content of
 ###
 module.exports.getPage = (page_name, lang, complete) ->
-  
+
   # Get data from cache first
   async.series [getFromCache = (fallback) ->
     cache_key = "page-" + page_name
-    
+
     # Get the course from the cache
     unless not cache.get(cache_key)
       complete cache.get(cache_key)
-    
+
     # Or get the colletion from the fallback function
     else
       fallback()
@@ -38,11 +38,11 @@ module.exports.getPage = (page_name, lang, complete) ->
 Return the list of post stored into /content/posts/
 ###
 module.exports.getPosts = (lang, domain, complete) ->
-  post_paths = contentPath + "posts/"  
+  post_paths = contentPath + "posts/"
   cache_key = "posts-list-" + lang + "-" + domain
   # Get the course from the cache
   if cache.get(cache_key)
-    complete cache.get(cache_key)    
+    complete cache.get(cache_key)
   # Or get the colletion from the fallback function
   else
     getPostsFromFiles lang, domain, complete
@@ -55,8 +55,8 @@ getPostsFromFiles = (lang, domain, complete) ->
   posts_path = contentPath + "posts/"
   async.waterfall([
     (getPostsMeta) -> fs.readdir posts_path, getPostsMeta
-    # Read all posts meta from "posts/" folder  
-    (elements, filterPosts) ->          
+    # Read all posts meta from "posts/" folder
+    (elements, filterPosts) ->
       # console.log('getPosts.getPostsMeta - ', elements);
       async.map( elements, (element, addPost) ->
         element_path = posts_path + element + "/"
@@ -71,6 +71,7 @@ getPostsFromFiles = (lang, domain, complete) ->
     # We filter posts if they are not from the requested domain
     (posts, filterPost) ->
       async.filter(posts, (post, filter) ->
+        console.log post
         post_domains = post.meta.domains
         filtered = true
         unless post.disabled
@@ -78,27 +79,27 @@ getPostsFromFiles = (lang, domain, complete) ->
             filtered = false  if post_domain is domain
 
         filter not filtered
-      , (results) -> filterPost null, results) 
+      , (results) -> filterPost null, results)
 
     # We sort the posts
     (posts, getPostsContent)->
       getPostsContent null, _.sortBy posts, (p)-> -1 * (new Date(p.meta.date).getTime())
     # We get all post contents
-    (posts, sendResults) ->    
+    (posts, sendResults) ->
       # map transform function for each post
       async.map posts, ((post, addPost) ->
         getPostContentExtended post, lang, addPost
       ), sendResults
 
   # Final callback
-  ], (error, results) ->    
-    console.log error  if error    
+  ], (error, results) ->
+    console.log error  if error
     cache.put "posts-lists-" + lang, results  if results.length > 0
     onPostsRetrieved results, lang, domain, complete
   )
 
 getPostContentExtended = (post, lang, complete) ->
-  defaultLanguage = "en"  
+  defaultLanguage = "en"
   fs.readFile post.path + lang + ".md", "utf-8", (err, content, _post) ->
     _post = post  unless _post
     unless err
@@ -116,7 +117,7 @@ getPostContentExtended = (post, lang, complete) ->
     else
       if lang isnt defaultLanguage
         getPostContentExtended _post, defaultLanguage, complete
-      else        
+      else
         complete null, null
 
 

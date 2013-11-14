@@ -7,7 +7,7 @@
   "slug": "infographies-interactives",
   "siteurl": "http://www.iledefrance.fr/action-quotidienne/se-loger",
   "title": {
-    "fr":"\"Infographies interactives\"",
+    "fr": "Infographies interactives",
     "en": "infographies interactives"
   },
   "domains": ["paris", "berlin"],
@@ -18,6 +18,6 @@
   "tags": [
     "infographics",
     "data",
-    "infographies",
+    "infographies"
   ]
 }

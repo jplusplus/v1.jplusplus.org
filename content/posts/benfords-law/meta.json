@@ -7,7 +7,7 @@
   "slug": "benfords-law",
   "siteurl": "http://benford.jplusplus.org/",
   "title": {
-    "fr": "La loi de Benford appliquées à vos données",
+    "fr": "La loi de Benford appliquée à vos données",
     "en": "Benford's law checker"
   },
   "domains":["paris", "berlin"],

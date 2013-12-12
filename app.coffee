@@ -33,6 +33,9 @@ app.configure ->
   app.use require("connect-assets")(src: pubDir, buildFilenamer: plainFilenamer)
   app.use express.static(pubDir)
 
+  # Static build public access
+  app.use express.static(pubDir + "/build")
+
   # setup some locales
   i18n.configure locales: ["fr", "en", "de", "sv"]
 

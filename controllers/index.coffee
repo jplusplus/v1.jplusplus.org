@@ -4,6 +4,7 @@ cache   = require("memory-cache")
 i18n    = require("i18n")
 config  = require("config")
 content = require("./content")
+fs      = require("fs")
 
 getSubdomain = (req) ->
   host = req.headers.host
@@ -19,11 +20,11 @@ getSubdomain = (req) ->
 @description Home route binder
 ###
 module.exports = (app, db, controllers) ->
-  
+
   #
   #   * GET home page.
-  #   
-  app.get "/", (req, res) ->      
+  #
+  app.get "/", (req, res) ->
     # Get and set the language in (or from) session
     req.session.language = module.exports.getUserLang(req)
     subdomain = getSubdomain(req)
@@ -34,44 +35,43 @@ module.exports = (app, db, controllers) ->
         parisBerlinRouter.getRoute req, res, subdomain
       when "amsterdam"
         amsterdamRouter.getRoute req, res, subdomain
-      when "cologne"        
+      when "cologne"
         cologneRouter.getRoute req, res, subdomain
       when "stockholm"
         res.redirect "http://jplusplus.se"
       else
         rootRoute req, res, subdomain
 
-  
+
   #
   #   * Chnage the user language
-  #   
+  #
   app.get "/lang/:ln", (req, res) ->
     req.session.language = (if ["fr", "en", "de", "sv"].indexOf(req.params.ln) > -1 then req.params.ln else "en")
     res.redirect req.query.path or "back" or "/"
 
-  
   ###
   Birthday page
   ###
   app.get "/birthday/2012", (req, res) ->
-    res.render "birthday", {}
+    res.render "birthday-2012", {}
 
   app.use (req, res, next) ->
     res.status 404
-    
+
     # respond with html page
     if req.accepts("html")
       res.redirect "/404"
       return
 
-genericRouter = 
+genericRouter =
   about_page: 'a-propos-de-journalism'
   render_template: 'parisBerlin.jade'
 
   getPostsForDomain: (lang, domain, callback) ->
     content.getPosts lang, domain, (posts) ->
       defaultLanguage = "en"
-      
+
       # If no posts, load the english ones
       if posts and posts.length is 0 and lang isnt defaultLanguage
         content.getPosts defaultLanguage, domain, (posts) ->
@@ -97,7 +97,7 @@ genericRouter =
           about: results.getAbout
           city: (if subdomain? then subdomain.charAt(0).toUpperCase() + subdomain.slice(1) else undefined)
 
-# routers declaration & extension if needed 
+# routers declaration & extension if needed
 parisBerlinRouter = _.extend {}, genericRouter
 
 amsterdamRouter   = _.extend {}, genericRouter,

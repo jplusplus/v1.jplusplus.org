@@ -30,7 +30,7 @@ app.configure ->
   # Assets managers
   pubDir = path.join(__dirname, "public")
   plainFilenamer = (filename, code)-> filename
-  app.use require("connect-assets")(src: pubDir, build: yes, buildFilenamer: plainFilenamer)
+  app.use require("connect-assets")(src: pubDir, buildFilenamer: plainFilenamer)
   app.use express.static(pubDir)
 
   # setup some locales

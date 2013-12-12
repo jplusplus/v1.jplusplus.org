@@ -19,22 +19,23 @@ app.configure ->
   app.set "port", process.env.PORT or 3000
   app.set "views", __dirname + "/views"
   app.set "view engine", "jade"
-  
+
   # using 'accept-language' header to guess language settings
   app.use i18n.init
   app.use express.bodyParser()
   app.use express.methodOverride()
   app.use express.cookieParser()
   app.use express.session(secret: process.env.SESSION_SECRET || "<SET A DEFAULT VALUE>")
-  
+
   # Assets managers
   pubDir = path.join(__dirname, "public")
-  app.use require("connect-assets")(src: pubDir)
+  plainFilenamer = (filename, code)-> filename
+  app.use require("connect-assets")(src: pubDir, build: yes, buildFilenamer: plainFilenamer)
   app.use express.static(pubDir)
-  
+
   # setup some locales
   i18n.configure locales: ["fr", "en", "de", "sv"]
-  
+
   # Register helpers for use in templates
   app.use (req, res, next) ->
     res.locals._ = (msg) ->
@@ -50,7 +51,7 @@ app.configure ->
     res.locals.path = req.path
     next()
 
-  
+
   # Load every controllers
   require("./controllers/404") app
   require("./controllers/index") app
@@ -65,5 +66,5 @@ app.configure "development", ->
 app.configure "production", -> app.use express.errorHandler()
 
 # Then create the express server
-http.createServer(app).listen app.get("port"), -> 
+http.createServer(app).listen app.get("port"), ->
   console.log("Express server listening on port " + app.get("port"))

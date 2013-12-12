@@ -1,0 +1,310 @@
+[
+	{
+		"type" : "person",
+		"id" : "pirhoo",
+		"name" : "Pierre Romera",
+		"description" : "CTO • Developer",
+		"img"  : "images/pirhoo.png" ,
+		"geo" : {
+			"lon": 2.406004,
+			"lat": 48.731398
+		}
+	},
+	{
+		"type" : "person",
+		"id" : "paulloz",
+		"name" : "Paul Joannon",
+		"description" : "Developer",
+		"img"  : "images/paul.png" ,
+		"geo" : {
+			"lon": 2.406004,
+			"lat": 48.731398
+		}
+	},
+	{
+		"type" : "person",
+		"id" : "toutenrab",
+		"name" : "Pierre Bellon",
+		"description" : "Developer",
+		"img"  : "images/toutenrab.png" ,
+		"geo" : {
+			"lon": 2.406004,
+			"lat": 48.731398
+		}
+	},
+	{
+		"type" : "person",
+		"name" : "Edouard Richard",
+		"description" : "Developer",
+		"img"  : "images/vied12.png",
+		"id"   : "vied12",
+		"geo" :{
+			"lon": 13.423653,
+			"lat": 52.473827
+		}
+	},
+		{
+		"type" : "person",
+		"name" : "Sebastian Kraus",
+		"description" : "Journalist",
+		"img"  : "images/seb.png",
+		"id"   : "seb",
+		"geo" :{
+			"lon": 13.423653,
+			"lat": 52.473827
+		}
+	},
+	{
+		"type" : "person",
+		"name" : "Nicolas Kayer-Bril",
+		"description" : "CEO • Journalist",
+		"id"   : "nkb",
+		"img"  : "images/nkb.png",
+		"geo" :{
+			"lon": 13.423653,
+			"lat": 52.473827
+		}
+	},
+	{
+		"type" : "person",
+		"name" : "Anne-Lise Bouyer",
+		"id"   : "annelise",
+		"description" : "Project Manager",
+		"img"   : "images/annelise.png",
+		"geo" :{
+			"lon": 13.423653,
+			"lat": 52.473827
+		}
+	},
+	{
+		"type" : "company",
+		"name" : "J++",
+		"description" : "Cologne",
+		"img" : "images/jpp.png",
+		"link" : "",
+		"geo" : {
+			"lon": 6.960279,
+			"lat": 50.937531
+		},
+		"members" : ["mirko"]
+	},
+	{
+		"type" : "company",
+		"name" : "J++",
+		"description" : "Berlin",
+		"img" : "images/jpp.png",
+		"link" : "",
+		"geo" :{
+			"lon": 13.423653,
+			"lat": 52.473827
+		},
+		"members" : ["vied12", "annelise", "nkb", "seb"]
+	},
+	{
+		"type" : "company",
+		"name" : "J++",
+		"img" : "images/jpp.png",
+		"description" : "Paris",
+		"link" : "",
+		"geo" : {
+			"lon": 2.406004,
+			"lat": 48.731398
+		},
+		"members" : ["pirhoo", "toutenrab", "paulloz"]
+	},
+		{
+		"type" : "company",
+		"name" : "J++",
+		"img" : "images/jpp.png",
+		"description" : "Amsterdam",
+
+		"link" : "",
+		"geo" : {
+			"lon": 4.893189,
+			"lat": 52.3731
+		}
+	},
+	{
+		"type" : "company",
+		"name" : "We Do Data",
+		"description" : "Best quality Partner",
+		"twitter" : "https://twitter.com/We_Do_Data",
+		"id"   : "wedodata",
+		"img"   : "images/wdd.png",
+		"geo" : {
+			"lon": 2.406004,
+			"lat": 48.731398
+		}
+	},
+	{
+		"type" : "company",
+		"name" : "Arte",
+		"link" : "arte.tv",
+		"id"   : "arte",
+		"img"   : "images/arte.png",
+		"description" : "Réalitation du web-documentaire \"La Contre Histoire des Internets\"",
+		"geo" : {
+			"lon": 2.406004,
+			"lat": 48.731398
+		}
+	},
+	{
+		"type" : "company",
+		"name" : "J++",
+		"description" : "Stockholm",
+		"img" : "images/jpp.png",
+		"link" : "",
+		"geo" : {
+			"lon": 18.062835,
+			"lat": 59.332261
+		}
+	},
+	{
+		"type" : "company",
+		"name" : "Wikileaks",
+		"id"   : "wikileaks",
+		"link" : "",
+		"description" : "Analyse sémentique des cables diplomatiques pour pouvoir les représenter dans le temps",
+		"img": "images/wl.png",
+		"geo" : {
+			"lon": -0.127177,
+			"lat": 51.506301
+		}
+	},
+	{
+		"type" : "company",
+		"name" : "LocalFocus",
+		"description": "A news service for (regional) media organizations to make data driven news stories and interactive visualizations.",
+		"id"   : "localfocus",
+		"link" : "http://localfocus.nl",
+		"twitter" : "https://twitter.com/LocalFocusNL",
+		"img": "images/lf.png",
+		"members" : ["jelle", "yordi", "eric"],
+		"geo" : {
+			"lon": 4.893189,
+			"lat": 52.3731
+		}
+	},
+	{
+		"type" : "company",
+		"name" : "The Open Knowledge Foundation",
+		"id"   : "okf",
+		"link" : "",
+		"img": "images/okf.png",
+		"geo" : {
+			"lon": -0.127177,
+			"lat": 51.506301
+		}
+	},
+	{
+		"type" : "event",
+		"title" : "Winter School in Mardid",
+		"location" : "Madrid",
+		"date" : "",
+		"link" : "",
+		"img"   : "images/madrid.png",
+		"geo" : {
+			"lon": -3.705802,
+			"lat": 40.420279
+		},
+		"members" : ["vied12", "pirhoo", "nkb", "annelise", "toutenrab"]
+	},
+	{
+		"type" : "event",
+		"title" : "Knight News Challenge Summer",
+		"description" : "A gathering of News Challenge winners from the past three years, organized by the Knight Foundation. Journalism++ was invited with the Open Knowledge Foundation team, winners in 2011 for the Spending Project.",
+		"location" : "Stanford",
+		"date" : "25/08/2013",
+		"link" : "http://www.knightfoundation.org/blogs/knightblog/2013/8/23/news-challenge-winners-gather-share-common-experience/",
+		"img"   : "images/google.png",
+		"geo" : {
+			"lon": -122.475586,
+			"lat": 37.791880
+		},
+		"members" : ["annelise", "okf"]
+	},
+	{
+		"type" : "event",
+		"title" : "INRIA Winter School",
+		"description" : "Journalism++ took part in the INRIA Winter School in Santiago, doing talks and workshops on the topic of data-driven journalism.",
+		"location" : "Santiago, Chile",
+		"date" : "20/07/2013",
+		"link" : "http://www.lanacion.cl/nicolas-kayser-bril-el-articulo-noticioso-esta-muriendo/noticias/2013-07-19/184602.html",
+		"img"   : "images/sant.png",
+		"geo" : {
+			"lon": -70.641997,
+			"lat": -33.469120
+		},
+		"members" : ["nkb"]
+	},
+	{
+		"type" : "event",
+		"title" : "Consulting mission for the World Bank",
+		"description" : "Journalism++ did a consulting mission for the World Bank in Burkina Faso. Nicolas Kayser-Bril worked to assess the level of readiness of the Burkinabè government to start its own open data initiative.",
+		"location" : "Ouagadougou, Burkina Faso",
+		"date" : "23/05/2013",
+		"link" : "http://www.lefaso.net/spip.php?article54343",
+		"img"   : "images/bur.png",
+		"geo" : {
+			"lon": -1.533864,
+			"lat": 12.364637
+		},
+		"members" : ["nkb"]
+	},
+	{
+		"type" : "event",
+		"title" : "DataBootcamp Malawi",
+		"description" : "Journalism++ took part in the dataBootcamp Malawi, where Nicolas Kayser-Bril acted as a trainer and mentor during the 3 days of the event.",
+		"location" : "Malawi",
+		"date" : "14/06/2013",
+		"link" : "http://malawi.databootcamp.org",
+		"img"   : "images/malawi.png",
+		"geo" : {
+			"lon": 34.301525,
+			"lat": -13.254308
+		},
+		"members" : ["nkb"]
+	}
+	,{
+		"type" : "event",
+		"title" : "Singapore Digital Journalism World conference",
+		"description" : "Journalism++ was at the Singapore Digital Journalism World conference, where Nicolas Kayser-Bril held 2 keynotes to an audience of over 70 Asian journalists.",
+		"location" : "Singapore",
+		"date" : "06/10/2013",
+		"link" : "http://prez.nkb.fr/djw-ddj-operation",
+		"img"   : "images/singapour.png",
+		"geo" : {
+			"lon": 103.819836,
+			"lat": 1.352083
+		},
+		"members" : ["nkb"]
+	}
+	,{
+		"type" : "event",
+		"title" : "4M Machrek conference",
+		"description" : "Journalism++ was at the 4M Machrek conference, where Nicolas Kayser-Bril held a keynote on business models for content in front of over 40 journalists and entrepreneurs from the Middle East.",
+		"location" : "Beirut, Lebanon",
+		"date" : "06/12/2013",
+		"link" : "",
+		"img"   : "images/beyrouth.png",
+		"geo" : {
+			"lon": 35.495479,
+			"lat": 33.888629
+		},
+		"members" : ["nkb"]
+	},
+	{
+		"type" : "event",
+		"title" : "DataBootcamps",
+		"description" : "Journalism++'s Pierre Romera was with the World Bank Institute in Kathmandu to take part in the local edition of the dataBootcamps.",
+		"location" : "Kathmandu, Nepal",
+		"date" : "03/06/2013",
+		"link" : "http://nepal.databootcamp.org/",
+		"img"   : "images/katmandou.png",
+		"geo" : {
+			"lon": 85.333333,
+			"lat": 27.700000
+		},
+		"members" : ["pirhoo"]
+	}
+]

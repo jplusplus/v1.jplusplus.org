@@ -2,5 +2,4 @@ node_modules
 ./public/temp.png
 ./config/development.json
 builtAssets
-build
 .DS_Store

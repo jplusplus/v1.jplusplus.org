@@ -34,7 +34,8 @@ app.configure ->
   app.use express.static(pubDir)
 
   # Static build public access
-  app.use express.static(pubDir + "/build")
+  buildDir = path.join(__dirname, "build")
+  app.use express.static(buildDir)
 
   # setup some locales
   i18n.configure locales: ["fr", "en", "de", "sv"]

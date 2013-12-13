@@ -1,34 +1,5 @@
-@font-face {
-  font-family: Dinl;
-  src: url('./fonts/dinl.eot');
-  font-weight: normal;
-  font-style: normal;
-}
-
-.hidden {
-  display: none;
-}
-
-h1,
-h2,
-h3 {
-  font-family: Dinl, sans-serif;
-}
-
-body {
-  font-family: sans-serif;
-  background-image: url('../images/bg.png');
-  margin: 0;
-  padding: 0;
-}
-
 .force-visible {
   visibility: visible !important;
-}
-
-a {
-  text-decoration: none;
-  color: #f24405;
 }
 
 .Map {
@@ -125,7 +96,6 @@ a {
 
 .Title {
   overflow: hidden;
-  color: #f24405;
 }
 
 .primary.Map {
@@ -187,6 +157,10 @@ a {
   -ms-border-radius: 2px;
 }
 
+.primary.Map .legend .l.clicked {
+  background: #eeeeee;
+}
+
 .primary.Map .legend .l:hover {
   background: #eeeeee;
 }
@@ -221,8 +195,13 @@ a {
   transition: opacity .55s;
   opacity: 1;
   filter: alpha(opacity=100);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(99%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,1)));
-  background: -moz-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(99%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,1)));
+  background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 73%, rgba(255,255,255,1) 100%);
+  background: "-webkit-gradient linear, left top, left bottom, color-stop 0%, rgba 255, 255, 255, 0, color-stop 73%, rgba 255, 255, 255, 1, color-stop 100%, rgba 255, 255, 255, 1;
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 73%,rgba(255,255,255,1) 100%);
+  background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 73%,rgba(255,255,255,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 73%,rgba(255,255,255,1) 100%);
+  background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 73%,rgba(255,255,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=\'#00ffffff\', endColorstr=\'#ffffff\',GradientType=0 );
   position: relative;
   text-align: left;
 }
@@ -272,8 +251,13 @@ a {
 }
 
 .primary.Map .Panel.top {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,rgba(0,0,0,0)), color-stop(99%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,1)));
-  background: -moz-gradient(linear, left bottom, left top, color-stop(0%,rgba(0,0,0,0)), color-stop(99%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,1)));
+  background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,1) 1%, rgba(255,255,255,1) 26%, rgba(255,255,255,0) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(1%,rgba(255,255,255,1)), color-stop(26%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0)));
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 1%,rgba(255,255,255,1) 26%,rgba(255,255,255,0) 100%);
+  background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 1%,rgba(255,255,255,1) 26%,rgba(255,255,255,0) 100%);
+  background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 1%,rgba(255,255,255,1) 26%,rgba(255,255,255,0) 100%);
+  background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 1%,rgba(255,255,255,1) 26%,rgba(255,255,255,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=\'#ffffff\', endColorstr=\'#00ffffff\',GradientType=0 );
 }
 
 .primary.Map .Panel.top .wrapper {

@@ -1,4 +1,4 @@
-var Format, Utils, Widget, isDefined, start,
+var Format, Utils, Widget, isDefined,
   __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
   __slice = [].slice,
   __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; },
@@ -503,40 +503,13 @@ Format = window.serious.format;
 
 Utils = window.serious.Utils;
 
-network.Page = (function(_super) {
-  __extends(Page, _super);
-
-  function Page() {
-    this.relayout = __bind(this.relayout, this);
-    this.bindUI = __bind(this.bindUI, this);
-    this.UIS = {
-      map: ".Map.primary",
-      title: ".Title"
-    };
-  }
-
-  Page.prototype.bindUI = function(ui) {
-    Page.__super__.bindUI.apply(this, arguments);
-    this.relayout();
-    return $(window).on('resize', this.relayout);
-  };
-
-  Page.prototype.relayout = function() {
-    var window_height;
-    window_height = $(window).height();
-    return this.uis.map.height(window_height - this.uis.title.outerHeight(true) - 20);
-  };
-
-  return Page;
-
-})(Widget);
-
 network.Map = (function(_super) {
   __extends(Map, _super);
 
   function Map() {
     this.closeAll = __bind(this.closeAll, this);
     this.allclick = __bind(this.allclick, this);
+    this.jppclick = __bind(this.jppclick, this);
     this.eventclick = __bind(this.eventclick, this);
     this.companyclick = __bind(this.companyclick, this);
     this.personclick = __bind(this.personclick, this);
@@ -556,6 +529,7 @@ network.Map = (function(_super) {
     this.getBoundingBox = __bind(this.getBoundingBox, this);
     this.init_size = __bind(this.init_size, this);
     this.bindUI = __bind(this.bindUI, this);
+    this.relayout = __bind(this.relayout, this);
     this.OPTIONS = {
       map_ratio: .5,
       litle_radius: 5,
@@ -564,6 +538,7 @@ network.Map = (function(_super) {
     this.UIS = {
       panel: '.Panel'
     };
+    this.Page = $(".Page");
     this.ACTIONS = ['jppclick', 'closeAll', 'companyclick', 'allclick', 'personclick', 'eventclick', 'ffctnclick', 'datastoryclick'];
     this.projection = void 0;
     this.groupPaths = void 0;
@@ -575,10 +550,21 @@ network.Map = (function(_super) {
     this.initialRotation = [0, -30, 0];
   }
 
+  Map.prototype.relayout = function() {
+    this.width = this.Page.width();
+    this.height = this.width * this.OPTIONS.map_ratio;
+    return this.ui.css({
+      width: this.width,
+      height: this.height
+    });
+  };
+
   Map.prototype.bindUI = function(ui) {
     var graticule,
       _this = this;
     Map.__super__.bindUI.apply(this, arguments);
+    this.relayout();
+    $(window).on('resize', this.relayout);
     this.svg = d3.select(this.ui.get(0)).insert("svg", ":first-child").on("mousedown", function() {
       if (_this.legendBlocked) {
         return _this.hideLegend(true)();
@@ -594,28 +580,16 @@ network.Map = (function(_super) {
   };
 
   Map.prototype.init_size = function() {
-    var bounds, height, hscale, scale, vscale, width;
-    width = $(window).width();
-    height = $(window).height() - this.ui.offset().top - $(".Title").height();
-    if (width != null) {
-      this.width = width;
-      this.height = this.width * this.OPTIONS.map_ratio;
-      if (height > 0 && this.height > height) {
-        this.height = height;
-        this.width = this.height / this.OPTIONS.map_ratio;
-      }
-    }
-    this.ui.css({
-      width: this.width,
-      height: this.height
-    });
+    var bounds, center, height, hscale, scale, vscale;
+    this.relayout();
     if (this.projection != null) {
       bounds = this.getBoundingBox();
       hscale = 150 * this.width / (bounds[1][0] - bounds[0][0]);
       vscale = 150 * this.height / (bounds[1][1] - bounds[0][1]);
       scale = Math.min(hscale, vscale);
       this.scale = scale;
-      this.projection.scale(this.scale).translate([this.width / 2, this.height / 2]);
+      center = this.projection.invert([(bounds[1][0] + bounds[0][0]) / 2, (bounds[1][1] + bounds[0][1]) / 2]);
+      this.projection.translate([this.width / 2, this.height / 2]).scale(this.scale).center([center[0], center[1] - 30]);
     }
     if (this.svg != null) {
       this.svg.style('width', this.width + 'px').style('height', this.height + 'px');
@@ -631,19 +605,25 @@ network.Map = (function(_super) {
     height = this.height * 0.3;
     return this.uis.panel.css({
       height: height,
-      width: this.width + 4,
+      width: this.width + 5,
       top: -height - 3
     });
   };
 
-  Map.prototype.getBoundingBox = function() {
+  Map.prototype.getBoundingBox = function(filter) {
     var coords, e, maxX, maxY, minX, minY, padding, _i, _len, _ref;
     coords = [];
-    padding = 50;
+    padding = 30;
     _ref = this.entries;
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
       e = _ref[_i];
-      coords.push([e.qx, e.qy]);
+      if (filter != null) {
+        if (e.name === filter) {
+          coords.push([e.qx, e.qy]);
+        }
+      } else {
+        coords.push([e.qx, e.qy]);
+      }
     }
     maxY = d3.max(coords, function(e) {
       return e[1];
@@ -845,7 +825,7 @@ network.Map = (function(_super) {
       clearTimeout(_this.hideLegendTimer);
       if (d.y > _this.height - _this.uis.panel.height()) {
         _this.uis.panel.addClass('top');
-        _this.uis.panel.css('top', -_this.height - 7);
+        _this.uis.panel.css('top', -_this.height - 11);
       } else {
         _this.uis.panel.removeClass('top');
         _this.uis.panel.css('top', -_this.uis.panel.height() - 3);
@@ -893,13 +873,13 @@ network.Map = (function(_super) {
     return this.groupPaths.selectAll(".country").data(this.countries.features).enter().append("path").attr("d", this.path).attr("class", "country");
   };
 
-  Map.prototype.move = function(_rotation, _scale, _translate) {
+  Map.prototype.move = function(_rotation, _scale, _center) {
     var _this = this;
     this.n_rotation = _rotation != null ? _rotation : this.n_rotation || this.projection.rotate();
     this.n_scale = _scale != null ? _scale : this.n_scale || this.projection.scale();
-    this.n_translate = _translate != null ? _translate : this.n_translate || this.projection.translate();
+    this.n_center = _center != null ? _center : this.n_center || this.projection.center();
     return function(timestamp) {
-      var progress, rotation, scale, translate;
+      var center, progress, rotation, scale;
       if (_this.start == null) {
         _this.start = timestamp;
       }
@@ -909,10 +889,10 @@ network.Map = (function(_super) {
       rotation[1] += (_this.n_rotation[1] - rotation[1]) * progress / 1000;
       scale = _this.projection.scale();
       scale += (_this.n_scale - scale) * progress / 1000;
-      translate = _this.projection.translate();
-      translate[0] += (_this.n_translate[0] - translate[0]) * progress / 1000;
-      translate[1] += (_this.n_translate[1] - translate[1]) * progress / 1000;
-      _this.projection.scale(scale).rotate(rotation).translate(translate);
+      center = _this.projection.center();
+      center[0] += (_this.n_center[0] - center[0]) * progress / 1000;
+      center[1] += (_this.n_center[1] - center[1]) * progress / 1000;
+      _this.projection.scale(scale).rotate(rotation).center(center);
       if (!_this.groupPathsSelection) {
         _this.groupPathsSelection = _this.groupPaths.selectAll("path");
       }
@@ -927,56 +907,113 @@ network.Map = (function(_super) {
   };
 
   Map.prototype.viewGlobal = function() {
+    var bounds, center, hscale, scale, vscale;
     if (this.currentView !== "global") {
-      this.animationRequest = requestAnimationFrame(this.move(this.initialRotation, this.scale, [this.width / 2, this.height / 2]));
+      bounds = this.getBoundingBox();
+      hscale = this.scale * this.width / (bounds[1][0] - bounds[0][0]);
+      vscale = this.scale * this.height / (bounds[1][1] - bounds[0][1]);
+      scale = Math.min(hscale, vscale) * .95;
+      center = this.projection.invert([(bounds[1][0] + bounds[0][0]) / 2, (bounds[1][1] + bounds[0][1]) / 2]);
+      center = [center[0], center[1] - 30];
+      this.scale = scale;
+      this.animationRequest = requestAnimationFrame(this.move(this.initialRotation, this.scale, center));
     }
     return this.currentView = "global";
   };
 
   Map.prototype.viewEurope = function() {
-    var translate;
+    var bounds, center, hscale, scale, vscale;
     if (this.currentView !== "europe") {
-      translate = this.projection.translate();
-      translate[1] += 300;
-      this.animationRequest = requestAnimationFrame(this.move(null, this.scale * 4, translate));
+      bounds = this.getBoundingBox("Journalism++");
+      hscale = this.scale * this.width / (bounds[1][0] - bounds[0][0]);
+      vscale = this.scale * this.height / (bounds[1][1] - bounds[0][1]);
+      scale = Math.min(hscale, vscale);
+      center = this.projection.invert([(bounds[1][0] + bounds[0][0]) / 2, (bounds[1][1] + bounds[0][1]) / 2]);
+      center = [center[0], center[1] - 30];
+      this.scale = scale;
+      this.animationRequest = requestAnimationFrame(this.move(null, scale, center));
     }
     return this.currentView = "europe";
   };
 
-  Map.prototype.personclick = function() {
+  Map.prototype.personclick = function(e) {
     var that;
     that = this;
+    $(".l").removeClass("clicked");
+    if (this.current_filter === "person") {
+      this.closeAll();
+      this.current_filter = null;
+      return;
+    }
     this.viewEurope();
     this.closeAll();
-    return this.circles.filter(function(d) {
+    this.circles.filter(function(d) {
       return d.type === "person";
     }).each(function(d) {
       return that.openCircle(d, d3.select(this));
     });
+    this.current_filter = "person";
+    return $(e.currentTarget).addClass("clicked");
   };
 
-  Map.prototype.companyclick = function() {
+  Map.prototype.companyclick = function(e) {
     var that;
     that = this;
+    $(".l").removeClass("clicked");
+    if (this.current_filter === "company") {
+      this.closeAll();
+      this.current_filter = null;
+      return;
+    }
     this.viewEurope();
     this.closeAll();
-    return this.circles.filter(function(d) {
-      return d.type === "company";
+    this.circles.filter(function(d) {
+      return d.type === "company" && d.name !== "Journalism++";
     }).each(function(d) {
       return that.openCircle(d, d3.select(this));
     });
+    this.current_filter = "company";
+    return $(e.currentTarget).addClass("clicked");
   };
 
-  Map.prototype.eventclick = function() {
+  Map.prototype.eventclick = function(e) {
     var that;
     that = this;
+    $(".l").removeClass("clicked");
+    if (this.current_filter === "event") {
+      this.closeAll();
+      this.current_filter = null;
+      return;
+    }
     this.viewGlobal();
     this.closeAll();
-    return this.circles.filter(function(d) {
+    this.circles.filter(function(d) {
       return d.type === "event";
     }).each(function(d) {
       return that.openCircle(d, d3.select(this));
     });
+    this.current_filter = "event";
+    return $(e.currentTarget).addClass("clicked");
+  };
+
+  Map.prototype.jppclick = function(e) {
+    var that;
+    that = this;
+    $(".l").removeClass("clicked");
+    if (this.current_filter === "jpp") {
+      this.closeAll();
+      this.current_filter = null;
+      return;
+    }
+    this.viewEurope();
+    this.closeAll();
+    this.circles.filter(function(d) {
+      return d.type === "company" && d.name === "Journalism++";
+    }).each(function(d) {
+      return that.openCircle(d, d3.select(this), false);
+    });
+    this.current_filter = "jpp";
+    return $(e.currentTarget).addClass("clicked");
   };
 
   Map.prototype.allclick = function() {
@@ -1000,11 +1037,3 @@ network.Map = (function(_super) {
   return Map;
 
 })(Widget);
-
-start = function() {
-  return $(window).load(function() {
-    return Widget.bindAll();
-  });
-};
-
-start();

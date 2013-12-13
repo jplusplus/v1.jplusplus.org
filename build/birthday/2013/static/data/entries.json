@@ -5,6 +5,7 @@
 		"name" : "Pierre Romera",
 		"description" : "CTO • Developer",
 		"img"  : "images/pirhoo.png" ,
+		"twitter" : "https://twitter.com/Pirhoo",
 		"geo" : {
 			"lon": 2.406004,
 			"lat": 48.731398
@@ -15,6 +16,7 @@
 		"id" : "paulloz",
 		"name" : "Paul Joannon",
 		"description" : "Developer",
+		"twitter" : "https://twitter.com/paulloz",
 		"img"  : "images/paul.png" ,
 		"geo" : {
 			"lon": 2.406004,
@@ -26,6 +28,7 @@
 		"id" : "toutenrab",
 		"name" : "Pierre Bellon",
 		"description" : "Developer",
+		"twitter" : "https://twitter.com/toutenrab",
 		"img"  : "images/toutenrab.png" ,
 		"geo" : {
 			"lon": 2.406004,
@@ -36,6 +39,7 @@
 		"type" : "person",
 		"name" : "Edouard Richard",
 		"description" : "Developer",
+		"twitter" : "https://twitter.com/vied12",
 		"img"  : "images/vied12.png",
 		"id"   : "vied12",
 		"geo" :{
@@ -46,7 +50,8 @@
 		{
 		"type" : "person",
 		"name" : "Sebastian Kraus",
-		"description" : "Journalist",
+		"description" : "Journalist in residence",
+		"twitter" : "https://twitter.com/sm_kraus",
 		"img"  : "images/seb.png",
 		"id"   : "seb",
 		"geo" :{
@@ -57,6 +62,7 @@
 	{
 		"type" : "person",
 		"name" : "Nicolas Kayer-Bril",
+		"twitter" : "https://twitter.com/nicolaskb",
 		"description" : "CEO • Journalist",
 		"id"   : "nkb",
 		"img"  : "images/nkb.png",
@@ -69,6 +75,7 @@
 		"type" : "person",
 		"name" : "Anne-Lise Bouyer",
 		"id"   : "annelise",
+		"twitter" : "https://twitter.com/annelisebouyer",
 		"description" : "Project Manager",
 		"img"   : "images/annelise.png",
 		"geo" :{
@@ -77,23 +84,107 @@
 		}
 	},
 	{
+		"type" : "person",
+		"id" : "mirko",
+		"name" : "Mirko Lorenz",
+		"description" : "CEO • Data-journalist, Information Architect, Trainer",
+		"twitter" : "https://twitter.com/mirkolorenz",
+		"img"  : "images/mirko.png" ,
+		"geo" : {
+			"lon": 6.96028,
+			"lat": 50.93753
+		}
+	},
+	{
+		"type" : "person",
+		"id" : "cosmin",
+		"name" : "Cosmin Cabulea",
+		"description" : "Data-journalist, Developer, Trainer",
+		"twitter" : "https://twitter.com/pushthings4ward",
+		"img"  : "images/cosmin.png" ,
+		"geo" : {
+			"lon": 6.96028,
+			"lat": 50.93753
+		}
+	},
+	{
+		"type" : "person",
+		"id" : "jelle",
+		"name" : "Jelle Kamsma",
+		"description" : "Datajournalist",
+		"twitter" : "http://twitter.com/ddjelle",
+		"img"  : "images/ddjelle.png" ,
+		"geo" : {
+			"lon": 4.89517,
+			"lat": 52.37022
+		}
+	},
+	{
+		"type" : "person",
+		"id" : "yordi",
+		"name" : "Yordi Dam",
+		"description" : "Designer",
+		"twitter" : "http://twitter.com/yordidam",
+		"img"  : "images/yordidam.png" ,
+		"geo" : {
+			"lon": 4.89517,
+			"lat": 52.37022
+		}
+	},
+	{
+		"type" : "person",
+		"id" : "erik",
+		"name" : "Erik Willems",
+		"description" : "Programmer",
+		"twitter" : "http://twitter.com/ehwillems",
+		"img"  : "images/ehwillems.png" ,
+		"geo" : {
+			"lon": 4.89517,
+			"lat": 52.37022
+		}
+	},
+	{
+		"type" : "person",
+		"id" : "jens",
+		"name" : "Jens Finnäs",
+		"description" : "Journalist",
+		"twitter" : "http://twitter.com/jensfinnas",
+		"img"  : "images/jens.png" ,
+		"geo" : {
+			"lon": 18.06491,
+			"lat": 59.32893
+		}
+	},
+	{
+		"type" : "person",
+		"id" : "peter",
+		"name" : "Peter Grensund",
+		"description" : "Journalist",
+		"twitter" : "http://twitter.com/grensund",
+		"img"  : "images/peter.png" ,
+		"geo" : {
+			"lon": 18.06491,
+			"lat": 59.32893
+		}
+	},
+	{
 		"type" : "company",
-		"name" : "J++",
+		"name" : "Journalism++",
 		"description" : "Cologne",
 		"img" : "images/jpp.png",
-		"link" : "",
+		"link" : "http://cologne.jplusplus.org/",
 		"geo" : {
 			"lon": 6.960279,
 			"lat": 50.937531
 		},
-		"members" : ["mirko"]
+		"members" : ["mirko", "cosmin"]
 	},
 	{
 		"type" : "company",
-		"name" : "J++",
+		"name" : "Journalism++",
 		"description" : "Berlin",
 		"img" : "images/jpp.png",
-		"link" : "",
+		"link" : "http://berlin.jplusplus.org/",
 		"geo" :{
 			"lon": 13.423653,
 			"lat": 52.473827
@@ -102,34 +193,35 @@
 	},
 	{
 		"type" : "company",
-		"name" : "J++",
+		"name" : "Journalism++",
 		"img" : "images/jpp.png",
 		"description" : "Paris",
-		"link" : "",
+		"link" : "http://paris.jplusplus.org/",
 		"geo" : {
 			"lon": 2.406004,
 			"lat": 48.731398
 		},
 		"members" : ["pirhoo", "toutenrab", "paulloz"]
 	},
-		{
+	{
 		"type" : "company",
-		"name" : "J++",
+		"name" : "Journalism++",
 		"img" : "images/jpp.png",
 		"description" : "Amsterdam",
-
-		"link" : "",
+		"link" : "http://amsterdam.jplusplus.org/",
 		"geo" : {
 			"lon": 4.893189,
 			"lat": 52.3731
-		}
+		},
+		"members" : ["jelle", "yordi", "erik"]
 	},
 	{
 		"type" : "company",
 		"name" : "We Do Data",
-		"description" : "Best quality Partner",
+		"description" : "Best quality partner for dataviz & information design",
 		"twitter" : "https://twitter.com/We_Do_Data",
 		"id"   : "wedodata",
+		"link" : "http://wedodata.fr/",
 		"img"   : "images/wdd.png",
 		"geo" : {
 			"lon": 2.406004,
@@ -142,29 +234,30 @@
 		"link" : "arte.tv",
 		"id"   : "arte",
 		"img"   : "images/arte.png",
-		"description" : "Réalitation du web-documentaire \"La Contre Histoire des Internets\"",
+		"description" : "Development of the web documentary \"The counter-history of the Internets\" and another one to come in 2014...",
 		"geo" : {
-			"lon": 2.406004,
-			"lat": 48.731398
+			"lon": 7.74788,
+			"lat": 48.58315
 		}
 	},
 	{
 		"type" : "company",
-		"name" : "J++",
+		"name" : "Journalism++",
 		"description" : "Stockholm",
 		"img" : "images/jpp.png",
-		"link" : "",
+		"link" : "http://stockholm.jplusplus.org/",
 		"geo" : {
 			"lon": 18.062835,
 			"lat": 59.332261
-		}
+		},
+		"members" : ["jens", "peter"]
 	},
 	{
 		"type" : "company",
 		"name" : "Wikileaks",
 		"id"   : "wikileaks",
-		"link" : "",
-		"description" : "Analyse sémentique des cables diplomatiques pour pouvoir les représenter dans le temps",
+		"link" : "http://wikileaks.org/",
+		"description" : "Analysis and display of the information contained in the Kissinger Cables, close to 2 million documents from the State Department's archive.",
 		"img": "images/wl.png",
 		"geo" : {
 			"lon": -0.127177,
@@ -189,7 +282,8 @@
 		"type" : "company",
 		"name" : "The Open Knowledge Foundation",
 		"id"   : "okf",
-		"link" : "",
+		"description": "A nonprofit organization that promotes open knowledge, including open content and open data.",
+		"link" : "http://okfn.org/",
 		"img": "images/okf.png",
 		"geo" : {
 			"lon": -0.127177,
@@ -198,9 +292,9 @@
 	},
 	{
 		"type" : "event",
-		"title" : "Winter School in Mardid",
+		"title" : "Winter School in Madrid",
 		"location" : "Madrid",
-		"date" : "",
+		"date" : "08/03/2013",
 		"link" : "",
 		"img"   : "images/madrid.png",
 		"geo" : {
@@ -264,8 +358,8 @@
 			"lat": -13.254308
 		},
 		"members" : ["nkb"]
-	}
-	,{
+	},
+	{
 		"type" : "event",
 		"title" : "Singapore Digital Journalism World conference",
 		"description" : "Journalism++ was at the Singapore Digital Journalism World conference, where Nicolas Kayser-Bril held 2 keynotes to an audience of over 70 Asian journalists.",
@@ -278,8 +372,8 @@
 			"lat": 1.352083
 		},
 		"members" : ["nkb"]
-	}
-	,{
+	},
+	{
 		"type" : "event",
 		"title" : "4M Machrek conference",
 		"description" : "Journalism++ was at the 4M Machrek conference, where Nicolas Kayser-Bril held a keynote on business models for content in front of over 40 journalists and entrepreneurs from the Middle East.",
@@ -306,5 +400,96 @@
 			"lat": 27.700000
 		},
 		"members" : ["pirhoo"]
-	}
+	},
+	{
+		"type" : "event",
+		"title" : "DDJ Workshop",
+		"description" : "We did a workshop about data-driven journalism with journalists from WDR. In just one week we created a special webpage with charts. The key goal was to be be quick - and to learn.",
+		"location" : "Cologne, Germany",
+		"date" : "11/12/2013",
+		"link" : "http://data.wdr.de",
+		"img"   : "images/cologne-ws.png",
+		"geo" : {
+			"lon": 6.96028,
+			"lat": 50.93753
+		},
+		"members" : ["mirko"]
+	},
+	{
+		"type" : "event",
+		"title" : "Training in Norway",
+		"description" : "Jens Finnäs from J++ Stockholm is helping Norwegian journalists to get started with data journalism in a project arranged by NXT Media.",
+		"location" : "Trondheim, Norway",
+		"date" : "11/12/2013",
+		"link" : "http://nxtmedia.no/kamp-om-prisen-for-datajournalistikk/",
+		"img"   : "images/norway-ws.png",
+		"geo" : {
+			"lon": 10.39505,
+			"lat": 63.43051
+		},
+		"members" : ["jens"]
+	},
+	{
+		"type" : "event",
+		"title" : "J++ awarded at Media Hackday",
+		"description" : "Journalism++ won the Guardian API prize at the WAN-IFRA Media Hackday in Berlin with the platform Broken Promises.",
+		"location" : "Berlin, Germany",
+		"date" : "19/09/2013",
+		"link" : "http://jplusplus.se/?p=213",
+		"img"   : "images/wanifra.png", 
+		"geo" : {
+			"lon": 13.423653,
+			"lat": 52.473827
+		},
+		"members" : ["pirhoo", "jens","erik","jordi","nkb"]
+	},
+	{
+		"type" : "company",
+		"title" : "We <3 Helsinki",
+		"description" : "Journalism++ Stockholm has done numerous trainings in and projects in Finland with partners such as Helsingin Sanomat, Yle and Hufvudstadsbladet. Journalism++ Paris were finalists in the Uutisraivaaja contest.",
+		"location" : "Helsinki, Finland",
+		"img"   : "images/helsinki.png", 
+		"geo" : {
+			"lon": 24.94102,
+			"lat": 60.17332
+		}
+	},
+	{
+                "type" : "company",
+                "name" : "ABZV",
+                "description": "ABZV supports the development of Datawrapper, the best open source data visualization software. We serve above 6 million chart views per month.",
+                "id" : "abzv",
+                "link" : "http://www.datawrapper.de",
+                "twitter" : "https://twitter.com/datawrapper",
+                "img": "images/abzv.png",
+                "members" : ["mirko"],
+                "geo" : {
+                        "lon": 7.098207,
+                        "lat": 50.73743
+                }
+        },
+        {
+                "type" : "company",
+                "name" : "UNDP",
+                "description": "Journalism++ did a week-long workshop with young activists and journalists as part of the Youth Sleuth program by UNDP.",
+                "id" : "undp",
+                "img": "images/undp.png",
+                "members" : ["nkb", "pirhoo"],
+                "geo" : {
+                        "lon": 20.462222,
+                        "lat": 44.820556
+                }
+        },
+        {
+                "type" : "company",
+                "name" : "Tamedia",
+                "description": "Journalism++ trains Tamedia journalists of all backgrounds and makes them proficient in all things data.",
+                "id" : "tamedia",
+                "img": "images/tamedia.png",
+                "members" : ["nkb", "pirhoo", "mirko"],
+                "geo" : {
+                        "lon": 7.444608,
+                        "lat": 46.947922
+                }
+        }
 ]

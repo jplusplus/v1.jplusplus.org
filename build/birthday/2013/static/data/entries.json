@@ -273,7 +273,7 @@
 		"link" : "http://localfocus.nl",
 		"twitter" : "https://twitter.com/LocalFocusNL",
 		"img": "images/lf.png",
-		"members" : ["jelle", "yordi", "eric"],
+		"members" : ["jelle", "yordi", "erik"],
 		"geo" : {
 			"lon": 4.893189,
 			"lat": 52.3731

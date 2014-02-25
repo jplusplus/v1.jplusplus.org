@@ -6,9 +6,9 @@ Our main project is the successful "Datawrapper", an open source tool helping ev
 
 ## Get in touch!
 
-![](http://oeildupirate.com/jplusplus/files/iconmonstr-twitter-5-icon.png) [@jplusplus_de](http://twitter.com/jplusplus_de)
+![](http://oeildupirate.com/wp-content/blogs.dir/7/files/iconmonstr-twitter-5-icon.png) [@jplusplus_de](http://twitter.com/jplusplus_de)
 
-![](http://oeildupirate.com/jplusplus/files/iconmonstr-email-10-icon.png) hallo@jplusplus.org
+![](http://oeildupirate.com/wp-content/blogs.dir/7/files/iconmonstr-email-10-icon.png) hallo@jplusplus.org
 
 Journalism++ Cologne GmbH, Im Mediapark 5b, 50670 Köln
 

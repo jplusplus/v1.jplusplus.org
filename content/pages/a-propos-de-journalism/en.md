@@ -11,9 +11,9 @@ Since August 2012, Journalism++ is very happy to work with the best project mana
 
 ## Contact us!
 
-![](http://oeildupirate.com/jplusplus/files/iconmonstr-twitter-5-icon.png) [@jplusplus_fr](http://twitter.com/jplusplus_fr)
+![](http://oeildupirate.com/wp-content/blogs.dir/7/files/iconmonstr-twitter-5-icon.png) [@jplusplus_fr](http://twitter.com/jplusplus_fr)
 
-![](http://oeildupirate.com/jplusplus/files/iconmonstr-email-10-icon.png) bonjour@jplusplus.org
+![](http://oeildupirate.com/wp-content/blogs.dir/7/files/iconmonstr-email-10-icon.png) bonjour@jplusplus.org
 
 
 ## Jobs

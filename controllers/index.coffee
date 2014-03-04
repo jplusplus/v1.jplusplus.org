@@ -37,6 +37,8 @@ module.exports = (app, db, controllers) ->
         amsterdamRouter.getRoute req, res, subdomain
       when "cologne"
         cologneRouter.getRoute req, res, subdomain
+      when "porto"
+        portoRouter.getRoute req, res, subdomain
       when "stockholm"
         res.redirect "http://jplusplus.se"
       else
@@ -107,6 +109,10 @@ amsterdamRouter   = _.extend {}, genericRouter,
 cologneRouter     = _.extend {}, genericRouter,
   about_page: 'about-cologne'
   render_template: 'cologne.jade'
+
+portoRouter       = _.extend {}, genericRouter,
+  about_page: 'about-porto'
+  render_template: 'porto.jade'
 
 rootRoute = (req, res, subdomain) ->
   async.parallel

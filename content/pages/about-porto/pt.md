@@ -12,5 +12,4 @@ Ao longo dos anos este trio tem vindo a aprimorar competências que vão desde o
 
 ![](http://oeildupirate.com/wp-content/blogs.dir/7/files/iconmonstr-email-10-icon.png) porto@jplusplus.org
 
-Journalism++ Porto
-Rua Elísio de Melo 28, sala 32 — Porto, Portugal
+Journalism++ Porto, Portugal — Rua Elísio de Melo 28, sala 32

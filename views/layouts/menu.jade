@@ -18,7 +18,7 @@
 					- if(typeof about != "undefined")
 						li.about
 							a(href="#about") !{about.title}
-					- ["fr", "en", "de", "sv"].forEach(function(lang) {
+					- ["fr", "en", "de", "sv", "pt"].forEach(function(lang) {
 						- if(session.language === lang) {
 							li.active
 								a(href="/lang/"+lang)=lang.toUpperCase()

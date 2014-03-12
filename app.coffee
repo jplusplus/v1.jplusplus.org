@@ -38,7 +38,7 @@ app.configure ->
   app.use express.static(buildDir)
 
   # setup some locales
-  i18n.configure locales: ["fr", "en", "de", "sv"]
+  i18n.configure locales: ["fr", "en", "de", "sv", "pt"]
 
   # Register helpers for use in templates
   app.use (req, res, next) ->

@@ -49,7 +49,7 @@ module.exports = (app, db, controllers) ->
   #   * Chnage the user language
   #
   app.get "/lang/:ln", (req, res) ->
-    req.session.language = (if ["fr", "en", "de", "sv"].indexOf(req.params.ln) > -1 then req.params.ln else "en")
+    req.session.language = (if ["fr", "en", "de", "sv", "pt"].indexOf(req.params.ln) > -1 then req.params.ln else "en")
     res.redirect req.query.path or "back" or "/"
 
   ###

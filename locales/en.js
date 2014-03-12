@@ -18,5 +18,8 @@
 	"Designer": "Designer",
 	"Programmer": "Programmer",
 	"Clients & Partners": "Clients & Partners",
-	"Data-journalist": "Data-journalist"
+	"Data-journalist": "Data-journalist",
+	"Designer &bullet; Front-end Developer": "Designer &bullet; Front-end Developer",
+	"Designer &bullet; Data architect": "Designer &bullet; Data architect",
+	"Editor": "Editor"
 }

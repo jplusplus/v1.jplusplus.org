@@ -37,6 +37,8 @@ module.exports = (app, db, controllers) ->
         amsterdamRouter.getRoute req, res, subdomain
       when "cologne"
         cologneRouter.getRoute req, res, subdomain
+      when "porto"
+        portoRouter.getRoute req, res, subdomain
       when "stockholm"
         res.redirect "http://jplusplus.se"
       else
@@ -47,7 +49,7 @@ module.exports = (app, db, controllers) ->
   #   * Chnage the user language
   #
   app.get "/lang/:ln", (req, res) ->
-    req.session.language = (if ["fr", "en", "de", "sv"].indexOf(req.params.ln) > -1 then req.params.ln else "en")
+    req.session.language = (if ["fr", "en", "de", "sv", "pt"].indexOf(req.params.ln) > -1 then req.params.ln else "en")
     res.redirect req.query.path or "back" or "/"
 
   ###
@@ -107,6 +109,10 @@ amsterdamRouter   = _.extend {}, genericRouter,
 cologneRouter     = _.extend {}, genericRouter,
   about_page: 'about-cologne'
   render_template: 'cologne.jade'
+
+portoRouter       = _.extend {}, genericRouter,
+  about_page: 'about-porto'
+  render_template: 'porto.jade'
 
 rootRoute = (req, res, subdomain) ->
   async.parallel

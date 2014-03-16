@@ -12,5 +12,8 @@
 	"This page is only available in English. We're working on translating it in your language.": "Den här sidan är inte översatt till svenska ännu.",
 	"Journalism++ is a network of datajournalists that aims to build great stories and tools with data.": "Journalism++ is a network of datajournalists that aims to build great stories and tools with data.",
 	"Clients & Partners": "Clients & Partners",
-	"Data-journalist": "Data-journalist"
+	"Data-journalist": "Data-journalist",
+	"Designer &bullet; Front-end Developer": "Designer &bullet; Front-end Developer",
+	"Designer &bullet; Data architect": "Designer &bullet; Data architect",
+	"Editor": "Editor"
 }

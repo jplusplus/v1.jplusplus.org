@@ -25,5 +25,10 @@
 	"CEO &bullet; Data-journalist, Information Architect, Trainer": "CEO &bullet; Data-journalist, Information Architect, Trainer",
 	"Data-journalist, Developer": "Data-journalist, Developer",
 	"CEO &bullet; Data-journalist, Information&nbsp;Architect, Trainer": "CEO &bullet; Data-journalist, Information&nbsp;Architect, Trainer",
-	"Data-journalist, Developer, Trainer": "Data-journalist, Developer, Trainer"
+	"Data-journalist, Developer, Trainer": "Data-journalist, Developer, Trainer",
+	"Designer &bullet; Developer": "Designer &bullet; Developer",
+	"Journalist": "Journalist",
+	"Designer &bullet; Front-end Developer": "Designer &bullet; Front-end Developer",
+	"Designer &bullet; Data architect": "Designer &bullet; Data architect",
+	"Editor": "Editeur"
 }

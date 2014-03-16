@@ -1,0 +1,1 @@
+Ajudamos as redações a chegar mais longe na missão de informar o seu público. Organizamos workshops sobre ferramentas e táticas para encontrar, extrair, estruturar e visualizar informação. Já orientámos também várias sessões sob os temas de tipografia, design gráfico e layout para a web e impressão.

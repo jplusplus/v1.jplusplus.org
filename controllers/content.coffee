@@ -71,7 +71,6 @@ getPostsFromFiles = (lang, domain, complete) ->
     # We filter posts if they are not from the requested domain
     (posts, filterPost) ->
       async.filter(posts, (post, filter) ->
-        console.log post
         post_domains = post.meta.domains
         filtered = true
         unless post.disabled
@@ -93,7 +92,7 @@ getPostsFromFiles = (lang, domain, complete) ->
 
   # Final callback
   ], (error, results) ->
-    console.log error  if error
+    console.warn error  if error
     cache.put "posts-lists-" + lang, results  if results.length > 0
     onPostsRetrieved results, lang, domain, complete
   )

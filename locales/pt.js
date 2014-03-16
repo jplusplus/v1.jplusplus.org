@@ -6,5 +6,7 @@
 	"Editor": "Editor",
 	"← Back to the homepage!": "← Back to the homepage!",
 	"Well... It's ambarrassing!": "Well... It's ambarrassing!",
-	"We didn't find the page you are looking for.": "We didn't find the page you are looking for."
+	"We didn't find the page you are looking for.": "We didn't find the page you are looking for.",
+	"See more": "See more",
+	"Back": "Back"
 }

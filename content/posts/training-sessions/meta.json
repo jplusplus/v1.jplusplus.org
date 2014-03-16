@@ -1,0 +1,21 @@
+{
+  "author": "edouard",
+  "thumbnail":"/img/gallery/jpp-portfolio-workshops.jpg",
+  "comments": true,
+  "date": "2013-11-13 15:41:43 +0100",
+  "layout": "post",
+  "slug": "training-sessions",
+  "siteurl": "",
+  "title": {
+    "pt": "Workshops",
+    "en": "Training sessions"
+  },
+  "domains": ["porto"],
+  "categories": [
+    "Non classé"
+  ],
+  "tags": [
+    "training",
+    "workshops"
+  ]
+}

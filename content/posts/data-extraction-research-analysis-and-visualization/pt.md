@@ -1,0 +1,1 @@
+Procuramos narrativas em tabelas, sequências e números. Encontramos padrões, coincidências e novas visões. Combinamos tudo de uma forma legível, eficaz e informativa.

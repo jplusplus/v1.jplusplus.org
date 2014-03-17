@@ -2,9 +2,11 @@
 
 ## How to add posts and pages
 Pages and posts can be found in the `content` folder. 
+
 ### About posts
 Post will be added to the main page carroussel if the subdomain is included into 
 the posts meta (see #post meta) 
+
 #### Post meta
 ```js
 {
@@ -51,7 +53,19 @@ The following environment variables can be use with the highest priority :
 * **PORT** defines the port to listen to (ex: *80*);
 * **NODE_ENV** defines the runtime mode that affects the configuration (ex: *development*, *production*, etc).
 
-### Step 3: Run!
+### Step 3: Add subdomains
+If you want to see the chapter's sites, you need dedicated subdomains.
+For local development, add for instance this line to your `/etc/hosts` file.
+
+```
+127.0.0.1       porto.jplusplus.dev
+```
+
+Subdomain should be in this switch case : https://github.com/jplusplus/jplusplus.org/blob/master/controllers/index.coffee#L27
+
+Then you can request the page [porto.jplusplus.dev:3000](http://porto.jplusplus.dev:3000)
+
+### Step 4: Run!
 To launch the application enter the following command: 
 
     $ coffee app.coffee

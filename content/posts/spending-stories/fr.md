@@ -1,4 +1,4 @@
-Spending Stories est un projé de l'[Open Knowledge Foundation](http://fr.okfn.org/‎) visant à améliorer la compréhension des données budgétaires mondiales [en savoir plus](http://blog.okfn.org/category/okf-projects/spending-stories/).Ce projet est financé par la Knight Foundation.
+Spending Stories est un projet de l'[Open Knowledge Foundation](http://fr.okfn.org/‎) visant à améliorer la compréhension des données budgétaires mondiales [en savoir plus](http://blog.okfn.org/category/okf-projects/spending-stories/).Ce projet est financé par la Knight Foundation.
 
 Cette partie du projet "Spending Stories" permet aux utilisateurs de mettre des données monétaires en perspective et d'obtenir un contexte. N'importe quel montant dans n'importe quelle devise peut-être entré et comparé à de vraies dépenses.
 Les résultats prennent en compte l'inflation dans le pays dans lequel la dépense a été réalisée ainsi que le taux de change entre deux monnaies différentes, afin de pouvoir les comparer.
